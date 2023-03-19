@@ -1,0 +1,72 @@
+@charset "UTF-8";
+
+@import "./variables.scss";
+
+%base-typography {
+  margin-top: $spacing-0;
+}
+
+%base-header {
+  @extend %base-typography;
+  font-family: "Raleway", sans-serif;
+}
+
+body {
+  background-color: $colour-orange;
+  color: $colour-dark;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+p {
+  @extend %base-typography;
+}
+
+b {
+  font-weight: 700;
+}
+
+h1 {
+  @extend %base-header;
+  font-size: 4.375rem;
+  font-weight: 600;
+}
+
+h2 {
+  @extend %base-header;
+  font-size: 2.875rem;
+  font-weight: 500;
+}
+
+h3 {
+  @extend %base-header;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+h4 {
+  @extend %base-header;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+h5 {
+  @extend %base-header;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+h6 {
+  @extend %base-header;
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+.is-light {
+  color: $colour-white;
+}
