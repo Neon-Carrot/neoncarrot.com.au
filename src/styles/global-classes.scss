@@ -1,0 +1,134 @@
+@import "./variables.scss";
+
+.bg-orange {
+  background-color: $color-orange;
+}
+
+.bg-red {
+  background-color: $color-cardinal;
+}
+
+.bg-yellow {
+  background-color: $color-maize;
+}
+
+.bg-purple {
+  background-color: $color-indigo;
+}
+
+.display-flex {
+  display: flex;
+}
+
+.is-light {
+  color: $color-white;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.hide {
+  visibility: hidden;
+  height: 0px;
+  margin: 0;
+  padding: 0;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.position-absolute {
+  position: absolute;
+}
+
+.spv-px {
+  margin-bottom: $spacing-px;
+}
+
+.spv-0 {
+  margin-bottom: 0;
+}
+
+.spv-1 {
+  margin-bottom: $spacing-1;
+}
+
+.spv-2 {
+  margin-bottom: $spacing-2;
+}
+
+.spv-3 {
+  margin-bottom: $spacing-3;
+}
+
+.spv-4 {
+  margin-bottom: $spacing-4;
+}
+
+.spv-6 {
+  margin-bottom: $spacing-6;
+}
+
+.spv-8 {
+  margin-bottom: $spacing-8;
+}
+
+.spv-12 {
+  margin-bottom: $spacing-12;
+}
+
+.spv-16 {
+  margin-bottom: $spacing-16;
+}
+
+.spv-32 {
+  margin-bottom: $spacing-32;
+}
+
+.spv-48 {
+  margin-bottom: $spacing-48;
+}
+
+.spv-64 {
+  margin-bottom: $spacing-64;
+}
+
+.sph-px {
+  margin-right: $spacing-px;
+}
+
+.sph-0 {
+  margin-right: 0;
+}
+
+.sph-1 {
+  margin-right: $spacing-1;
+}
+
+.sph-2 {
+  margin-right: $spacing-2;
+}
+
+.sph-3 {
+  margin-right: $spacing-3;
+}
+
+.sph-4 {
+  margin-right: $spacing-4;
+}
+
+.sph-6 {
+  margin-right: $spacing-6;
+}
+
+.sph-8 {
+  margin-right: $spacing-8;
+}
+
+.sph-12 {
+  margin-right: $spacing-12;
+}

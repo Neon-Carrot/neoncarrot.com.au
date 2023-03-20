@@ -1,22 +1,239 @@
 ---
-import "../styles/styles.scss";
+import "../styles/index.scss";
+import ButtonLink from "../components/ButtonLink.astro";
+import Grid from "../components/Grid.astro";
+import Logo from "../components/Logo.astro";
 import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import Col from "../components/Col.astro";
+import DitherDivider from "../components/DitherDivider.astro";
 ---
 
 <Layout title="Neon Carrot">
   <main>
-    <h1>Heading 1</h1>
-    <h2>Heading 2</h2>
-    <h3>Heading 3</h3>
-    <h4>Heading 4</h4>
-    <h5>Heading 5</h5>
-    <h6>Heading 6</h6>
-    <p>Body text</p>
-    <p>
-      <b>Bold text</b>
-    </p>
-    <p>
-      <small>Small text</small>
-    </p>
+    <Grid>
+      <Col size={8} start={3}>
+        <div class="spv-48"></div>
+        <Logo />
+        <h1 class="hide spv-12">Neon Carrot</h1>
+        <h3 class="center is-light spv-12">Tech for good, for all</h3>
+        <div class="center spv-64">
+          <ButtonLink class="sph-8" color="red" href="#services">
+            See our services
+          </ButtonLink>
+          <ButtonLink color="orange" href="#contact">Get in contact</ButtonLink>
+        </div>
+      </Col>
+    </Grid>
+    <section class="position-relative">
+      <Grid extended>
+        <Col size={12}>
+          <Card class="who-we-are-card">
+            <Grid>
+              <Col size={6}>
+                <h1 id="who-we-are">Who<br />we are</h1>
+              </Col>
+              <Col size={6}>
+                <div class="spv-8"></div>
+                <h4>
+                  Neon Carrot is an IT consultancy dedicated to serving
+                  not-for-profits.
+                </h4>
+                <p>
+                  We are a couple of passionate and creative problem-solvers
+                  with first-hand experience in the not-for-profit space. We
+                  know how it can be - IT systems that are bursting at the
+                  seams, spreadsheets that are as intricate as they are
+                  mission-critical, and time-consuming processes that eat into
+                  the important work. You want technology to help, and so do we.
+                </p>
+                <p>
+                  Our mission is to maximise the positive impacts of
+                  not-for-profit organisations, and we believe we can do that
+                  best using our skills in IT and project management. We deliver
+                  innovative tech solutions that enable not-for-profits to
+                  provide better services, make better decisions and be better
+                  prepared for the future.
+                </p>
+              </Col>
+            </Grid>
+          </Card>
+        </Col>
+      </Grid>
+      <DitherDivider class="divider-1" color="yellow" />
+      <div class="divider-filler"></div>
+    </section>
+    <section class="what-we-do-section bg-yellow">
+      <div class="spv-32">
+        <Grid>
+          <Col size={6}>
+            <h1 id="what-we-do">What<br />we do</h1>
+          </Col>
+          <Col size={6}>
+            <div class="spv-8"></div>
+            <h4>We empower organisations to do what they do best, better.</h4>
+            <p>
+              It's not a revelation to describe digital technology as "kind of a
+              big deal", but it's rarely the be-all end-all antidote. We believe
+              that the best tech solutions come from working closely with
+              clients to fully understand their needs and goals, so whatever
+              problem or idea you have, we are ready to work with you to share
+              our knowledge and come up with a creative solution.
+            </p>
+          </Col>
+        </Grid>
+      </div>
+      <Grid>
+        <Col size={12}>
+          <h2 class="spv-16">Explore opportunities</h2>
+        </Col>
+      </Grid>
+      <Grid class="spv-32">
+        <Col size={4}>
+          <Card class="small-card" color="orange">
+            <div class="center">
+              <div class="image"></div>
+            </div>
+            <h4 class="center">Supercharge efficiency</h4>
+            <p class="center">
+              Free your team to tackle bigger tasks! Automate the mundane for
+              maximum productivity.
+            </p>
+          </Card>
+        </Col>
+        <Col size={4}>
+          <Card class="small-card" color="orange">
+            <div class="center">
+              <div class="image"></div>
+            </div>
+            <h4 class="center">Boost satisfaction</h4>
+            <p class="center">
+              Craft customer experience strategies that foster loyalty and keep
+              clients happy.
+            </p>
+          </Card>
+        </Col>
+        <Col size={4}>
+          <Card class="small-card" color="orange">
+            <div class="center">
+              <div class="image"></div>
+            </div>
+            <h4 class="center">Upgrade skills</h4>
+            <p class="center">
+              Empower your team for digital success! Build skills and confidence
+              to excel.
+            </p>
+          </Card>
+        </Col>
+      </Grid>
+      <Grid>
+        <Col size={12}>
+          <h2 class="spv-16">Solve challenges</h2>
+        </Col>
+      </Grid>
+      <Grid>
+        <Col size={4}>
+          <Card class="small-card" color="red">
+            <div class="center">
+              <div class="image"></div>
+            </div>
+            <h4 class="center">Illuminate insights</h4>
+            <p class="center">
+              A lack of effective reporting can be like trying to see in the
+              dark. Shine a light on what’s important.
+            </p>
+          </Card>
+        </Col>
+        <Col size={4}>
+          <Card class="small-card" color="red">
+            <div class="center">
+              <div class="image"></div>
+            </div>
+            <h4 class="center">Uncover identities</h4>
+            <p class="center">
+              Managing stakeholder data can be difficult as a company grows.
+              Regain control so you can easily find out who’s who.
+            </p>
+          </Card>
+        </Col>
+        <Col size={4}>
+          <Card class="small-card" color="red">
+            <div class="center">
+              <div class="image"></div>
+            </div>
+            <h4 class="center">Embrace the cloud</h4>
+            <p class="center">
+              Paper-based processes can be prone to error. Save on costs and
+              improve data security using cloud services.
+            </p>
+          </Card>
+        </Col>
+      </Grid>
+      <div class="spv-32"></div>
+      <DitherDivider color="purple" />
+    </section>
+    <section class="tech-solutions-section bg-purple is-light">
+      <div class="spv-32">
+        <Grid>
+          <Col size={6}>
+            <h1 id="what-we-do">Tech<br />solutions</h1>
+          </Col>
+          <Col size={6}>
+            <div class="spv-8"></div>
+            <h4>Fuel your organisation’s success with digital technology.</h4>
+            <p>
+              At the heart of every not-for-profit is a passion to change the
+              world for the better, so you deserve technology that empowers
+              rather than impedes. Let us help you elevate your performance with
+              these innovative tech solutions.
+            </p>
+          </Col>
+        </Grid>
+      </div>
+    </section>
   </main>
 </Layout>
+
+<style lang="scss">
+  @import "../styles/variables.scss";
+
+  .divider-1 {
+    position: absolute;
+    width: 100%;
+    top: calc(50% - 4.5rem);
+    z-index: -10;
+  }
+
+  .divider-filler {
+    background-color: $color-maize;
+    position: absolute;
+    width: 100%;
+    height: calc(50% - 4.5rem);
+    top: calc(50% + 4.5rem);
+    z-index: -10;
+  }
+
+  .image {
+    background-color: $color-orange;
+    height: 150px;
+    width: 150px;
+    margin-bottom: $spacing-12;
+  }
+
+  .what-we-do-section {
+    padding-top: $spacing-48;
+  }
+
+  .tech-solutions-section {
+    padding-top: $spacing-48;
+  }
+
+  .small-card {
+    padding: $spacing-12 $spacing-6 $spacing-4 $spacing-6;
+  }
+
+  .who-we-are-card {
+    margin-bottom: $spacing-4;
+    padding: $spacing-12 $spacing-8;
+  }
+</style>

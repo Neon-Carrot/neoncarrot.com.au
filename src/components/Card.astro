@@ -1,0 +1,64 @@
+---
+export interface Props {
+  class?: string;
+  color?: "red" | "orange" | "yellow";
+}
+
+const { class: className, color } = Astro.props;
+---
+
+<div class="card-container">
+  <div
+    class:list={[
+      "card",
+      className,
+      {
+        red: !color || color == "red",
+        orange: color == "orange",
+        yellow: color == "yellow",
+      },
+    ]}
+  >
+    <slot />
+  </div>
+</div>
+
+<style lang="scss">
+  @import "../styles/variables.scss";
+
+  .card-container {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .card {
+    background-color: $color-white;
+    border-radius: 1rem;
+    border: 2px solid $color-dark;
+    position: relative;
+
+    &::after {
+      border-radius: 1rem;
+      border: 2px solid $color-dark;
+      content: "";
+      height: 100%;
+      left: 0.5rem;
+      position: absolute;
+      top: 0.5rem;
+      width: 100%;
+      z-index: -1;
+    }
+
+    &.red::after {
+      background-color: $color-cardinal;
+    }
+
+    &.orange::after {
+      background-color: $color-orange;
+    }
+
+    &.yellow::after {
+      background-color: $color-maize;
+    }
+  }
+</style>

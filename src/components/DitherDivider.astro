@@ -1,0 +1,48 @@
+---
+export interface Props {
+  class?: string;
+  color?: "red" | "orange" | "yellow" | "purple";
+}
+
+const { class: className, color } = Astro.props;
+---
+
+<div
+  class:list={[
+    "dither-divider",
+    className,
+    {
+      red: !color || color == "red",
+      orange: color == "orange",
+      yellow: color == "yellow",
+      purple: color == "purple",
+    },
+  ]}
+>
+</div>
+
+<style lang="scss">
+  @import "../styles/variables.scss";
+
+  .dither-divider {
+    mask: url("/dither.png");
+    -webkit-mask: url("/dither.png") repeat-x;
+    height: 9rem;
+
+    &.red {
+      background-color: $color-cardinal;;
+    }
+
+    &.orange {
+      background-color: $color-orange;
+    }
+
+    &.yellow {
+      background-color: $color-maize;
+    }
+
+    &.purple {
+      background-color: $color-indigo;
+    }
+  }
+</style>

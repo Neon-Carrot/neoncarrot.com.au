@@ -1,0 +1,65 @@
+---
+export interface Props {
+  class?: string;
+  color?: "red" | "orange";
+  href: string;
+}
+
+const { class: className, color, href } = Astro.props;
+---
+
+<a
+  class:list={[
+    "button-link",
+    className,
+    {
+      red: !color || color == "red",
+      orange: color == "orange",
+    },
+  ]}
+  href={href}><slot /></a
+>
+
+<style lang="scss">
+  @import "../styles/variables.scss";
+
+  .button-link {
+    border-radius: 0.5rem;
+    border: 2px solid $color-dark;
+    box-shadow: 0.25rem 0.25rem 0 $color-dark;
+    color: $color-white;
+    font-size: .875rem;
+    font-weight: 700;
+    left: 0;
+    padding: $spacing-3 $spacing-4;
+    position: relative;
+    text-decoration: none;
+    top: 0;
+    transition: all 0.125s ease-out;
+
+    &:hover,
+    &:focus {
+      box-shadow: 0.125rem 0.125rem 0 $color-dark;
+      top: 0.125rem;
+      left: 0.125rem;
+    }
+  }
+
+  .red {
+    background-color: $color-cardinal;
+
+    &:hover,
+    &:focus {
+      background-color: darken($color-cardinal, 5%)
+    }
+  }
+
+  .orange {
+    background-color: $color-orange;
+
+    &:hover,
+    &:focus {
+      background-color: darken($color-orange, 5%)
+    }
+  }
+</style>
