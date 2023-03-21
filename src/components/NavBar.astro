@@ -3,8 +3,20 @@ import Col from "./Col.astro";
 import Grid from "./Grid.astro";
 ---
 
-<Grid>
-  <Col size={12}>
-    <nav>I'm a navbar</nav>
-  </Col>
-</Grid>
+<nav>
+  <Grid>
+    <Col size={12}>
+      <span>I'm a navbar</span>
+    </Col>
+  </Grid>
+</nav>
+
+<style lang="scss">
+  @import "../styles/variables.scss";
+
+  nav {
+    background-color: $color-cardinal;
+    color: $color-white;
+    padding: $spacing-4 0;
+  }
+</style>

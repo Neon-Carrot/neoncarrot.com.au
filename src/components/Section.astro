@@ -1,0 +1,38 @@
+---
+export interface Props {
+  class?: string;
+  deep?: boolean;
+  shallow?: boolean;
+}
+
+const { class: className, deep, shallow } = Astro.props;
+---
+
+<div
+  class:list={[
+    "section",
+    className,
+    { "is-deep": !!deep, "is-shallow": !!shallow },
+  ]}
+>
+  <slot />
+</div>
+
+<style lang="scss">
+  @import "../styles/variables.scss";
+
+  .section {
+    padding-bottom: $spacing-32;
+    padding-top: $spacing-32;
+
+    &.is-deep {
+      padding-bottom: $spacing-48;
+      padding-top: $spacing-48;
+    }
+
+    &.is-shallow {
+      padding-bottom: $spacing-16;
+      padding-top: $spacing-16;
+    }
+  }
+</style>

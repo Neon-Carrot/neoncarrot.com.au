@@ -2,13 +2,13 @@
 export interface Props {
   class?: string;
   color?: "red" | "orange";
-  href: string;
+  type?: "button" | "submit" | "reset";
 }
 
-const { class: className, color, href } = Astro.props;
+const { class: className, color, type } = Astro.props;
 ---
 
-<a
+<button
   class:list={[
     "button",
     className,
@@ -17,5 +17,7 @@ const { class: className, color, href } = Astro.props;
       orange: color == "orange",
     },
   ]}
-  href={href}><slot /></a
+  type={type}
 >
+  <slot />
+</button>

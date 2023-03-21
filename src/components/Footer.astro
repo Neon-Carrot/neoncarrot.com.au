@@ -3,11 +3,20 @@ import Col from "./Col.astro";
 import Grid from "./Grid.astro";
 ---
 
-<div class="spv-8" />
-<Grid>
-  <Col size={12}>
-    <footer>
-      <p>I'm a footer</p>
-    </footer>
-  </Col>
-</Grid>
+<footer>
+  <Grid>
+    <Col size={12}>
+      <span>I'm a footer</span>
+    </Col>
+  </Grid>
+</footer>
+
+<style lang="scss">
+  @import "../styles/variables.scss";
+
+  footer {
+    background-color: $color-dark;
+    color: $color-white;
+    padding: $spacing-12 0;
+  }
+</style>

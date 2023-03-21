@@ -5,20 +5,22 @@
 %base-header {
   @extend %base-typography;
   font-family: "Raleway", sans-serif;
+  line-height: 1.2;
 }
 
 body {
   background-color: $color-orange;
   color: $color-dark;
   font-family: "Open Sans", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 p {
   @extend %base-typography;
+  line-height: 1.3625;
 }
 
-b {
+strong {
   font-weight: 700;
 }
 
@@ -31,29 +33,77 @@ h1 {
 h2 {
   @extend %base-header;
   font-size: 2.875rem;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 h3 {
   @extend %base-header;
   font-size: 2rem;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 h4 {
   @extend %base-header;
   font-size: 1.5rem;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 h5 {
   @extend %base-header;
   font-size: 1.25rem;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 h6 {
   @extend %base-header;
   font-size: 1.125rem;
-  font-weight: 400;
+  font-weight: 500;
+}
+
+button {
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:focus,
+  &:focus-visible {
+    border-color: $color-focus;
+    outline: 2px solid $color-focus;
+    outline-offset: 0 !important;
+  }
+}
+
+label {
+  display: block;
+  margin-bottom: $spacing-1;
+}
+
+input[type="text"] {
+  border: 2px solid $color-dark;
+  border-radius: 0.5rem;
+  margin-bottom: $spacing-6;
+  padding: $spacing-3 $spacing-2;
+  width: 100%;
+
+  &:focus,
+  &:focus-visible {
+    border-color: $color-focus;
+    outline: 2px solid $color-focus;
+    outline-offset: 0 !important;
+  }
+}
+
+textarea {
+  border: 2px solid $color-dark;
+  border-radius: 0.5rem;
+  margin-bottom: $spacing-6;
+  padding: $spacing-3 $spacing-2;
+  width: 100%;
+
+  &:focus,
+  &:focus-visible {
+    border-color: $color-focus;
+    outline: 2px solid $color-focus;
+    outline-offset: 0 !important;
+  }
 }

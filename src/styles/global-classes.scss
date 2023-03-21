@@ -16,6 +16,55 @@
   background-color: $color-indigo;
 }
 
+.button {
+  border-radius: 0.5rem;
+  border: 2px solid $color-dark;
+  box-shadow: 0.25rem 0.25rem 0 $color-dark;
+  color: $color-white;
+  font-size: 0.875rem;
+  font-weight: 700;
+  left: 0;
+  padding: $spacing-3 $spacing-4;
+  position: relative;
+  text-decoration: none;
+  top: 0;
+  transition: box-shadow 0.125s ease-out, left 0.125s ease-out,
+    top 0.125s ease-out;
+
+  &:hover,
+  &:focus,
+  &:focus-visible {
+    box-shadow: 0.125rem 0.125rem 0 $color-dark;
+    left: 0.125rem;
+    top: 0.125rem;
+  }
+
+  &:focus,
+  &:focus-visible {
+    border-color: $color-focus;
+    outline: 2px solid $color-focus;
+    outline-offset: 0 !important;
+  }
+
+  &.red {
+    background-color: $color-cardinal;
+
+    &:hover,
+    &:focus {
+      background-color: darken($color-cardinal, 5%);
+    }
+  }
+
+  &.orange {
+    background-color: $color-orange;
+
+    &:hover,
+    &:focus {
+      background-color: darken($color-orange, 5%);
+    }
+  }
+}
+
 .display-flex {
   display: flex;
 }
@@ -43,6 +92,14 @@
 
 .position-absolute {
   position: absolute;
+}
+
+.no-pb {
+  padding-bottom: 0 !important;
+}
+
+.no-pt {
+  padding-top: 0 !important;
 }
 
 .spv-px {
