@@ -2,12 +2,13 @@
 export interface Props {
   class?: string;
   color?: "red" | "orange" | "yellow";
+  fullWidth?: boolean;
 }
 
-const { class: className, color } = Astro.props;
+const { class: className, color, fullWidth } = Astro.props;
 ---
 
-<div class="card-container">
+<div class:list={["card-container", { "full-width": !!fullWidth }]}>
   <div
     class:list={[
       "card",
@@ -29,6 +30,10 @@ const { class: className, color } = Astro.props;
   .card-container {
     position: relative;
     z-index: 1;
+
+    &.full-width {
+      width: 100%;
+    }
   }
 
   .card {

@@ -12,6 +12,8 @@ const { class: className, extended } = Astro.props;
 </div>
 
 <style lang="scss">
+  @import "../styles/variables.scss";
+
   .grid {
     column-gap: 2rem;
     display: grid;
@@ -27,6 +29,11 @@ const { class: className, extended } = Astro.props;
 
     .grid {
       padding: 0;
+    }
+
+    @media only screen and (max-width: $breakpoint-medium) {
+      column-gap: 1.5rem;
+      grid-template-columns: repeat(4, 1fr);
     }
   }
 </style>

@@ -1,0 +1,44 @@
+---
+import Card from "./Card.astro";
+
+export interface Props {
+  color: "red" | "orange";
+  img: {
+    alt: string;
+    src: string;
+  };
+  message: string;
+  title: string;
+}
+
+const { color, img, title, message } = Astro.props;
+---
+
+<Card class="service-card" color={color}>
+  <div class="center">
+    <img
+      alt={img.alt}
+      class="service-card__image"
+      height="150"
+      src={img.src}
+      width="150"
+    />
+  </div>
+  <h4 class="center">{title}</h4>
+  <p class="center">
+    {message}
+  </p>
+</Card>
+
+<style lang="scss">
+  @import "../styles/variables.scss";
+
+  .service-card {
+    margin-bottom: $spacing-8;
+    padding: $spacing-12 $spacing-6 $spacing-4 $spacing-6;
+  }
+
+  .service-card__image {
+    margin-bottom: $spacing-12;
+  }
+</style>

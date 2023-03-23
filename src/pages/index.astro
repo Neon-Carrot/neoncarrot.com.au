@@ -9,13 +9,15 @@ import Card from "../components/Card.astro";
 import Col from "../components/Col.astro";
 import DitherDivider from "../components/DitherDivider.astro";
 import Section from "../components/Section.astro";
+import ServiceCard from "../components/ServiceCard.astro";
+import TechSolutionCard from "../components/TechSolutionCard.astro";
 ---
 
 <Layout title="Neon Carrot">
   <main>
     <Section deep>
       <Grid>
-        <Col size={8} start={3}>
+        <Col size={8} start={3} mdSize={8} mdStart={3} smSize={4} smStart={1}>
           <Logo />
           <h1 class="hide spv-12">Neon Carrot</h1>
           <h3 class="center is-light spv-12">Tech for good, for all</h3>
@@ -35,10 +37,26 @@ import Section from "../components/Section.astro";
         <Col size={12}>
           <Card class="who-we-are-card">
             <Grid>
-              <Col size={6}>
+              <Col size={6} mdSize={5} smSize={4}>
                 <h1 id="who-we-are">Who<br />we are</h1>
+                <div class="card-images-container">
+                  <div>
+                    <img
+                      src="/images/carol.png"
+                      height="181"
+                      alt="Pop art-style image of Carol"
+                    />
+                  </div>
+                  <div>
+                    <img
+                      src="/images/caleb.png"
+                      height="202"
+                      alt="Pop art-style image of Caleb"
+                    />
+                  </div>
+                </div>
               </Col>
-              <Col size={6}>
+              <Col size={6} mdSize={7} smSize={4}>
                 <div class="spv-8"></div>
                 <h4>
                   Neon Carrot is an IT consultancy dedicated to serving
@@ -71,10 +89,10 @@ import Section from "../components/Section.astro";
     <Section class="bg-yellow no-pb">
       <Section class="no-pt">
         <Grid>
-          <Col size={6}>
+          <Col size={6} mdSize={5} smSize={4}>
             <h1 id="services">What<br />we do</h1>
           </Col>
-          <Col size={6}>
+          <Col size={6} mdSize={7} smSize={4}>
             <div class="spv-8"></div>
             <h4>We empower organisations to do what they do best, better.</h4>
             <p>
@@ -95,41 +113,38 @@ import Section from "../components/Section.astro";
           </Col>
         </Grid>
         <Grid>
-          <Col size={4}>
-            <Card class="small-card" color="orange">
-              <div class="center">
-                <div class="service-image"></div>
-              </div>
-              <h4 class="center">Supercharge efficiency</h4>
-              <p class="center">
-                Free your team to tackle bigger tasks! Automate the mundane for
-                maximum productivity.
-              </p>
-            </Card>
+          <Col size={4} mdSize={4} smSize={4}>
+            <ServiceCard
+              color="orange"
+              img={{
+                src: "/images/lightning-bolt.jpg",
+                alt: "Pop art lightning bolt",
+              }}
+              title="Supercharge efficiency"
+              message="Free your team to tackle bigger tasks! Automate the mundane for maximum productivity."
+            />
           </Col>
-          <Col size={4}>
-            <Card class="small-card" color="orange">
-              <div class="center">
-                <div class="service-image"></div>
-              </div>
-              <h4 class="center">Boost satisfaction</h4>
-              <p class="center">
-                Craft customer experience strategies that foster loyalty and
-                keep clients happy.
-              </p>
-            </Card>
+          <Col size={4} mdSize={4} smSize={4}>
+            <ServiceCard
+              color="orange"
+              img={{
+                src: "/images/heart.jpg",
+                alt: "Pop art heart",
+              }}
+              title="Boost satisfaction"
+              message="Craft customer experience strategies that foster loyalty and keep clients happy."
+            />
           </Col>
-          <Col size={4}>
-            <Card class="small-card" color="orange">
-              <div class="center">
-                <div class="service-image"></div>
-              </div>
-              <h4 class="center">Upgrade skills</h4>
-              <p class="center">
-                Empower your team for digital success! Build skills and
-                confidence to excel.
-              </p>
-            </Card>
+          <Col size={4} mdSize={4} smSize={4}>
+            <ServiceCard
+              color="orange"
+              img={{
+                src: "/images/up-arrow.jpg",
+                alt: "Pop art arrow pointing upwards",
+              }}
+              title="Upgrade skills"
+              message="Empower your team for digital success! Build skills and confidence to excel."
+            />
           </Col>
         </Grid>
       </Section>
@@ -140,41 +155,38 @@ import Section from "../components/Section.astro";
           </Col>
         </Grid>
         <Grid>
-          <Col size={4}>
-            <Card class="small-card" color="red">
-              <div class="center">
-                <div class="service-image"></div>
-              </div>
-              <h4 class="center">Illuminate insights</h4>
-              <p class="center">
-                A lack of effective reporting can be like trying to see in the
-                dark. Shine a light on what’s important.
-              </p>
-            </Card>
+          <Col size={4} mdSize={4} smSize={4}>
+            <ServiceCard
+              color="red"
+              img={{
+                src: "/images/light-bulb.jpg",
+                alt: "Pop art light bulb",
+              }}
+              title="Illuminate insights"
+              message="A lack of effective reporting can be like trying to see in the dark. Shine a light on what’s important."
+            />
           </Col>
-          <Col size={4}>
-            <Card class="small-card" color="red">
-              <div class="center">
-                <div class="service-image"></div>
-              </div>
-              <h4 class="center">Uncover identities</h4>
-              <p class="center">
-                Managing stakeholder data can be difficult as a company grows.
-                Regain control so you can easily find out who’s who.
-              </p>
-            </Card>
+          <Col size={4} mdSize={4} smSize={4}>
+            <ServiceCard
+              color="red"
+              img={{
+                src: "/images/magnifying-glass.jpg",
+                alt: "Pop art magnifying glass",
+              }}
+              title="Uncover identities"
+              message="Managing stakeholder data can be difficult as a company grows. Regain control so you can easily find out who’s who."
+            />
           </Col>
-          <Col size={4}>
-            <Card class="small-card" color="red">
-              <div class="center">
-                <div class="service-image"></div>
-              </div>
-              <h4 class="center">Embrace the cloud</h4>
-              <p class="center">
-                Paper-based processes can be prone to error. Save on costs and
-                improve data security using cloud services.
-              </p>
-            </Card>
+          <Col size={4} mdSize={4} smSize={4}>
+            <ServiceCard
+              color="red"
+              img={{
+                src: "/images/cloud.jpg",
+                alt: "Pop art cloud",
+              }}
+              title="Embrace the cloud"
+              message="Paper-based processes can be prone to error. Save on costs and improve data security using cloud services."
+            />
           </Col>
         </Grid>
       </Section>
@@ -200,14 +212,17 @@ import Section from "../components/Section.astro";
       </Section>
       <Section shallow>
         <Grid>
-          <Col size={5}>
-            <Card color="red">
-              <div class="center">
-                <div class="tech-image"></div>
-              </div>
-            </Card>
+          <Col size={5} mdSize={5} smSize={4}>
+            <TechSolutionCard
+              color="red"
+              img={{
+                src: "/images/data-capture.jpg",
+                alt: "Cartoon of office workers organising files and folders.",
+                height: 238,
+              }}
+            />
           </Col>
-          <Col size={6} start={7}>
+          <Col size={6} start={7} mdSize={6} mdStart={7} smSize={4} smStart={1}>
             <h2>Intuitive data capture and management systems</h2>
             <p>
               Streamline and automate the process of collecting, organising and
@@ -219,7 +234,7 @@ import Section from "../components/Section.astro";
       </Section>
       <Section shallow>
         <Grid>
-          <Col size={6}>
+          <Col size={6} mdSize={6} smSize={4}>
             <h2>Interactive dashboards that use live, real-time data</h2>
             <p>
               Drill down, explore and gain deeper understanding of the operation
@@ -227,25 +242,31 @@ import Section from "../components/Section.astro";
               decision-making.
             </p>
           </Col>
-          <Col size={5} start={8}>
-            <Card color="orange">
-              <div class="center">
-                <div class="tech-image"></div>
-              </div>
-            </Card>
+          <Col size={5} start={8} mdSize={5} mdStart={8} smSize={4} smStart={1}>
+            <TechSolutionCard
+              color="orange"
+              img={{
+                src: "/images/dashboard.jpg",
+                alt: "Cartoon of office worker in front of UI for data dashboard.",
+                height: 231,
+              }}
+            />
           </Col>
         </Grid>
       </Section>
       <Section shallow>
         <Grid>
-          <Col size={5}>
-            <Card color="yellow">
-              <div class="center">
-                <div class="tech-image"></div>
-              </div>
-            </Card>
+          <Col size={5} mdSize={5} smSize={4}>
+            <TechSolutionCard
+              color="yellow"
+              img={{
+                src: "/images/websites.jpg",
+                alt: "Cartoon of office worker in front of UI for website mockup.",
+                height: 231,
+              }}
+            />
           </Col>
-          <Col size={6} start={7}>
+          <Col size={6} start={7} mdSize={6} mdStart={7} smSize={4} smStart={1}>
             <h2>Modern and accessible websites and apps</h2>
             <p>
               Establish credibility, engage stakeholders and provide access to
@@ -263,7 +284,7 @@ import Section from "../components/Section.astro";
         <Col size={12}>
           <Card class="get-in-touch-card" color="orange">
             <Grid>
-              <Col size={6}>
+              <Col size={6} mdSize={6} smSize={4}>
                 <h1 id="contact">Get in touch</h1>
                 <div class="contact-item">
                   <div class="contact-icon"></div>
@@ -279,8 +300,14 @@ import Section from "../components/Section.astro";
                     info@neoncarrot.com.au
                   </p>
                 </div>
+                <img
+                  class="megaphone"
+                  src="/images/megaphone.jpg"
+                  alt="Pop art-style image of a megaphone"
+                  height="330"
+                />
               </Col>
-              <Col size={6}>
+              <Col size={6} mdSize={6} smSize={4}>
                 <div class="spv-8"></div>
                 <h4>We'd love to hear from you.</h4>
                 <form>
@@ -316,6 +343,28 @@ import Section from "../components/Section.astro";
 <style lang="scss">
   @import "../styles/variables.scss";
 
+  .card-images-container {
+    align-items: flex-end;
+    bottom: 0;
+    display: flex;
+    left: 2rem;
+    position: absolute;
+    max-width: 50%;
+
+    img {
+      block-size: auto;
+      display: block;
+    }
+
+    @media only screen and (max-width: $breakpoint-large) {
+      max-width: 39%;
+    }
+
+    @media only screen and (max-width: $breakpoint-medium) {
+      max-width: 90%;
+    }
+  }
+
   .divider-1 {
     position: absolute;
     width: 100%;
@@ -332,40 +381,39 @@ import Section from "../components/Section.astro";
     z-index: -10;
   }
 
-  .service-image {
-    background-color: $color-orange;
-    height: 150px;
-    width: 150px;
-    margin-bottom: $spacing-12;
-  }
-
-  .tech-image {
-    background-color: $color-orange;
-    height: 250px;
-    width: 350px;
-    margin: $spacing-4;
-  }
-
-  .what-we-do-section {
-    padding-top: $spacing-48;
-  }
-
-  .tech-solutions-section {
-    padding-top: $spacing-48;
-  }
-
-  .small-card {
-    padding: $spacing-12 $spacing-6 $spacing-4 $spacing-6;
-  }
-
   .who-we-are-card {
     margin-bottom: $spacing-4;
     padding: $spacing-12 $spacing-8;
+
+    @media only screen and (max-width: $breakpoint-large) {
+      padding: $spacing-8 $spacing-6;
+    }
+
+    @media only screen and (max-width: $breakpoint-medium) {
+      padding-bottom: $spacing-48;
+    }
   }
 
   .get-in-touch-card {
     margin-bottom: $spacing-4;
-    padding: $spacing-12 $spacing-8;
+    padding: $spacing-12 $spacing-8 $spacing-0 $spacing-8;
+
+    @media only screen and (max-width: $breakpoint-large) {
+      padding: $spacing-8 $spacing-6 $spacing-0 $spacing-6;
+    }
+
+    @media only screen and (max-width: $breakpoint-medium) {
+      padding-bottom: $spacing-8;
+    }
+  }
+
+  .megaphone {
+    block-size: auto;
+    display: block;
+
+    @media only screen and (max-width: $breakpoint-medium) {
+      display: none;
+    }
   }
 
   .contact-item {

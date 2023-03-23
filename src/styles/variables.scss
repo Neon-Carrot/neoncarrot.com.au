@@ -1,12 +1,12 @@
 /* colors */
-$color-orange: #FF7600;
-$color-indigo: #52006A;
-$color-maize: #FFF266;
-$color-cardinal: #CD113B;
-$color-orange-alt: #FFA900;
+$color-orange: #ff7600;
+$color-indigo: #52006a;
+$color-maize: #fff266;
+$color-cardinal: #cd113b;
+$color-orange-alt: #ffa900;
 $color-focus: #2e96ff;
-$color-white: #FFFFFF;
-$color-light: #FFFFFF;
+$color-white: #ffffff;
+$color-light: #ffffff;
 $color-dark: #242430;
 
 /* spacing */
@@ -20,6 +20,12 @@ $spacing-6: 1.5rem;
 $spacing-8: 2rem;
 $spacing-12: 3rem;
 $spacing-16: 4rem;
+$spacing-24: 6rem;
 $spacing-32: 8rem;
 $spacing-48: 12rem;
 $spacing-64: 16rem;
+
+/* breakpoints */
+$breakpoint-large: 1160px;
+$breakpoint-medium: 768px;
+$breakpoint-small: 412px;

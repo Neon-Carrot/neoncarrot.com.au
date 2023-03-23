@@ -3,18 +3,42 @@ export interface Props {
   class?: string;
   size: number;
   start?: number;
+  mdSize?: number;
+  mdStart?: number;
+  smSize?: number;
+  smStart?: number;
 }
 
-const { class: className, size, start } = Astro.props;
+const {
+  class: className,
+  mdSize,
+  mdStart,
+  smSize,
+  smStart,
+  size,
+  start,
+} = Astro.props;
 ---
 
 <div
-  class:list={[`col-${size}`, className, { [`col-start-${start}`]: !!start }]}
+  class:list={[
+    `col-${size}`,
+    className,
+    {
+      [`col-start-${start}`]: !!start,
+      [`col-md-${mdSize}`]: !!mdSize,
+      [`col-md-start-${mdStart}`]: !!mdStart,
+      [`col-sm-${smSize}`]: !!smSize,
+      [`col-sm-start-${smStart}`]: !!smStart,
+    },
+  ]}
 >
   <slot />
 </div>
 
 <style lang="scss">
+  @import "../styles/variables.scss";
+
   .col-1 {
     grid-column: span 1 / span 1;
   }
@@ -105,5 +129,129 @@ const { class: className, size, start } = Astro.props;
 
   .col-start-12 {
     grid-column-start: 12;
+  }
+
+  @media only screen and (max-width: $breakpoint-large) {
+    .col-md-1 {
+      grid-column: span 1 / span 1;
+    }
+
+    .col-md-2 {
+      grid-column: span 2 / span 2;
+    }
+
+    .col-md-3 {
+      grid-column: span 3 / span 3;
+    }
+
+    .col-md-4 {
+      grid-column: span 4 / span 4;
+    }
+
+    .col-md-5 {
+      grid-column: span 5 / span 5;
+    }
+
+    .col-md-6 {
+      grid-column: span 6 / span 6;
+    }
+
+    .col-md-7 {
+      grid-column: span 7 / span 7;
+    }
+
+    .col-md-8 {
+      grid-column: span 8 / span 8;
+    }
+
+    .col-md-9 {
+      grid-column: span 9 / span 9;
+    }
+
+    .col-md-10 {
+      grid-column: span 10 / span 10;
+    }
+
+    .col-md-11 {
+      grid-column: span 11 / span 11;
+    }
+
+    .col-md-12 {
+      grid-column: span 12 / span 12;
+    }
+
+    .col-md-start-2 {
+      grid-column-start: 2;
+    }
+
+    .col-md-start-3 {
+      grid-column-start: 3;
+    }
+
+    .col-md-start-4 {
+      grid-column-start: 4;
+    }
+
+    .col-md-start-5 {
+      grid-column-start: 5;
+    }
+
+    .col-md-start-6 {
+      grid-column-start: 6;
+    }
+
+    .col-md-start-7 {
+      grid-column-start: 7;
+    }
+
+    .col-md-start-8 {
+      grid-column-start: 8;
+    }
+
+    .col-md-start-9 {
+      grid-column-start: 9;
+    }
+
+    .col-md-start-10 {
+      grid-column-start: 10;
+    }
+
+    .col-md-start-11 {
+      grid-column-start: 11;
+    }
+
+    .col-md-start-12 {
+      grid-column-start: 12;
+    }
+  }
+
+  @media only screen and (max-width: $breakpoint-medium) {
+    .col-sm-1 {
+      grid-column: span 1 / span 1;
+    }
+
+    .col-sm-2 {
+      grid-column: span 2 / span 2;
+    }
+
+    .col-sm-3 {
+      grid-column: span 3 / span 3;
+    }
+
+    .col-sm-4 {
+      grid-column: span 4 / span 4;
+    }
+
+    .col-sm-start-2 {
+      grid-column-start: 2;
+    }
+
+    .col-sm-start-3 {
+      grid-column-start: 3;
+    }
+
+    .col-sm-start-4 {
+      grid-column-start: 4;
+    }
   }
 </style>

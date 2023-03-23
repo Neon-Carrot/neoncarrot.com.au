@@ -34,5 +34,35 @@ const { class: className, deep, shallow } = Astro.props;
       padding-bottom: $spacing-16;
       padding-top: $spacing-16;
     }
+
+    @media only screen and (max-width: $breakpoint-large) {
+      padding-bottom: $spacing-24;
+      padding-top: $spacing-24;
+
+      &.is-deep {
+        padding-bottom: $spacing-32;
+        padding-top: $spacing-32;
+      }
+
+      &.is-shallow {
+        padding-bottom: $spacing-12;
+        padding-top: $spacing-12;
+      }
+    }
+
+    @media only screen and (max-width: $breakpoint-medium) {
+      padding-bottom: $spacing-16;
+      padding-top: $spacing-16;
+
+      &.is-deep {
+        padding-bottom: $spacing-24;
+        padding-top: $spacing-24;
+      }
+
+      &.is-shallow {
+        padding-bottom: $spacing-8;
+        padding-top: $spacing-8;
+      }
+    }
   }
 </style>

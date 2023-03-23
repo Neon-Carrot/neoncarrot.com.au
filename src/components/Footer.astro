@@ -1,22 +1,65 @@
 ---
 import Col from "./Col.astro";
 import Grid from "./Grid.astro";
+import Logo from "./Logo.astro";
 ---
 
-<footer>
+<footer class="footer">
   <Grid>
     <Col size={12}>
-      <span>I'm a footer</span>
+      <div class="footer-contents">
+        <div class="left-container">
+          <Logo />
+        </div>
+        <div class="right-container">
+          <a class="link" href="#">Privacy policy</a>
+          <span
+            >&copy; {new Date().getFullYear()} Neon Carrot. All rights reserved.</span
+          >
+        </div>
+      </div>
     </Col>
+    <Col size={10} />
   </Grid>
 </footer>
 
 <style lang="scss">
   @import "../styles/variables.scss";
 
-  footer {
+  .footer {
     background-color: $color-dark;
     color: $color-white;
     padding: $spacing-12 0;
+  }
+
+  .footer-contents {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+    @media only screen and (max-width: $breakpoint-medium) {
+      flex-direction: column;
+    }
+  }
+
+  .left-container {
+    flex-shrink: 0;
+    width: 10rem;
+
+    @media only screen and (max-width: $breakpoint-medium) {
+      margin-bottom: $spacing-4;
+    }
+  }
+
+  .right-container {
+    display: flex;
+
+    > *:not(:last-child) {
+      margin-right: $spacing-8;
+    }
+  }
+
+  .link {
+    color: $color-white !important;
   }
 </style>

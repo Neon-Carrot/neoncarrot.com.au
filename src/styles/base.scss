@@ -28,36 +28,60 @@ h1 {
   @extend %base-header;
   font-size: 4.375rem;
   font-weight: 600;
+
+  @media only screen and (max-width: $breakpoint-medium) {
+    font-size: 2.875rem;
+  }
 }
 
 h2 {
   @extend %base-header;
   font-size: 2.875rem;
   font-weight: 500;
+
+  @media only screen and (max-width: $breakpoint-medium) {
+    font-size: 2rem;
+  }
 }
 
 h3 {
   @extend %base-header;
   font-size: 2rem;
   font-weight: 500;
+
+  @media only screen and (max-width: $breakpoint-medium) {
+    font-size: 1.5rem;
+  }
 }
 
 h4 {
   @extend %base-header;
   font-size: 1.5rem;
   font-weight: 500;
+
+  @media only screen and (max-width: $breakpoint-medium) {
+    font-size: 1.25rem;
+  }
 }
 
 h5 {
   @extend %base-header;
   font-size: 1.25rem;
   font-weight: 500;
+
+  @media only screen and (max-width: $breakpoint-medium) {
+    font-size: 1.125rem;
+  }
 }
 
 h6 {
   @extend %base-header;
   font-size: 1.125rem;
   font-weight: 500;
+
+  @media only screen and (max-width: $breakpoint-medium) {
+    font-size: 1rem;
+  }
 }
 
 button {
@@ -81,7 +105,7 @@ label {
 input[type="text"] {
   border: 2px solid $color-dark;
   border-radius: 0.5rem;
-  margin-bottom: $spacing-6;
+  margin-bottom: $spacing-8;
   padding: $spacing-3 $spacing-2;
   width: 100%;
 
@@ -96,7 +120,7 @@ input[type="text"] {
 textarea {
   border: 2px solid $color-dark;
   border-radius: 0.5rem;
-  margin-bottom: $spacing-6;
+  margin-bottom: $spacing-8;
   padding: $spacing-3 $spacing-2;
   width: 100%;
 
@@ -106,4 +130,8 @@ textarea {
     outline: 2px solid $color-focus;
     outline-offset: 0 !important;
   }
+}
+
+img {
+  max-inline-size: 100%;
 }
