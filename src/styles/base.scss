@@ -8,11 +8,40 @@
   line-height: 1.2;
 }
 
+%base-input {
+  border: 2px solid $color-dark;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  margin-bottom: $spacing-8;
+  padding: $spacing-3 $spacing-2;
+  width: 100%;
+
+  &:focus,
+  &:focus-visible {
+    border-color: $color-focus;
+    outline: 2px solid $color-focus;
+    outline-offset: 0 !important;
+  }
+}
+
+html,
+body,
+main {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: $color-orange;
   color: $color-dark;
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
+  height: 100%;
 }
 
 p {
@@ -102,34 +131,15 @@ label {
   margin-bottom: $spacing-1;
 }
 
-input[type="text"] {
-  border: 2px solid $color-dark;
-  border-radius: 0.5rem;
-  margin-bottom: $spacing-8;
-  padding: $spacing-3 $spacing-2;
-  width: 100%;
-
-  &:focus,
-  &:focus-visible {
-    border-color: $color-focus;
-    outline: 2px solid $color-focus;
-    outline-offset: 0 !important;
+input {
+  &[type="text"],
+  &[type="email"] {
+    @extend %base-input;
   }
 }
 
 textarea {
-  border: 2px solid $color-dark;
-  border-radius: 0.5rem;
-  margin-bottom: $spacing-8;
-  padding: $spacing-3 $spacing-2;
-  width: 100%;
-
-  &:focus,
-  &:focus-visible {
-    border-color: $color-focus;
-    outline: 2px solid $color-focus;
-    outline-offset: 0 !important;
-  }
+  @extend %base-input;
 }
 
 img {

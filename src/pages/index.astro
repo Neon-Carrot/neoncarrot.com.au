@@ -15,7 +15,7 @@ import TechSolutionCard from "../components/TechSolutionCard.astro";
 
 <Layout title="Neon Carrot">
   <main>
-    <Section deep>
+    <Section extraDeep>
       <Grid>
         <Col size={8} start={3} mdSize={8} mdStart={3} smSize={4} smStart={1}>
           <Logo />
@@ -32,7 +32,7 @@ import TechSolutionCard from "../components/TechSolutionCard.astro";
         </Col>
       </Grid>
     </Section>
-    <Section class="position-relative" shallow>
+    <Section class="position-relative" id="about" shallow>
       <Grid extended>
         <Col size={12}>
           <Card class="who-we-are-card">
@@ -86,11 +86,11 @@ import TechSolutionCard from "../components/TechSolutionCard.astro";
       <DitherDivider class="divider-1" color="yellow" />
       <div class="divider-filler"></div>
     </Section>
-    <Section class="bg-yellow no-pb">
+    <Section class="bg-yellow no-pb" id="services">
       <Section class="no-pt">
         <Grid>
           <Col size={6} mdSize={5} smSize={4}>
-            <h1 id="services">What<br />we do</h1>
+            <h1>What<br />we do</h1>
           </Col>
           <Col size={6} mdSize={7} smSize={4}>
             <div class="spv-8"></div>
@@ -279,13 +279,13 @@ import TechSolutionCard from "../components/TechSolutionCard.astro";
       <Section shallow />
       <DitherDivider color="yellow" />
     </Section>
-    <Section class="bg-yellow" deep>
+    <Section class="bg-yellow" deep id="contact">
       <Grid extended>
         <Col size={12}>
           <Card class="get-in-touch-card" color="orange">
             <Grid>
               <Col size={6} mdSize={6} smSize={4}>
-                <h1 id="contact">Get in touch</h1>
+                <h1>Get in touch</h1>
                 <div class="contact-item">
                   <div class="contact-icon"></div>
                   <p class="contact-details">
@@ -317,7 +317,7 @@ import TechSolutionCard from "../components/TechSolutionCard.astro";
                   </div>
                   <div class="text-input">
                     <label for="email">Email address</label>
-                    <input name="email" id="email" required type="text" />
+                    <input name="email" id="email" required type="email" />
                   </div>
                   <div class="text-input">
                     <label for="subject">Subject</label>

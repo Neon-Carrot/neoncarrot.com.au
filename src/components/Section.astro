@@ -2,18 +2,25 @@
 export interface Props {
   class?: string;
   deep?: boolean;
+  extraDeep?: boolean;
+  id?: string;
   shallow?: boolean;
 }
 
-const { class: className, deep, shallow } = Astro.props;
+const { class: className, deep, extraDeep, id, shallow } = Astro.props;
 ---
 
 <div
   class:list={[
     "section",
     className,
-    { "is-deep": !!deep, "is-shallow": !!shallow },
+    {
+      "is-deep": !!deep,
+      "is-extra-deep": !!extraDeep,
+      "is-shallow": !!shallow,
+    },
   ]}
+  id={id}
 >
   <slot />
 </div>
@@ -25,28 +32,38 @@ const { class: className, deep, shallow } = Astro.props;
     padding-bottom: $spacing-32;
     padding-top: $spacing-32;
 
+    &.is-shallow {
+      padding-bottom: $spacing-16;
+      padding-top: $spacing-16;
+    }
+
     &.is-deep {
       padding-bottom: $spacing-48;
       padding-top: $spacing-48;
     }
 
-    &.is-shallow {
-      padding-bottom: $spacing-16;
-      padding-top: $spacing-16;
+    &.is-extra-deep {
+      padding-bottom: $spacing-64;
+      padding-top: $spacing-64;
     }
 
     @media only screen and (max-width: $breakpoint-large) {
       padding-bottom: $spacing-24;
       padding-top: $spacing-24;
 
+      &.is-shallow {
+        padding-bottom: $spacing-12;
+        padding-top: $spacing-12;
+      }
+
       &.is-deep {
         padding-bottom: $spacing-32;
         padding-top: $spacing-32;
       }
 
-      &.is-shallow {
-        padding-bottom: $spacing-12;
-        padding-top: $spacing-12;
+      &.is-extra-deep {
+        padding-bottom: $spacing-48;
+        padding-top: $spacing-48;
       }
     }
 
@@ -54,14 +71,19 @@ const { class: className, deep, shallow } = Astro.props;
       padding-bottom: $spacing-16;
       padding-top: $spacing-16;
 
+      &.is-shallow {
+        padding-bottom: $spacing-8;
+        padding-top: $spacing-8;
+      }
+
       &.is-deep {
         padding-bottom: $spacing-24;
         padding-top: $spacing-24;
       }
 
-      &.is-shallow {
-        padding-bottom: $spacing-8;
-        padding-top: $spacing-8;
+      &.is-extra-deep {
+        padding-bottom: $spacing-32;
+        padding-top: $spacing-32;
       }
     }
   }

@@ -1,22 +1,96 @@
 ---
 import Col from "./Col.astro";
 import Grid from "./Grid.astro";
+import LogoColor from "./LogoColor.astro";
 ---
 
-<nav>
+<nav class="nav">
   <Grid>
     <Col size={12}>
-      <span>I'm a navbar</span>
+      <div class="nav-contents">
+        <a class="left-container" href="#top">
+          <LogoColor height={24} />
+        </a>
+        <div class="right-container">
+          <a class="nav-link" href="#about">About</a>
+          <a class="nav-link" href="#services">Services</a>
+          <a class="nav-link" href="#contact">Contact</a>
+        </div>
+      </div>
     </Col>
   </Grid>
 </nav>
 
+<script>
+  function setUpNav() {
+    const navBar = document.querySelector("nav");
+
+    if (navBar == null) {
+      return;
+    }
+
+    let scrollPosition = 0;
+
+    document.addEventListener("scroll", () => {
+      const currentScrollPosition =
+        window.scrollY || document.documentElement.scrollTop;
+
+      if (currentScrollPosition < scrollPosition && currentScrollPosition > 0) {
+        navBar.classList.add("show");
+      } else {
+        navBar.classList.remove("show");
+      }
+
+      scrollPosition = currentScrollPosition;
+    });
+  }
+
+  setUpNav();
+</script>
+
 <style lang="scss">
   @import "../styles/variables.scss";
 
-  nav {
-    background-color: $color-cardinal;
-    color: $color-white;
-    padding: $spacing-4 0;
+  .nav {
+    background-color: $color-white;
+    border-bottom: 2px solid $color-dark;
+    position: fixed;
+    transition: top 0.5s cubic-bezier(0.2, 0, 0, 1);
+    top: -6rem;
+    width: 100%;
+    z-index: 100;
+
+    &.show {
+      top: 0;
+    }
+  }
+
+  .nav-contents {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .left-container {
+    display: inline-flex;
+    padding: $spacing-3 $spacing-3 $spacing-3 0;
+  }
+
+  .right-container {
+    padding: $spacing-3 0 $spacing-3 0;
+
+    > *:not(:last-child) {
+      margin-right: $spacing-8;
+    }
+  }
+
+  .nav-link {
+    color: $color-dark !important;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 </style>

@@ -8,18 +8,17 @@ import Logo from "./Logo.astro";
   <Grid>
     <Col size={12}>
       <div class="footer-contents">
-        <div class="left-container">
-          <Logo />
-        </div>
+        <a class="left-container" href="#top">
+          <Logo height={24} />
+        </a>
         <div class="right-container">
-          <a class="link" href="#">Privacy policy</a>
+          <a class="footer-link" href="#">Privacy policy</a>
           <span
             >&copy; {new Date().getFullYear()} Neon Carrot. All rights reserved.</span
           >
         </div>
       </div>
     </Col>
-    <Col size={10} />
   </Grid>
 </footer>
 
@@ -36,30 +35,28 @@ import Logo from "./Logo.astro";
     align-items: center;
     display: flex;
     justify-content: space-between;
-
-    @media only screen and (max-width: $breakpoint-medium) {
-      flex-direction: column;
-    }
+    flex-wrap: wrap;
   }
 
   .left-container {
-    flex-shrink: 0;
-    width: 10rem;
-
-    @media only screen and (max-width: $breakpoint-medium) {
-      margin-bottom: $spacing-4;
-    }
+    display: inline-flex;
+    padding: $spacing-3 $spacing-8 $spacing-3 0;
   }
 
   .right-container {
     display: flex;
+    flex-wrap: wrap;
 
     > *:not(:last-child) {
       margin-right: $spacing-8;
     }
+
+    > * {
+      padding: $spacing-4 0;
+    }
   }
 
-  .link {
+  .footer-link {
     color: $color-white !important;
   }
 </style>
