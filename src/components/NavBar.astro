@@ -2,19 +2,25 @@
 import Col from "./Col.astro";
 import Grid from "./Grid.astro";
 import LogoColor from "./LogoColor.astro";
+
+export interface Props {
+  alwaysShow?: boolean;
+}
+
+const { alwaysShow } = Astro.props;
 ---
 
-<nav class="nav">
+<nav class:list={["nav", { "always-show": !!alwaysShow }]}>
   <Grid>
     <Col size={12}>
       <div class="nav-contents">
-        <a class="left-container" href="#top">
+        <a class="left-container" href="/#top">
           <LogoColor height={24} />
         </a>
         <div class="right-container">
-          <a class="nav-link" href="#about">About</a>
-          <a class="nav-link" href="#services">Services</a>
-          <a class="nav-link" href="#contact">Contact</a>
+          <a class="nav-link" href="/#about">About</a>
+          <a class="nav-link" href="/#services">Services</a>
+          <a class="nav-link" href="/#contact">Contact</a>
         </div>
       </div>
     </Col>
@@ -63,6 +69,10 @@ import LogoColor from "./LogoColor.astro";
 
     &.show {
       top: 0;
+    }
+    
+    &.always-show {
+      top: 0 !important;
     }
   }
 

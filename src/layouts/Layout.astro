@@ -3,10 +3,11 @@ import Footer from "../components/Footer.astro";
 import NavBar from "../components/NavBar.astro";
 
 export interface Props {
+  alwaysShowNav?: boolean;
   title: string;
 }
 
-const { title } = Astro.props;
+const { alwaysShowNav, title } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -36,7 +37,7 @@ const { title } = Astro.props;
     />
   </head>
   <body>
-    <NavBar />
+    <NavBar alwaysShow={alwaysShowNav} />
     <slot />
     <Footer />
   </body>
