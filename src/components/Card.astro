@@ -1,18 +1,23 @@
 ---
 export interface Props {
+  containerClass?: string;
   class?: string;
   color?: "red" | "orange" | "yellow";
   fullWidth?: boolean;
 }
 
-const { class: className, color, fullWidth } = Astro.props;
+const { class: className, color, containerClass, fullWidth } = Astro.props;
 ---
 
-<div class:list={["card-container", { "full-width": !!fullWidth }]}>
+<div
+  class:list={["card-container", containerClass, { "full-width": !!fullWidth }]}
+>
+  <div class:list={["card", className]}>
+    <slot />
+  </div>
   <div
     class:list={[
-      "card",
-      className,
+      "card-shadow",
       {
         red: !color || color == "red",
         orange: color == "orange",
@@ -20,7 +25,6 @@ const { class: className, color, fullWidth } = Astro.props;
       },
     ]}
   >
-    <slot />
   </div>
 </div>
 
@@ -28,6 +32,7 @@ const { class: className, color, fullWidth } = Astro.props;
   @import "../styles/variables.scss";
 
   .card-container {
+    height: 100%;
     position: relative;
     z-index: 1;
 
@@ -40,29 +45,31 @@ const { class: className, color, fullWidth } = Astro.props;
     background-color: $color-white;
     border-radius: 1rem;
     border: 2px solid $color-dark;
+    overflow: hidden;
     position: relative;
+  }
 
-    &::after {
-      border-radius: 1rem;
-      border: 2px solid $color-dark;
-      content: "";
-      height: 100%;
-      left: 0.5rem;
-      position: absolute;
-      top: 0.5rem;
-      width: 100%;
-      z-index: -1;
-    }
+  .card-shadow {
+    border-radius: 1rem;
+    border: 2px solid $color-dark;
+    box-sizing: border-box;
+    content: "";
+    height: 100%;
+    left: 10px;
+    position: absolute;
+    top: 10px;
+    width: 100%;
+    z-index: -1;
 
-    &.red::after {
+    &.red {
       background-color: $color-cardinal;
     }
 
-    &.orange::after {
+    &.orange {
       background-color: $color-orange;
     }
 
-    &.yellow::after {
+    &.yellow {
       background-color: $color-maize;
     }
   }

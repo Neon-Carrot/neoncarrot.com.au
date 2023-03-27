@@ -24,24 +24,25 @@ import LogoColor from "./LogoColor.astro";
 <script>
   function setUpNav() {
     const navBar = document.querySelector("nav");
+    const triggerElement = document.querySelector("#trigger");
 
-    if (navBar == null) {
+    if (navBar == null || triggerElement == null) {
       return;
     }
 
-    let scrollPosition = 0;
+    const rect = triggerElement.getBoundingClientRect();
+    const initScrollPos = window.scrollY || document.documentElement.scrollTop;
+    const triggerPos = rect.y + rect.height + initScrollPos;
 
     document.addEventListener("scroll", () => {
-      const currentScrollPosition =
+      const currentScrollPos =
         window.scrollY || document.documentElement.scrollTop;
 
-      if (currentScrollPosition < scrollPosition && currentScrollPosition > 0) {
+      if (currentScrollPos > triggerPos) {
         navBar.classList.add("show");
       } else {
         navBar.classList.remove("show");
       }
-
-      scrollPosition = currentScrollPosition;
     });
   }
 

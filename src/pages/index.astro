@@ -21,7 +21,7 @@ import TechSolutionCard from "../components/TechSolutionCard.astro";
           <Logo />
           <h1 class="hide spv-12">Neon Carrot</h1>
           <h3 class="center is-light spv-12">Tech for good, for all</h3>
-          <div class="center">
+          <div class="center" id="trigger">
             <ButtonLink class="sph-8" color="red" href="#services">
               See our services
             </ButtonLink>
@@ -40,15 +40,17 @@ import TechSolutionCard from "../components/TechSolutionCard.astro";
               <Col size={6} mdSize={5} smSize={4}>
                 <h1 id="who-we-are">Who<br />we are</h1>
                 <div class="card-images-container">
-                  <div>
+                  <div class="image-container">
                     <img
+                      class="me-image carol"
                       src="/images/carol.png"
-                      height="181"
+                      height="177"
                       alt="Pop art-style image of Carol"
                     />
                   </div>
-                  <div>
+                  <div class="image-container">
                     <img
+                      class="me-image caleb"
                       src="/images/caleb.png"
                       height="202"
                       alt="Pop art-style image of Caleb"
@@ -57,7 +59,7 @@ import TechSolutionCard from "../components/TechSolutionCard.astro";
                 </div>
               </Col>
               <Col size={6} mdSize={7} smSize={4}>
-                <div class="spv-8"></div>
+                <div class="spv-8 hide--small"></div>
                 <h4>
                   Neon Carrot is an IT consultancy dedicated to serving
                   not-for-profits.
@@ -93,7 +95,7 @@ import TechSolutionCard from "../components/TechSolutionCard.astro";
             <h1>What<br />we do</h1>
           </Col>
           <Col size={6} mdSize={7} smSize={4}>
-            <div class="spv-8"></div>
+            <div class="spv-8 hide--small"></div>
             <h4>We empower organisations to do what they do best, better.</h4>
             <p>
               It's not a revelation to describe digital technology as "kind of a
@@ -109,84 +111,80 @@ import TechSolutionCard from "../components/TechSolutionCard.astro";
       <Section class="no-pt">
         <Grid>
           <Col size={12}>
-            <h2 class="spv-16">Explore opportunities</h2>
+            <h2>Explore opportunities</h2>
           </Col>
         </Grid>
         <Grid>
-          <Col size={4} mdSize={4} smSize={4}>
-            <ServiceCard
-              color="orange"
-              img={{
-                src: "/images/lightning-bolt.jpg",
-                alt: "Pop art lightning bolt",
-              }}
-              title="Supercharge efficiency"
-              message="Free your team to tackle bigger tasks! Automate the mundane for maximum productivity."
-            />
-          </Col>
-          <Col size={4} mdSize={4} smSize={4}>
-            <ServiceCard
-              color="orange"
-              img={{
-                src: "/images/heart.jpg",
-                alt: "Pop art heart",
-              }}
-              title="Boost satisfaction"
-              message="Craft customer experience strategies that foster loyalty and keep clients happy."
-            />
-          </Col>
-          <Col size={4} mdSize={4} smSize={4}>
-            <ServiceCard
-              color="orange"
-              img={{
-                src: "/images/up-arrow.jpg",
-                alt: "Pop art arrow pointing upwards",
-              }}
-              title="Upgrade skills"
-              message="Empower your team for digital success! Build skills and confidence to excel."
-            />
+          <Col size={12}>
+            <div class="service-cards">
+              <ServiceCard
+                color="orange"
+                img={{
+                  src: "/images/lightning-bolt.jpg",
+                  alt: "Pop art lightning bolt",
+                }}
+                title="Supercharge efficiency"
+                message="Free your team to tackle bigger tasks! Automate the mundane for maximum productivity."
+              />
+              <ServiceCard
+                color="orange"
+                img={{
+                  src: "/images/heart.jpg",
+                  alt: "Pop art heart",
+                }}
+                title="Boost satisfaction"
+                message="Craft customer experience strategies that foster loyalty and keep clients happy."
+              />
+              <ServiceCard
+                color="orange"
+                img={{
+                  src: "/images/up-arrow.jpg",
+                  alt: "Pop art arrow pointing upwards",
+                }}
+                title="Upgrade skills"
+                message="Empower your team for digital success! Build skills and confidence to excel."
+              />
+            </div>
           </Col>
         </Grid>
       </Section>
       <Section class="no-pt">
         <Grid>
           <Col size={12}>
-            <h2 class="spv-16">Solve challenges</h2>
+            <h2>Solve challenges</h2>
           </Col>
         </Grid>
         <Grid>
-          <Col size={4} mdSize={4} smSize={4}>
-            <ServiceCard
-              color="red"
-              img={{
-                src: "/images/light-bulb.jpg",
-                alt: "Pop art light bulb",
-              }}
-              title="Illuminate insights"
-              message="A lack of effective reporting can be like trying to see in the dark. Shine a light on what’s important."
-            />
-          </Col>
-          <Col size={4} mdSize={4} smSize={4}>
-            <ServiceCard
-              color="red"
-              img={{
-                src: "/images/magnifying-glass.jpg",
-                alt: "Pop art magnifying glass",
-              }}
-              title="Uncover identities"
-              message="Managing stakeholder data can be difficult as a company grows. Regain control so you can easily find out who’s who."
-            />
-          </Col>
-          <Col size={4} mdSize={4} smSize={4}>
-            <ServiceCard
-              color="red"
-              img={{
-                src: "/images/cloud.jpg",
-                alt: "Pop art cloud",
-              }}
-              title="Embrace the cloud"
-              message="Paper-based processes can be prone to error. Save on costs and improve data security using cloud services."
-            />
+          <Col size={12}>
+            <div class="service-cards">
+              <ServiceCard
+                color="red"
+                img={{
+                  src: "/images/light-bulb.jpg",
+                  alt: "Pop art light bulb",
+                }}
+                title="Illuminate insights"
+                message="A lack of effective reporting can be like trying to see in the dark. Shine a light on what’s important."
+              />
+              <ServiceCard
+                color="red"
+                img={{
+                  src: "/images/magnifying-glass.jpg",
+                  alt: "Pop art magnifying glass",
+                }}
+                title="Uncover identities"
+                message="Managing stakeholder data can be difficult as a company grows. Regain control so you can easily find out who’s who."
+              />
+              <ServiceCard
+                color="red"
+                img={{
+                  src: "/images/cloud.jpg",
+                  alt: "Pop art cloud",
+                }}
+                title="Embrace the cloud"
+                message="Paper-based processes can be prone to error. Save on costs and improve data security using cloud services."
+              />
+            </div>
           </Col>
         </Grid>
       </Section>
@@ -199,7 +197,7 @@ import TechSolutionCard from "../components/TechSolutionCard.astro";
             <h1 id="what-we-do">Tech<br />solutions</h1>
           </Col>
           <Col size={6}>
-            <div class="spv-8"></div>
+            <div class="spv-8 hide--small"></div>
             <h4>Fuel your organisation’s success with digital technology.</h4>
             <p>
               At the heart of every not-for-profit is a passion to change the
@@ -234,7 +232,7 @@ import TechSolutionCard from "../components/TechSolutionCard.astro";
       </Section>
       <Section shallow>
         <Grid>
-          <Col size={6} mdSize={6} smSize={4}>
+          <Col class="hide--small" size={6} mdSize={6} smSize={4}>
             <h2>Interactive dashboards that use live, real-time data</h2>
             <p>
               Drill down, explore and gain deeper understanding of the operation
@@ -251,6 +249,14 @@ import TechSolutionCard from "../components/TechSolutionCard.astro";
                 height: 231,
               }}
             />
+          </Col>
+          <Col class="hide--large" size={6} mdSize={6} smSize={4}>
+            <h2>Interactive dashboards that use live, real-time data</h2>
+            <p>
+              Drill down, explore and gain deeper understanding of the operation
+              of your business. Harness the power of data to inform
+              decision-making.
+            </p>
           </Col>
         </Grid>
       </Section>
@@ -287,28 +293,55 @@ import TechSolutionCard from "../components/TechSolutionCard.astro";
               <Col size={6} mdSize={6} smSize={4}>
                 <h1>Get in touch</h1>
                 <div class="contact-item">
-                  <div class="contact-icon"></div>
+                  <div class="contact-icon">
+                    <svg
+                      fill="#ff7600"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true"
+                    >
+                      <path
+                        clip-rule="evenodd"
+                        fill-rule="evenodd"
+                        d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z"
+                      ></path>
+                    </svg>
+                  </div>
                   <p class="contact-details">
                     <strong>Phone</strong><br />
                     +12 3456 7890
                   </p>
                 </div>
                 <div class="contact-item">
-                  <div class="contact-icon"></div>
+                  <div class="contact-icon">
+                    <svg
+                      fill="#ff7600"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z"
+                      ></path>
+                      <path
+                        d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z"
+                      ></path>
+                    </svg>
+                  </div>
                   <p class="contact-details">
                     <strong>Email address</strong><br />
                     info@neoncarrot.com.au
                   </p>
                 </div>
                 <img
-                  class="megaphone"
+                  class="megaphone hide--small"
                   src="/images/megaphone.jpg"
                   alt="Pop art-style image of a megaphone"
                   height="330"
                 />
               </Col>
               <Col size={6} mdSize={6} smSize={4}>
-                <div class="spv-8"></div>
+                <div class="spv-8 hide--small"></div>
                 <h4>We'd love to hear from you.</h4>
                 <form>
                   <div class="text-input">
@@ -351,9 +384,19 @@ import TechSolutionCard from "../components/TechSolutionCard.astro";
     position: absolute;
     max-width: 50%;
 
-    img {
+    .image-container {
+      position: relative;
+    }
+
+    .me-image {
       block-size: auto;
       display: block;
+      filter: drop-shadow(-0.75rem 0 0 $color-orange);
+      mix-blend-mode: multiply;
+
+      &.caleb {
+        padding-left: $spacing-4;
+      }
     }
 
     @media only screen and (max-width: $breakpoint-large) {
@@ -382,7 +425,6 @@ import TechSolutionCard from "../components/TechSolutionCard.astro";
   }
 
   .who-we-are-card {
-    margin-bottom: $spacing-4;
     padding: $spacing-12 $spacing-8;
 
     @media only screen and (max-width: $breakpoint-large) {
@@ -394,8 +436,16 @@ import TechSolutionCard from "../components/TechSolutionCard.astro";
     }
   }
 
+  .service-cards {
+    display: flex;
+    column-gap: 2rem;
+
+    @media only screen and (max-width: $breakpoint-medium) {
+      flex-direction: column;
+    }
+  }
+
   .get-in-touch-card {
-    margin-bottom: $spacing-4;
     padding: $spacing-12 $spacing-8 $spacing-0 $spacing-8;
 
     @media only screen and (max-width: $breakpoint-large) {
@@ -409,11 +459,7 @@ import TechSolutionCard from "../components/TechSolutionCard.astro";
 
   .megaphone {
     block-size: auto;
-    display: block;
-
-    @media only screen and (max-width: $breakpoint-medium) {
-      display: none;
-    }
+    display: flex;
   }
 
   .contact-item {
@@ -422,8 +468,6 @@ import TechSolutionCard from "../components/TechSolutionCard.astro";
   }
 
   .contact-icon {
-    background-color: $color-orange;
-    border-radius: 50%;
     height: 1.25rem;
     width: 1.25rem;
   }

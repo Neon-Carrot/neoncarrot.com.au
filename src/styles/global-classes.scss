@@ -86,6 +86,18 @@
   padding: 0;
 }
 
+.hide--small {
+  @media only screen and (max-width: $breakpoint-medium) {
+    display: none !important;
+  }
+}
+
+.hide--large {
+  @media only screen and (min-width: $breakpoint-medium) {
+    display: none !important;
+  }
+}
+
 .position-relative {
   position: relative;
 }
