@@ -349,7 +349,12 @@ import TechSolutionCard from "../components/TechSolutionCard.astro";
               <Col size={6} mdSize={6} smSize={4}>
                 <div class="spv-8 hide--small"></div>
                 <h2 class="heading-4">We'd love to hear from you.</h2>
-                <form>
+                <form
+                  name="contact"
+                  method="POST"
+                  data-netlify="true"
+                  data-netlify-recaptcha="true"
+                >
                   <div class="text-input">
                     <label for="name">Name</label>
                     <input name="name" id="name" required type="text" />
@@ -364,9 +369,15 @@ import TechSolutionCard from "../components/TechSolutionCard.astro";
                   </div>
                   <div class="textarea">
                     <label for="message">Message</label>
-                    <textarea name="message" id="message" required></textarea>
+                    <textarea
+                      name="message"
+                      id="message"
+                      required
+                      maxlength="1000"
+                      rows="4"></textarea>
                   </div>
-                  <Button type="submit">
+                  <div data-netlify-recaptcha="true"></div>
+                  <Button class="submit-button" type="submit">
                     <span style={{ padding: "0 0.75rem" }}>Send</span>
                   </Button>
                 </form>
@@ -410,6 +421,7 @@ import TechSolutionCard from "../components/TechSolutionCard.astro";
     }
 
     @media only screen and (max-width: $breakpoint-medium) {
+      left: 1rem;
       max-width: 90%;
     }
   }
@@ -480,5 +492,9 @@ import TechSolutionCard from "../components/TechSolutionCard.astro";
 
   .contact-details {
     padding-left: $spacing-3;
+  }
+
+  .submit-button {
+    margin: $spacing-8 0;
   }
 </style>
