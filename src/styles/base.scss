@@ -53,60 +53,72 @@ strong {
   font-weight: 700;
 }
 
-h1 {
+h1,
+.heading-1 {
   @extend %base-header;
   font-size: 4.375rem;
   font-weight: 600;
+  margin-bottom: 0.67em;
 
   @media only screen and (max-width: $breakpoint-medium) {
     font-size: 2.875rem;
   }
 }
 
-h2 {
+h2,
+.heading-2 {
   @extend %base-header;
   font-size: 2.875rem;
   font-weight: 500;
+  margin-bottom: 0.83em;
 
   @media only screen and (max-width: $breakpoint-medium) {
     font-size: 2rem;
   }
 }
 
-h3 {
+h3,
+.heading-3 {
   @extend %base-header;
   font-size: 2rem;
   font-weight: 500;
+  margin-bottom: 1em;
 
   @media only screen and (max-width: $breakpoint-medium) {
     font-size: 1.5rem;
   }
 }
 
-h4 {
+h4,
+.heading-4 {
   @extend %base-header;
   font-size: 1.5rem;
   font-weight: 500;
+  margin-bottom: 1.25em;
 
   @media only screen and (max-width: $breakpoint-medium) {
     font-size: 1.25rem;
   }
 }
 
-h5 {
+h5,
+.heading-5 {
   @extend %base-header;
   font-size: 1.25rem;
   font-weight: 500;
+  margin-bottom: 1.5em;
 
   @media only screen and (max-width: $breakpoint-medium) {
     font-size: 1.125rem;
   }
 }
 
-h6 {
+h6,
+.heading-6 {
   @extend %base-header;
   font-size: 1.125rem;
   font-weight: 500;
+  margin-bottom: 1.5em;
 
   @media only screen and (max-width: $breakpoint-medium) {
     font-size: 1rem;
