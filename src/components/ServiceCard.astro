@@ -9,9 +9,10 @@ export interface Props {
   };
   message: string;
   title: string;
+  width?: number;
 }
 
-const { color, img, title, message } = Astro.props;
+const { color, img, title, width, message } = Astro.props;
 ---
 
 <div class="container">
@@ -22,10 +23,10 @@ const { color, img, title, message } = Astro.props;
         class="service-card__image"
         height="150"
         src={img.src}
-        width="150"
+        width={width || 150}
       />
     </div>
-    <h4 class="center">{title}</h4>
+    <h3 class="heading-4 center">{title}</h3>
     <p class="center">
       {message}
     </p>

@@ -13,37 +13,29 @@ export interface Props {
 const { color, img } = Astro.props;
 ---
 
-<div class="align">
-  <div class="tech-solution-card-container">
-    <Card class="tech-solution-card" color={color} fullWidth>
-      <div class="center">
-        <img
-          class="tech-solution-image"
-          alt={img.alt}
-          height={`${img.height}`}
-          src={img.src}
-        />
-      </div>
-    </Card>
-  </div>
+<div class="tech-solution-card-container">
+  <Card class="tech-solution-card" color={color} fullWidth>
+    <div class="center">
+      <img
+        class="tech-solution-image"
+        alt={img.alt}
+        height="250"
+        width="250"
+        src={img.src}
+      />
+    </div>
+  </Card>
 </div>
 
 <style lang="scss">
   @import "../styles/variables.scss";
-
-  .align {
-    align-items: center;
-    display: flex;
-    height: 100%;
-    justify-content: center;
-  }
 
   .tech-solution-card-container {
     margin-bottom: $spacing-8;
   }
 
   .tech-solution-card {
-    padding: $spacing-6;
+    padding: $spacing-4;
   }
 
   .tech-solution-image {
@@ -53,5 +45,4 @@ const { color, img } = Astro.props;
   .full-width {
     width: 100%;
   }
-
 </style>
