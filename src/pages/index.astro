@@ -49,6 +49,7 @@ import TechSolutionCard from "../components/TechSolutionCard.astro";
                       height="177"
                       width="191"
                       alt="Pop art-style image of Carol"
+                      loading="lazy"
                     />
                   </div>
                   <div class="image-container">
@@ -58,6 +59,7 @@ import TechSolutionCard from "../components/TechSolutionCard.astro";
                       height="202"
                       width="233"
                       alt="Pop art-style image of Caleb"
+                      loading="lazy"
                     />
                   </div>
                 </div>
@@ -348,6 +350,7 @@ import TechSolutionCard from "../components/TechSolutionCard.astro";
                   alt="Pop art-style image of a hand holding a megaphone"
                   height={379}
                   width={400}
+                  loading="lazy"
                 />
               </Col>
               <Col size={6} mdSize={6} smSize={4}>
@@ -481,7 +484,11 @@ import TechSolutionCard from "../components/TechSolutionCard.astro";
 
   .megaphone {
     block-size: auto;
+    bottom: 0;
     display: flex;
+    left: $spacing-8;
+    max-width: 46%;
+    position: absolute;
   }
 
   .contact-item {

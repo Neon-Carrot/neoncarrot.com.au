@@ -24,6 +24,7 @@ const { color, img, title, width, message } = Astro.props;
         height="150"
         src={img.src}
         width={width || 150}
+        loading="lazy"
       />
     </div>
     <h3 class="heading-4 center">{title}</h3>
