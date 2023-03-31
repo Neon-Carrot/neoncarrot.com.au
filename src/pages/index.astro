@@ -11,6 +11,8 @@ import DitherDivider from "../components/DitherDivider.astro";
 import Section from "../components/Section.astro";
 import ServiceCard from "../components/ServiceCard.astro";
 import TechSolutionCard from "../components/TechSolutionCard.astro";
+import CarolText from "../components/CarolText.astro";
+import CalebText from "../components/CalebText.astro";
 ---
 
 <Layout title="IT consultancy for not-for-profits | Neon Carrot">
@@ -42,7 +44,10 @@ import TechSolutionCard from "../components/TechSolutionCard.astro";
               <Col size={6} mdSize={5} smSize={4}>
                 <h1 id="who-we-are">Who<br />we are</h1>
                 <div class="card-images-container">
-                  <div class="image-container">
+                  <div class="image-container carol">
+                    <div class="pic-text">
+                      <CarolText />
+                    </div>
                     <img
                       class="me-image carol"
                       src="/images/carol.webp"
@@ -52,7 +57,10 @@ import TechSolutionCard from "../components/TechSolutionCard.astro";
                       loading="lazy"
                     />
                   </div>
-                  <div class="image-container">
+                  <div class="image-container caleb">
+                    <div class="pic-text">
+                      <CalebText />
+                    </div>
                     <img
                       class="me-image caleb"
                       src="/images/caleb.webp"
@@ -433,6 +441,22 @@ import TechSolutionCard from "../components/TechSolutionCard.astro";
     }
   }
 
+  .pic-text {
+    position: absolute;
+
+    .carol & {
+      width: 26%;
+      left: 66%;
+      top: -24%;
+    }
+
+    .caleb & {
+      width: 24%;
+      left: 4%;
+      top: -16%;
+    }
+  }
+
   .divider-1 {
     position: absolute;
     width: 100%;
@@ -457,6 +481,10 @@ import TechSolutionCard from "../components/TechSolutionCard.astro";
     }
 
     @media only screen and (max-width: $breakpoint-medium) {
+      padding-bottom: $spacing-64;
+    }
+
+    @media only screen and (max-width: $breakpoint-small) {
       padding-bottom: $spacing-48;
     }
   }
