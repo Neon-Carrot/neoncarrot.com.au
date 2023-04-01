@@ -1,18 +1,28 @@
 ---
 export interface Props {
+  bgColor?: string;
   containerClass?: string;
   class?: string;
-  color?: "red" | "orange" | "yellow";
+  color?: "red" | "orange" | "yellow" | "black";
   fullWidth?: boolean;
 }
 
-const { class: className, color, containerClass, fullWidth } = Astro.props;
+const {
+  bgColor,
+  class: className,
+  color,
+  containerClass,
+  fullWidth,
+} = Astro.props;
 ---
 
 <div
   class:list={["card-container", containerClass, { "full-width": !!fullWidth }]}
 >
-  <div class:list={["card", className]}>
+  <div
+    class:list={["card", className]}
+    style={!!bgColor ? { backgroundColor: bgColor } : undefined}
+  >
     <slot />
   </div>
   <div
@@ -22,6 +32,7 @@ const { class: className, color, containerClass, fullWidth } = Astro.props;
         red: !color || color == "red",
         orange: color == "orange",
         yellow: color == "yellow",
+        black: color == "black",
       },
     ]}
   >
@@ -71,6 +82,10 @@ const { class: className, color, containerClass, fullWidth } = Astro.props;
 
     &.yellow {
       background-color: $color-maize;
+    }
+
+    &.black {
+      background-color: $color-dark;
     }
   }
 </style>

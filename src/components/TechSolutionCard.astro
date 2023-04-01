@@ -2,7 +2,7 @@
 import Card from "./Card.astro";
 
 export interface Props {
-  color: "red" | "orange" | "yellow";
+  bgColor?: string;
   img: {
     alt: string;
     height: number;
@@ -10,17 +10,17 @@ export interface Props {
   };
 }
 
-const { color, img } = Astro.props;
+const { bgColor, color, img } = Astro.props;
 ---
 
 <div class="tech-solution-card-container">
-  <Card class="tech-solution-card" color={color} fullWidth>
+  <Card bgColor={bgColor} class="tech-solution-card" color="black" fullWidth>
     <div class="center">
       <img
         class="tech-solution-image"
         alt={img.alt}
-        height="250"
-        width="250"
+        height="300"
+        width="300"
         src={img.src}
         loading="lazy"
       />
