@@ -21,9 +21,9 @@ const { color, img, title, width, message } = Astro.props;
       <img
         alt={img.alt}
         class="service-card__image"
-        height="150"
+        height="175"
         src={img.src}
-        width={width || 150}
+        width={width || 175}
         loading="lazy"
       />
     </div>
@@ -45,10 +45,10 @@ const { color, img, title, width, message } = Astro.props;
   .service-card {
     box-sizing: border-box;
     height: 100%;
-    padding: $spacing-12 $spacing-6 $spacing-4 $spacing-6;
+    padding: $spacing-4 $spacing-6;
   }
 
   .service-card__image {
-    margin-bottom: $spacing-12;
+    margin-bottom: $spacing-8;
   }
 </style>
