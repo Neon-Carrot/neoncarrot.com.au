@@ -1,4 +1,5 @@
 ---
+import { Image } from "@astrojs/image/components";
 import Card from "./Card.astro";
 
 export interface Props {
@@ -6,7 +7,7 @@ export interface Props {
   img: {
     alt: string;
     height: number;
-    src: string;
+    src: ImageMetadata;
   };
 }
 
@@ -16,13 +17,14 @@ const { bgColor, color, img } = Astro.props;
 <div class="tech-solution-card-container">
   <Card bgColor={bgColor} class="tech-solution-card" color="black" fullWidth>
     <div class="center">
-      <img
+      <Image
         class="tech-solution-image"
         alt={img.alt}
-        height="300"
-        width="300"
+        height={300}
+        width={300}
         src={img.src}
         loading="lazy"
+        format="webp"
       />
     </div>
   </Card>
