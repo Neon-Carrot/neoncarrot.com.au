@@ -1,13 +1,9 @@
 ---
-import { Picture } from "@astrojs/image/components";
 import Card from "./Card.astro";
 
 export interface Props {
-  color: "red" | "orange";
-  img: {
-    alt: string;
-    src: ImageMetadata;
-  };
+  color: string;
+  img: string;
   message: string;
   title: string;
 }
@@ -18,17 +14,9 @@ const { color, img, title, message } = Astro.props;
 <div class="container">
   <Card class="service-card" color={color}>
     <div class="center">
-      <Picture
-        alt={img.alt}
-        class="service-card__image"
-        formats={["webp"]}
-        height={175}
-        src={img.src}
-        width={175}
-        widths={[175, 350]}
-        sizes="(min-width: 1160px) 175px, 350px"
-        loading="lazy"
-      />
+      <div class="service-card__image">
+        <Fragment set:html={img} />
+      </div>
     </div>
     <h3 class="heading-4 center">{title}</h3>
     <p class="center">
@@ -52,6 +40,8 @@ const { color, img, title, message } = Astro.props;
   }
 
   .service-card__image {
-    margin-bottom: $spacing-8;
+    height: 175px;
+    margin: $spacing-2 0 $spacing-8 0;
+    max-width: 200px;
   }
 </style>

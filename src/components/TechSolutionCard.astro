@@ -1,31 +1,31 @@
 ---
 import { Picture } from "@astrojs/image/components";
 import Card from "./Card.astro";
+import { COLORS } from "../constants";
 
 export interface Props {
-  bgColor?: string;
   img: {
     alt: string;
     src: ImageMetadata;
   };
 }
 
-const { bgColor, img } = Astro.props;
+const { img } = Astro.props;
 ---
 
 <div class="tech-solution-card-container">
-  <Card bgColor={bgColor} class="tech-solution-card" color="black" fullWidth>
+  <Card class="tech-solution-card" color={COLORS.maize} fullWidth>
     <div class="center">
       <Picture
         class="tech-solution-image"
         alt={img.alt}
-        height={300}
-        width={300}
+        height={250}
+        width={250}
         src={img.src}
         loading="lazy"
         formats={["webp"]}
-        widths={[300, 600]}
-        sizes="(min-width: 1160px) 300px, 600px"
+        widths={[250, 500]}
+        sizes="(min-width: 1160px) 250px, 500px"
       />
     </div>
   </Card>
@@ -35,7 +35,7 @@ const { bgColor, img } = Astro.props;
   @import "../styles/variables.scss";
 
   .tech-solution-card-container {
-    margin-bottom: $spacing-8;
+    margin-bottom: $spacing-12;
   }
 
   .tech-solution-card {
