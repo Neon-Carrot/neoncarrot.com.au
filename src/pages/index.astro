@@ -1,47 +1,49 @@
 ---
-import { Image, Picture } from "@astrojs/image/components";
+import { Picture } from "@astrojs/image/components";
 
 import "../styles/index.scss";
+import { COLORS } from "../constants";
 import Button from "../components/Button.astro";
 import ButtonLink from "../components/ButtonLink.astro";
-import Grid from "../components/Grid.astro";
-import Logo from "../components/Logo.astro";
-import Layout from "../layouts/Layout.astro";
+import CalebText from "../components/CalebText.astro";
 import Card from "../components/Card.astro";
+import CarolText from "../components/CarolText.astro";
+import Clouds from "../components/Clouds.astro";
 import Col from "../components/Col.astro";
 import DitherDivider from "../components/DitherDivider.astro";
+import Grid from "../components/Grid.astro";
+import Heart from "../components/Heart.astro";
+import Layout from "../layouts/Layout.astro";
+import LightBulb from "../components/LightBulb.astro";
+import LightningBolt from "../components/LightningBolt.astro";
+import MagnifyingGlass from "../components/MagnifyingGlass.astro";
+import Megaphone from "../components/Megaphone.astro";
 import Section from "../components/Section.astro";
 import ServiceCard from "../components/ServiceCard.astro";
+import SplashLogo from "../components/SplashLogo.astro";
 import TechSolutionCard from "../components/TechSolutionCard.astro";
-import CarolText from "../components/CarolText.astro";
-import CalebText from "../components/CalebText.astro";
+import UpArrow from "../components/UpArrow.astro";
 
 import caleb from "../images/caleb.png";
 import carol from "../images/carol.png";
-import clouds from "../images/clouds.svg?raw";
 import dashboard from "../images/dashboard.png";
 import dataManagement from "../images/data-management.png";
-import heart from "../images/heart.svg?raw";
-import lightbulb from "../images/lightbulb.svg?raw";
-import lightningBolt from "../images/lightning-bolt.svg?raw";
-import magnifyingGlass from "../images/magnifying-glass.svg?raw";
-import megaphone from "../images/megaphone.svg?raw";
-import upArrow from "../images/up-arrow.svg?raw";
 import website from "../images/website.png";
-import { COLORS } from "../constants";
 ---
 
 <Layout title="IT consultancy for not-for-profits | Neon Carrot">
   <main>
-    <Section extraDeep>
+    <Section deep>
       <Grid>
-        <Col size={8} start={3} mdSize={8} mdStart={3} smSize={4} smStart={1}>
-          <Logo />
-          <h1 class="hide spv-12">Neon Carrot</h1>
-          <h2 class="heading-3 center is-light spv-12">
+        <Col size={10} start={2} mdSize={10} mdStart={2} smSize={4} smStart={0}>
+          <SplashLogo />
+          <h1 class="hide">Neon Carrot</h1>
+          <h2
+            class="heading-3 center is-light spv-12 fade-in from-bottom slogan"
+          >
             Tech for good, for all
           </h2>
-          <div class="center" id="trigger">
+          <div class="center fade-in from-bottom splash-buttons" id="trigger">
             <ButtonLink class="sph-8" color="red" href="#services">
               See our services
             </ButtonLink>
@@ -60,7 +62,7 @@ import { COLORS } from "../constants";
               <Col size={6} mdSize={5} smSize={4}>
                 <h1>Who<br />we are</h1>
                 <div class="card-images-container">
-                  <div class="image-container carol">
+                  <div class="image-container carol fade-in from-bottom">
                     <div class="pic-text">
                       <CarolText />
                     </div>
@@ -76,7 +78,7 @@ import { COLORS } from "../constants";
                       sizes="(min-width: 1160px) 191px, 382px"
                     />
                   </div>
-                  <div class="image-container caleb">
+                  <div class="image-container caleb fade-in from-bottom">
                     <div class="pic-text">
                       <CalebText />
                     </div>
@@ -157,22 +159,25 @@ import { COLORS } from "../constants";
             <div class="service-cards">
               <ServiceCard
                 color="#FFEA00"
-                img={lightningBolt}
                 title="Supercharge efficiency"
                 message="Free your team to tackle bigger tasks! Automate the mundane for maximum productivity."
-              />
+              >
+                <LightningBolt />
+              </ServiceCard>
               <ServiceCard
                 color="#F4718F"
-                img={heart}
                 title="Boost satisfaction"
                 message="Craft customer experience strategies that foster loyalty and keep clients happy."
-              />
+              >
+                <Heart />
+              </ServiceCard>
               <ServiceCard
                 color="#FF9133"
-                img={upArrow}
                 title="Upgrade skills"
                 message="Empower your team for digital success! Build skills and confidence to excel."
-              />
+              >
+                <UpArrow />
+              </ServiceCard>
             </div>
           </Col>
         </Grid>
@@ -188,22 +193,25 @@ import { COLORS } from "../constants";
             <div class="service-cards">
               <ServiceCard
                 color="#9E00CC"
-                img={magnifyingGlass}
                 title="Reveal data"
                 message="Managing things like stakeholder data can be difficult as a company grows. Regain control so you can easily find what you need."
-              />
+              >
+                <MagnifyingGlass />
+              </ServiceCard>
               <ServiceCard
                 color="#FF9F4D"
-                img={lightbulb}
                 title="Illuminate insights"
                 message="A lack of effective reporting is like trying to see in the dark. Shine a light on what’s important."
-              />
+              >
+                <LightBulb />
+              </ServiceCard>
               <ServiceCard
                 color="#809FFF"
-                img={clouds}
                 title="Embrace the cloud"
                 message="Paper-based processes can be prone to error. Save on costs and improve data management and security using cloud services."
-              />
+              >
+                <Clouds />
+              </ServiceCard>
             </div>
           </Col>
         </Grid>
@@ -233,68 +241,82 @@ import { COLORS } from "../constants";
       <Section shallow>
         <Grid>
           <Col size={5} mdSize={5} smSize={4}>
-            <TechSolutionCard
-              img={{
-                src: dataManagement,
-                alt: "Image generated by Midjourney with the prompt 'office workers organising files in an electronic database, flat vector art style'",
-              }}
-            />
+            <div class="fade-in from-left">
+              <TechSolutionCard
+                img={{
+                  src: dataManagement,
+                  alt: "Image generated by Midjourney with the prompt 'office workers organising files in an electronic database, flat vector art style'",
+                }}
+              />
+            </div>
           </Col>
           <Col size={6} start={7} mdSize={6} mdStart={7} smSize={4} smStart={1}>
-            <h2>Intuitive data capture and management systems</h2>
-            <p>
-              Streamline and automate the process of collecting, organising and
-              managing data to make it easier to access, analyse and extract
-              insights.
-            </p>
+            <div class="fade-in from-right">
+              <h2>Intuitive data capture and management systems</h2>
+              <p>
+                Streamline and automate the process of collecting, organising
+                and managing data to make it easier to access, analyse and
+                extract insights.
+              </p>
+            </div>
           </Col>
         </Grid>
       </Section>
       <Section shallow>
         <Grid>
           <Col class="hide--small" size={6} mdSize={6} smSize={4}>
-            <h2>Interactive dashboards that use live, real-time data</h2>
-            <p>
-              Drill down, explore and gain deeper understanding of the operation
-              of your business. Harness the power of data to inform
-              decision-making.
-            </p>
+            <div class="fade-in from-left">
+              <h2>Interactive dashboards that use live, real-time data</h2>
+              <p>
+                Drill down, explore and gain deeper understanding of the
+                operation of your business. Harness the power of data to inform
+                decision-making.
+              </p>
+            </div>
           </Col>
           <Col size={5} start={8} mdSize={5} mdStart={8} smSize={4} smStart={1}>
-            <TechSolutionCard
-              img={{
-                src: dashboard,
-                alt: "Image generated by Midjourney with the prompt 'office workers looking at a data analytics dashboard, flat vector art style'",
-              }}
-            />
+            <div class="fade-in from-right">
+              <TechSolutionCard
+                img={{
+                  src: dashboard,
+                  alt: "Image generated by Midjourney with the prompt 'office workers looking at a data analytics dashboard, flat vector art style'",
+                }}
+              />
+            </div>
           </Col>
           <Col class="hide--large" size={6} mdSize={6} smSize={4}>
-            <h2>Interactive dashboards that use live, real-time data</h2>
-            <p>
-              Drill down, explore and gain deeper understanding of the operation
-              of your business. Harness the power of data to inform
-              decision-making.
-            </p>
+            <div class="fade-in from-bottom">
+              <h2>Interactive dashboards that use live, real-time data</h2>
+              <p>
+                Drill down, explore and gain deeper understanding of the
+                operation of your business. Harness the power of data to inform
+                decision-making.
+              </p>
+            </div>
           </Col>
         </Grid>
       </Section>
       <Section shallow>
         <Grid>
           <Col size={5} mdSize={5} smSize={4}>
-            <TechSolutionCard
-              img={{
-                src: website,
-                alt: "Image generated by Midjourney with the prompt 'office workers designing a website and coding, flat vector art style'",
-              }}
-            />
+            <div class="fade-in from-left">
+              <TechSolutionCard
+                img={{
+                  src: website,
+                  alt: "Image generated by Midjourney with the prompt 'office workers designing a website and coding, flat vector art style'",
+                }}
+              />
+            </div>
           </Col>
           <Col size={6} start={7} mdSize={6} mdStart={7} smSize={4} smStart={1}>
-            <h2>Modern and accessible websites and apps</h2>
-            <p>
-              Establish credibility, engage stakeholders and provide access to
-              services with well-designed, user-friendly websites and
-              applications.
-            </p>
+            <div class="fade-in from-right">
+              <h2>Modern and accessible websites and apps</h2>
+              <p>
+                Establish credibility, engage stakeholders and provide access to
+                services with well-designed, user-friendly websites and
+                applications.
+              </p>
+            </div>
           </Col>
         </Grid>
       </Section>
@@ -330,7 +352,7 @@ import { COLORS } from "../constants";
                   </p>
                 </div>
                 <div class="hide--small">
-                  <Fragment set:html={megaphone} />
+                  <Megaphone />
                 </div>
               </Col>
               <Col size={6} mdSize={6} smSize={4}>
@@ -389,8 +411,87 @@ import { COLORS } from "../constants";
   </main>
 </Layout>
 
+<script>
+  document.querySelectorAll(".fade-in").forEach((el) => {
+    if (!window.IntersectionObserver) {
+      el.classList.add("is-visible");
+    }
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting || entry.boundingClientRect.top < 0) {
+          el.classList.add("is-visible");
+        }
+      },
+      { threshold: 0.5 }
+    );
+    observer.observe(el);
+  });
+</script>
+
 <style lang="scss">
   @import "../styles/variables.scss";
+
+  .fade-in {
+    opacity: 0;
+    position: relative;
+    transition: none 1s cubic-bezier(0, 0, 0.2, 1) 0.25s;
+    transition-property: all;
+
+    &.is-visible {
+      opacity: 1 !important;
+      top: 0 !important;
+      bottom: 0 !important;
+      right: 0 !important;
+      left: 0 !important;
+    }
+
+    &:not(.is-visible) {
+      &.from-bottom {
+        top: 2rem;
+      }
+
+      &.from-top {
+        top: -2rem;
+      }
+
+      &.from-left {
+        left: -2rem;
+      }
+
+      &.from-right {
+        left: 2rem;
+      }
+
+      @media only screen and (max-width: $breakpoint-medium) {
+        &.from-bottom,
+        &.from-left,
+        &.from-right {
+          left: 0;
+          top: 2rem;
+        }
+      }
+    }
+  }
+
+  .slogan {
+    margin-top: -2rem;
+    top: 0 !important;
+    transition-delay: 3s;
+    letter-spacing: 0.25rem;
+
+    &.is-visible {
+      letter-spacing: 0;
+    }
+
+    @media only screen and (max-width: $breakpoint-medium) {
+      margin-top: -4rem;
+      letter-spacing: 0.125rem;
+    }
+  }
+
+  .splash-buttons {
+    transition-delay: 3.15s;
+  }
 
   .card-images-container {
     align-items: flex-end;
@@ -402,6 +503,10 @@ import { COLORS } from "../constants";
 
     .image-container {
       position: relative;
+
+      &.caleb {
+        transition-delay: 0.75s;
+      }
     }
 
     .me-image {

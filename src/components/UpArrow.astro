@@ -1,0 +1,121 @@
+<svg
+  width="100%"
+  height="175px"
+  viewBox="0 0 135 187"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <title>Cartoon up arrow shooting upwards</title>
+  <path
+    class="small-arrow first"
+    d="M124.03 150.748L109.811 128.535C109.04 127.331 107.291 127.301 106.48 128.478L91.1621 150.69C90.2472 152.017 91.1969 153.826 92.8086 153.826H99.2871C100.392 153.826 101.287 154.721 101.287 155.826V181C101.287 182.105 102.183 183 103.287 183H111.627C112.731 183 113.627 182.105 113.627 181V155.826C113.627 154.721 114.522 153.826 115.627 153.826H122.345C123.926 153.826 124.882 152.079 124.03 150.748Z"
+    fill="#FF9133"></path>
+  <path
+    class="small-arrow second"
+    d="M50.9833 148.174L34.8762 123.474C34.1033 122.289 32.3778 122.259 31.5644 123.417L14.2127 148.117C13.2817 149.442 14.2296 151.267 15.8492 151.267H23.6154C24.72 151.267 25.6154 152.162 25.6154 153.267V181C25.6154 182.105 26.5109 183 27.6154 183H37.2893C38.3938 183 39.2893 182.105 39.2893 181V153.267C39.2893 152.162 40.1847 151.267 41.2893 151.267H49.3081C50.8963 151.267 51.8509 149.504 50.9833 148.174Z"
+    fill="#FF9133"></path>
+  <path
+    class="small-arrow third"
+    d="M134.003 166.614L126.662 155.252C126.277 154.655 125.408 154.64 125.002 155.224L117.094 166.586C116.632 167.249 117.107 168.157 117.914 168.157H121.31C121.862 168.157 122.31 168.605 122.31 169.157V182C122.31 182.552 122.757 183 123.31 183H127.646C128.199 183 128.646 182.552 128.646 182V169.157C128.646 168.605 129.094 168.157 129.646 168.157H133.163C133.956 168.157 134.433 167.28 134.003 166.614Z"
+    fill="#FF9133"></path>
+  <path
+    class="small-arrow fourth"
+    d="M20.0013 165.078L11.6992 152.25C11.3132 151.653 10.4457 151.638 10.0394 152.221L1.09585 165.05C0.633676 165.713 1.10803 166.621 1.91618 166.621H5.97375C6.52604 166.621 6.97375 167.069 6.97375 167.621V182C6.97375 182.552 7.42147 183 7.97375 183H12.9774C13.5297 183 13.9774 182.552 13.9774 182V167.621C13.9774 167.069 14.4251 166.621 14.9774 166.621H19.1617C19.9542 166.621 20.4318 165.744 20.0013 165.078Z"
+    fill="#FF9133"></path>
+  <g class="big-arrow" filter="url(#big-arrow-filter)">
+    <path
+      d="M114.28 74.1441L74.1226 10.3579C71.0479 5.47398 63.971 5.35338 60.7317 10.1297L17.4711 73.9159C13.8685 79.2279 17.6736 86.4063 24.092 86.4063H38.5254C42.9437 86.4063 46.5254 89.988 46.5254 94.4063V169C46.5254 173.418 50.1072 177 54.5254 177H76.2119C80.6301 177 84.2119 173.418 84.2119 169V94.4063C84.2119 89.988 87.7936 86.4063 92.2119 86.4063H107.51C113.805 86.4063 117.634 79.4715 114.28 74.1441Z"
+      fill="#FF9133"></path>
+    <path
+      d="M114.28 74.1441L74.1226 10.3579C71.0479 5.47398 63.971 5.35338 60.7317 10.1297L17.4711 73.9159C13.8685 79.2279 17.6736 86.4063 24.092 86.4063H38.5254C42.9437 86.4063 46.5254 89.988 46.5254 94.4063V169C46.5254 173.418 50.1072 177 54.5254 177H76.2119C80.6301 177 84.2119 173.418 84.2119 169V94.4063C84.2119 89.988 87.7936 86.4063 92.2119 86.4063H107.51C113.805 86.4063 117.634 79.4715 114.28 74.1441Z"
+      stroke="white"
+      stroke-width="4"></path>
+  </g>
+  <defs>
+    <filter
+      id="big-arrow-filter"
+      filterUnits="userSpaceOnUse"
+      color-interpolation-filters="sRGB"
+    >
+      <feDropShadow dx="4" dy="4" stdDeviation="0" flood-color="#52006A"
+      ></feDropShadow>
+      <feDropShadow dx="4" dy="4" stdDeviation="0" flood-color="#CD113B"
+      ></feDropShadow>
+    </filter>
+  </defs>
+</svg>
+
+<style lang="scss">
+  @import "../styles/variables.scss";
+
+  @keyframes smallarrow {
+    0% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    3% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    15% {
+      opacity: 0;
+      transform: translateY(-65%);
+    }
+    16% {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+    22% {
+      opacity: 1;
+      transform: translateY(100%);
+    }
+    35% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes bigarrow {
+    0% {
+      transform: translateY(0);
+    }
+    15% {
+      transform: translateY(-0.5rem);
+    }
+    25% {
+      transform: translateY(-0.5rem);
+    }
+    90% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  .big-arrow {
+    animation: bigarrow 5s ease-out infinite;
+    transform-origin: center;
+  }
+
+  .small-arrow {
+    animation: smallarrow 5s ease-out infinite;
+
+    &.first {
+      animation-delay: 0s;
+    }
+    &.second {
+      animation-delay: 0.2s;
+    }
+    &.third {
+      animation-delay: 0.4s;
+    }
+    &.fourth {
+      animation-delay: 0.6s;
+    }
+  }
+</style>

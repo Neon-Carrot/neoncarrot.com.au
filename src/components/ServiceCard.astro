@@ -3,19 +3,18 @@ import Card from "./Card.astro";
 
 export interface Props {
   color: string;
-  img: string;
   message: string;
   title: string;
 }
 
-const { color, img, title, message } = Astro.props;
+const { color, title, message } = Astro.props;
 ---
 
 <div class="container">
   <Card class="service-card" color={color}>
     <div class="center">
       <div class="service-card__image">
-        <Fragment set:html={img} />
+        <slot />
       </div>
     </div>
     <h3 class="heading-4 center">{title}</h3>
@@ -42,6 +41,6 @@ const { color, img, title, message } = Astro.props;
   .service-card__image {
     height: 175px;
     margin: $spacing-2 0 $spacing-8 0;
-    max-width: 200px;
+    max-width: 250px;
   }
 </style>
