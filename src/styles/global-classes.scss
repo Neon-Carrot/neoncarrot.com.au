@@ -25,22 +25,17 @@
   border: 2px solid $color-dark;
   box-shadow: 0.25rem 0.25rem 0 $color-dark;
   color: $color-white;
+  display: inline-block;
   font-size: 0.875rem;
   font-weight: 700;
-  left: 0;
   padding: $spacing-3 $spacing-4;
-  position: relative;
   text-decoration: none;
-  top: 0;
-  transition: box-shadow 0.125s ease-out, left 0.125s ease-out,
-    top 0.125s ease-out;
 
   &:hover,
   &:focus,
   &:focus-visible {
     box-shadow: 0.125rem 0.125rem 0 $color-dark;
-    left: 0.125rem;
-    top: 0.125rem;
+    transform: translate(0.125rem, 0.125rem);
   }
 
   &:focus,
