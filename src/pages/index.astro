@@ -1,46 +1,49 @@
 ---
-import { Image, Picture } from "@astrojs/image/components";
+import { Picture } from "@astrojs/image/components";
 
 import "../styles/index.scss";
+import { COLORS } from "../constants";
 import Button from "../components/Button.astro";
 import ButtonLink from "../components/ButtonLink.astro";
-import Grid from "../components/Grid.astro";
-import Logo from "../components/Logo.astro";
-import Layout from "../layouts/Layout.astro";
+import CalebText from "../components/CalebText.astro";
 import Card from "../components/Card.astro";
+import CarolText from "../components/CarolText.astro";
+import Clouds from "../components/Clouds.astro";
 import Col from "../components/Col.astro";
 import DitherDivider from "../components/DitherDivider.astro";
+import Grid from "../components/Grid.astro";
+import Heart from "../components/Heart.astro";
+import Layout from "../layouts/Layout.astro";
+import LightBulb from "../components/LightBulb.astro";
+import LightningBolt from "../components/LightningBolt.astro";
+import MagnifyingGlass from "../components/MagnifyingGlass.astro";
+import Megaphone from "../components/Megaphone.astro";
 import Section from "../components/Section.astro";
 import ServiceCard from "../components/ServiceCard.astro";
+import SplashLogo from "../components/SplashLogo.astro";
 import TechSolutionCard from "../components/TechSolutionCard.astro";
-import CarolText from "../components/CarolText.astro";
-import CalebText from "../components/CalebText.astro";
+import UpArrow from "../components/UpArrow.astro";
 
 import caleb from "../images/caleb.png";
 import carol from "../images/carol.png";
-import clouds from "../images/clouds.png";
 import dashboard from "../images/dashboard.png";
 import dataManagement from "../images/data-management.png";
-import heart from "../images/heart.png";
-import lightbulb from "../images/lightbulb.png";
-import lightningBolt from "../images/lightning-bolt.png";
-import magnifyingGlass from "../images/magnifying-glass.png";
-import megaphone from "../images/megaphone.png";
-import upArrow from "../images/up-arrow.png";
 import website from "../images/website.png";
 ---
 
 <Layout title="IT consultancy for not-for-profits | Neon Carrot">
   <main>
-    <Section extraDeep>
+    <Section deep>
       <Grid>
-        <Col size={8} start={3} mdSize={8} mdStart={3} smSize={4} smStart={1}>
-          <Logo />
-          <h1 class="hide spv-12">Neon Carrot</h1>
-          <h2 class="heading-3 center is-light spv-12">
-            Tech for good, for all
+        <Col size={10} start={2} mdSize={10} mdStart={2} smSize={4} smStart={0}>
+          <SplashLogo />
+          <h1 class="hide">Neon Carrot</h1>
+          <h2
+            class="heading-3 center is-light spv-12 fade-in from-bottom slogan"
+          >
+            Tech with an impact
           </h2>
-          <div class="center" id="trigger">
+          <div class="center fade-in from-bottom splash-buttons" id="trigger">
             <ButtonLink class="sph-8" color="red" href="#services">
               See our services
             </ButtonLink>
@@ -54,12 +57,12 @@ import website from "../images/website.png";
     <Section class="position-relative internal-anchor" id="about" shallow>
       <Grid extended>
         <Col size={12}>
-          <Card class="who-we-are-card">
+          <Card class="who-we-are-card" color={COLORS.cardinal}>
             <Grid>
               <Col size={6} mdSize={5} smSize={4}>
                 <h1>Who<br />we are</h1>
                 <div class="card-images-container">
-                  <div class="image-container carol">
+                  <div class="image-container carol fade-in from-bottom">
                     <div class="pic-text">
                       <CarolText />
                     </div>
@@ -75,7 +78,7 @@ import website from "../images/website.png";
                       sizes="(min-width: 1160px) 191px, 382px"
                     />
                   </div>
-                  <div class="image-container caleb">
+                  <div class="image-container caleb fade-in from-bottom">
                     <div class="pic-text">
                       <CalebText />
                     </div>
@@ -102,18 +105,17 @@ import website from "../images/website.png";
                 <p>
                   We are a couple of passionate and creative problem-solvers
                   with first-hand experience in the not-for-profit space. We
-                  know how it can be - IT systems that are bursting at the
-                  seams, spreadsheets that are as intricate as they are
-                  mission-critical, and time-consuming processes that eat into
-                  the important work. You want technology to help, and so do we.
+                  know how things can go - having to wrestle IT systems that are
+                  bursting at the seams, and untangling processes that get in
+                  the way of the real work. It’s time for an upgrade!
                 </p>
                 <p>
                   Our mission is to maximise the positive impacts of
-                  not-for-profit organisations, and we believe we can do that
-                  best using our skills in IT and project management. We deliver
-                  innovative tech solutions that enable not-for-profits to
-                  provide better services, make better decisions and be better
-                  prepared for the future.
+                  not-for-profit organisations by using our skills and expertise
+                  in IT and project management. Let’s work together on
+                  innovative tech solutions that empower your team to provide
+                  better services, make better decisions and be better prepared
+                  for the future.
                 </p>
               </Col>
             </Grid>
@@ -132,15 +134,23 @@ import website from "../images/website.png";
           <Col size={6} mdSize={7} smSize={4}>
             <div class="spv-8 hide--small"></div>
             <h2 class="heading-4">
-              We empower organisations to do what they do best, better.
+              Engage, enhance and empower your organisation for digital success.
             </h2>
             <p>
-              It's not a revelation to describe digital technology as "kind of a
-              big deal", but it's rarely the be-all end-all antidote. We believe
-              that the best tech solutions come from working closely with
-              clients to fully understand their needs and goals, so whatever
-              problem or idea you have, we are ready to work with you to share
-              our knowledge and come up with a creative solution.
+              Collaboration is key. We work closely with clients to fully
+              understand their IT challenges and goals, then deliver tech
+              solutions from inception through to design, development and
+              implementation.
+            </p>
+            <p class="spv-6">
+              Tech opportunities and challenges come in many shapes and sizes,
+              but we are ready to partner up, share our knowledge and set your
+              team on the path to digital greatness.
+            </p>
+            <p>
+              <ButtonLink color="red" href="#contact">
+                Let's get in touch!
+              </ButtonLink>
             </p>
           </Col>
         </Grid>
@@ -155,32 +165,26 @@ import website from "../images/website.png";
           <Col size={12}>
             <div class="service-cards">
               <ServiceCard
-                color="orange"
-                img={{
-                  src: lightningBolt,
-                  alt: "Image generated by Midjourney with the prompt 'halftone risograph of a yellow lightning bolt on a white background, --no canvas'",
-                }}
+                color="#FFEA00"
                 title="Supercharge efficiency"
                 message="Free your team to tackle bigger tasks! Automate the mundane for maximum productivity."
-              />
+              >
+                <LightningBolt />
+              </ServiceCard>
               <ServiceCard
-                color="orange"
-                img={{
-                  src: heart,
-                  alt: "Image generated by Midjourney with the prompt 'halftone risograph of a pink heart on a white background, --no canvas'",
-                }}
+                color="#F4718F"
                 title="Boost satisfaction"
-                message="Craft customer experience strategies that foster loyalty and keep clients happy."
-              />
+                message="Improve the look and feel of your websites and apps to better engage with your community."
+              >
+                <Heart />
+              </ServiceCard>
               <ServiceCard
-                color="orange"
-                img={{
-                  src: upArrow,
-                  alt: "Image generated by Midjourney with the prompt 'halftone risograph of an orange arrow on a white background, --no canvas'",
-                }}
+                color="#FF9133"
                 title="Upgrade skills"
                 message="Empower your team for digital success! Build skills and confidence to excel."
-              />
+              >
+                <UpArrow />
+              </ServiceCard>
             </div>
           </Col>
         </Grid>
@@ -195,32 +199,26 @@ import website from "../images/website.png";
           <Col size={12}>
             <div class="service-cards">
               <ServiceCard
-                color="red"
-                img={{
-                  src: lightbulb,
-                  alt: "Image generated by Midjourney with the prompt 'halftone risograph of a yellow lightbulb on a white background, --no canvas'",
-                }}
+                color="#9E00CC"
+                title="Master your data"
+                message="Company data has a habit of growing out of control. Take charge so finding and storing information is a breeze."
+              >
+                <MagnifyingGlass />
+              </ServiceCard>
+              <ServiceCard
+                color="#FF9F4D"
                 title="Illuminate insights"
-                message="A lack of effective reporting is like trying to see in the dark. Shine a light on what’s important."
-              />
+                message="A lack of effective reporting is like trying to see in the dark. Shine a light on what's important to understand your impact."
+              >
+                <LightBulb />
+              </ServiceCard>
               <ServiceCard
-                color="red"
-                img={{
-                  src: magnifyingGlass,
-                  alt: "Image generated by Midjourney with the prompt 'halftone risograph of a dark purple magnifying glass on a white background, --no canvas'",
-                }}
-                title="Reveal data"
-                message="Managing things like stakeholder data can be difficult as a company grows. Regain control so you can easily find what you need."
-              />
-              <ServiceCard
-                color="red"
-                img={{
-                  src: clouds,
-                  alt: "Image generated by Midjourney with the prompt 'halftone risograph of sky blue clouds on a white background, --no canvas'",
-                }}
+                color="#809FFF"
                 title="Embrace the cloud"
-                message="Paper-based processes can be prone to error. Save on costs and improve data management and security using cloud services."
-              />
+                message="Paper-based processes are time-consuming and prone to error. Save costs and improve security using cloud services."
+              >
+                <Clouds />
+              </ServiceCard>
             </div>
           </Col>
         </Grid>
@@ -250,71 +248,82 @@ import website from "../images/website.png";
       <Section shallow>
         <Grid>
           <Col size={5} mdSize={5} smSize={4}>
-            <TechSolutionCard
-              bgColor="#fff266"
-              img={{
-                src: dataManagement,
-                alt: "Image generated by Midjourney with the prompt 'office workers organising files in an electronic database, flat vector art style'",
-              }}
-            />
+            <div class="fade-in from-left">
+              <TechSolutionCard
+                img={{
+                  src: dataManagement,
+                  alt: "Image generated by Midjourney with the prompt 'office workers organising files in an electronic database, flat vector art style'",
+                }}
+              />
+            </div>
           </Col>
           <Col size={6} start={7} mdSize={6} mdStart={7} smSize={4} smStart={1}>
-            <h2>Intuitive data capture and management systems</h2>
-            <p>
-              Streamline and automate the process of collecting, organising and
-              managing data to make it easier to access, analyse and extract
-              insights.
-            </p>
+            <div class="fade-in from-right">
+              <h2>Intuitive data capture and management systems</h2>
+              <p>
+                Streamline and automate the process of collecting, organising
+                and managing data to make it easier to access, analyse and
+                extract insights.
+              </p>
+            </div>
           </Col>
         </Grid>
       </Section>
       <Section shallow>
         <Grid>
           <Col class="hide--small" size={6} mdSize={6} smSize={4}>
-            <h2>Interactive dashboards that use live, real-time data</h2>
-            <p>
-              Drill down, explore and gain deeper understanding of the operation
-              of your business. Harness the power of data to inform
-              decision-making.
-            </p>
+            <div class="fade-in from-left">
+              <h2>Interactive dashboards that use live, real-time data</h2>
+              <p>
+                Drill down, explore and gain deeper understanding of the
+                operation of your business. Harness the power of data to inform
+                decision-making and understand the impact of your services.
+              </p>
+            </div>
           </Col>
           <Col size={5} start={8} mdSize={5} mdStart={8} smSize={4} smStart={1}>
-            <TechSolutionCard
-              bgColor="#ff7600"
-              img={{
-                src: dashboard,
-                alt: "Image generated by Midjourney with the prompt 'office workers looking at a data analytics dashboard, flat vector art style'",
-              }}
-            />
+            <div class="fade-in from-right">
+              <TechSolutionCard
+                img={{
+                  src: dashboard,
+                  alt: "Image generated by Midjourney with the prompt 'office workers looking at a data analytics dashboard, flat vector art style'",
+                }}
+              />
+            </div>
           </Col>
           <Col class="hide--large" size={6} mdSize={6} smSize={4}>
-            <h2>Interactive dashboards that use live, real-time data</h2>
-            <p>
-              Drill down, explore and gain deeper understanding of the operation
-              of your business. Harness the power of data to inform
-              decision-making.
-            </p>
+            <div class="fade-in from-bottom">
+              <h2>Interactive dashboards that use live, real-time data</h2>
+              <p>
+                Drill down, explore and gain deeper understanding of the
+                operation of your business. Harness the power of data to inform
+                decision-making and understand the impact of your services.
+              </p>
+            </div>
           </Col>
         </Grid>
       </Section>
       <Section shallow>
         <Grid>
           <Col size={5} mdSize={5} smSize={4}>
-            <TechSolutionCard
-              bgColor="#d0dfdd"
-              img={{
-                src: website,
-                alt: "Image generated by Midjourney with the prompt 'office workers designing a website and coding, flat vector art style'",
-              }}
-            />
+            <div class="fade-in from-left">
+              <TechSolutionCard
+                img={{
+                  src: website,
+                  alt: "Image generated by Midjourney with the prompt 'office workers designing a website and coding, flat vector art style'",
+                }}
+              />
+            </div>
           </Col>
           <Col size={6} start={7} mdSize={6} mdStart={7} smSize={4} smStart={1}>
-            <h2>Modern and accessible websites and apps</h2>
-            <p>
-              Establish credibility, engage stakeholders and provide access to
-              services with well-designed, user-friendly websites and
-              applications.
-            </p>
+            <div class="fade-in from-right">
+              <h2>Modern and accessible websites and apps</h2>
+              <p>
+                Establish credibility, engage stakeholders and provide access to
+                services with well-designed, user-friendly websites and
+                applications.
+              </p>
+            </div>
           </Col>
         </Grid>
       </Section>
@@ -349,15 +358,9 @@ import website from "../images/website.png";
                     info@neoncarrot.com.au
                   </p>
                 </div>
-                <Image
-                  class="megaphone hide--small"
-                  src={megaphone}
-                  alt="Image generated by Midjourney with the prompt 'halftone risograph of a hand holding a huge megaphone with lightning bolts coming out on a white background, --no canvas'"
-                  height={500}
-                  width={500}
-                  loading="lazy"
-                  format="webp"
-                />
+                <div class="hide--small">
+                  <Megaphone />
+                </div>
               </Col>
               <Col size={6} mdSize={6} smSize={4}>
                 <div class="spv-8 hide--small"></div>
@@ -370,11 +373,23 @@ import website from "../images/website.png";
                 >
                   <div class="text-input">
                     <label for="name">Name</label>
-                    <input name="name" id="name" required type="text" />
+                    <input
+                      autocomplete="name"
+                      name="name"
+                      id="name"
+                      required
+                      type="text"
+                    />
                   </div>
                   <div class="text-input">
                     <label for="email">Email address</label>
-                    <input name="email" id="email" required type="email" />
+                    <input
+                      autocomplete="email"
+                      name="email"
+                      id="email"
+                      required
+                      type="email"
+                    />
                   </div>
                   <div class="text-input">
                     <label for="subject">Subject</label>
@@ -403,8 +418,86 @@ import website from "../images/website.png";
   </main>
 </Layout>
 
+<script>
+  document.querySelectorAll(".fade-in").forEach((el) => {
+    if (!window.IntersectionObserver) {
+      el.classList.add("is-visible");
+    }
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting || entry.boundingClientRect.top < 0) {
+          el.classList.add("is-visible");
+        }
+      },
+      { threshold: 0.5 }
+    );
+    observer.observe(el);
+  });
+</script>
+
 <style lang="scss">
   @import "../styles/variables.scss";
+
+  .fade-in {
+    opacity: 0;
+    position: relative;
+    transition: none 1s cubic-bezier(0, 0, 0.2, 1) 0.25s;
+    transition-property: all;
+
+    &.is-visible {
+      opacity: 1 !important;
+      top: 0 !important;
+      bottom: 0 !important;
+      right: 0 !important;
+      left: 0 !important;
+    }
+
+    &:not(.is-visible) {
+      &.from-bottom {
+        top: 2rem;
+      }
+
+      &.from-top {
+        top: -2rem;
+      }
+
+      &.from-left {
+        left: -2rem;
+      }
+
+      &.from-right {
+        left: 2rem;
+      }
+
+      @media only screen and (max-width: $breakpoint-medium) {
+        &.from-bottom,
+        &.from-left,
+        &.from-right {
+          left: 0;
+          top: 2rem;
+        }
+      }
+    }
+  }
+
+  .slogan {
+    margin-top: -2rem;
+    top: 0 !important;
+    transition-delay: 3s;
+    letter-spacing: 0.125ch;
+
+    &.is-visible {
+      letter-spacing: 0;
+    }
+
+    @media only screen and (max-width: $breakpoint-medium) {
+      margin-top: -4em;
+    }
+  }
+
+  .splash-buttons {
+    transition-delay: 3.15s;
+  }
 
   .card-images-container {
     align-items: flex-end;
@@ -416,6 +509,10 @@ import website from "../images/website.png";
 
     .image-container {
       position: relative;
+
+      &.caleb {
+        transition-delay: 0.75s;
+      }
     }
 
     .me-image {
@@ -532,6 +629,6 @@ import website from "../images/website.png";
   }
 
   .submit-button {
-    margin: $spacing-8 0;
+    margin-bottom: $spacing-8;
   }
 </style>

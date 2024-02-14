@@ -3,7 +3,7 @@ export interface Props {
   bgColor?: string;
   containerClass?: string;
   class?: string;
-  color?: "red" | "orange" | "yellow" | "black";
+  color: string;
   fullWidth?: boolean;
 }
 
@@ -25,18 +25,7 @@ const {
   >
     <slot />
   </div>
-  <div
-    class:list={[
-      "card-shadow",
-      {
-        red: !color || color == "red",
-        orange: color == "orange",
-        yellow: color == "yellow",
-        black: color == "black",
-      },
-    ]}
-  >
-  </div>
+  <div class:list={["card-shadow"]} style={`background-color:${color}`}></div>
 </div>
 
 <style lang="scss">
