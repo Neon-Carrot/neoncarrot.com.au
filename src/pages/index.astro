@@ -10,7 +10,7 @@ import Card from "../components/Card.astro";
 import CarolText from "../components/CarolText.astro";
 import Clouds from "../components/Clouds.astro";
 import Col from "../components/Col.astro";
-import DitherDivider from "../components/DitherDivider.astro";
+import HalftoneDivider from "../components/HalftoneDivider.astro";
 import Grid from "../components/Grid.astro";
 import Heart from "../components/Heart.astro";
 import Layout from "../layouts/Layout.astro";
@@ -120,7 +120,7 @@ import website from "../images/website.png";
           </Card>
         </Col>
       </Grid>
-      <DitherDivider class="divider-1" color="yellow" />
+      <HalftoneDivider class="divider-1" color="yellow" />
       <div class="divider-filler"></div>
     </Section>
     <Section class="bg-yellow no-pb internal-anchor" id="services">
@@ -221,7 +221,7 @@ import website from "../images/website.png";
           </Col>
         </Grid>
       </Section>
-      <DitherDivider color="purple" />
+      <HalftoneDivider color="purple" />
     </Section>
     <Section class="bg-purple is-light no-pb" deep>
       <Section class="no-pt" shallow>
@@ -326,7 +326,7 @@ import website from "../images/website.png";
         </Grid>
       </Section>
       <Section shallow />
-      <DitherDivider color="yellow" />
+      <HalftoneDivider color="yellow" />
     </Section>
     <Section class="bg-yellow" deep id="contact">
       <Grid extended>
@@ -570,7 +570,7 @@ import website from "../images/website.png";
   .divider-1 {
     position: absolute;
     width: 100%;
-    top: calc(50% - 4.5rem);
+    top: calc(50% - 103px);
     z-index: -10;
   }
 
@@ -578,8 +578,8 @@ import website from "../images/website.png";
     background-color: $color-maize;
     position: absolute;
     width: 100%;
-    height: calc(50% - 4.5rem);
-    top: calc(50% + 4.5rem);
+    height: calc(50% - 103px);
+    top: calc(50% + 103px);
     z-index: -10;
   }
 

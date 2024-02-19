@@ -9,7 +9,7 @@ const { class: className, color } = Astro.props;
 
 <div
   class:list={[
-    "dither-divider",
+    "halftone-divider",
     className,
     {
       red: !color || color == "red",
@@ -24,10 +24,10 @@ const { class: className, color } = Astro.props;
 <style lang="scss">
   @import "../styles/variables.scss";
 
-  .dither-divider {
-    mask: url("/images/dither.png");
-    -webkit-mask: url("/images/dither.png") repeat-x;
-    height: 9rem;
+  .halftone-divider {
+    mask: url("/images/halftone.png");
+    -webkit-mask: url("/images/halftone.png") repeat-x;
+    height: 206px;
 
     &.red {
       background-color: $color-cardinal;;
