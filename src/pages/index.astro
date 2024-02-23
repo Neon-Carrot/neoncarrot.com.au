@@ -55,7 +55,7 @@ import website from "../images/website.png";
     <Section class="position-relative internal-anchor" id="about" shallow>
       <Grid extended>
         <Col size={12}>
-          <Card class="who-we-are-card" color={COLORS.cardinal}>
+          <Card class="who-we-are-card" color={COLORS.red}>
             <Grid>
               <Col size={6} mdSize={5} smSize={4}>
                 <h1>Who<br />we are</h1>
@@ -123,7 +123,7 @@ import website from "../images/website.png";
       <HalftoneDivider class="divider-1" color="yellow" />
       <div class="divider-filler"></div>
     </Section>
-    <Section class="bg-yellow no-pb internal-anchor" id="services">
+    <Section class="bg-yellow--desat no-pb internal-anchor" id="services">
       <Section class="no-pt">
         <Grid>
           <Col size={6} mdSize={5} smSize={4}>
@@ -163,21 +163,21 @@ import website from "../images/website.png";
           <Col size={12}>
             <div class="service-cards">
               <ServiceCard
-                color="#FFEA00"
+                color={COLORS.yellow}
                 title="Supercharge efficiency"
                 message="Free your team to tackle bigger tasks! Automate the mundane for maximum productivity."
               >
                 <LightningBolt />
               </ServiceCard>
               <ServiceCard
-                color="#F4718F"
+                color={COLORS.redLight}
                 title="Boost satisfaction"
                 message="Improve the look and feel of your websites and apps to better engage with your community."
               >
                 <Heart />
               </ServiceCard>
               <ServiceCard
-                color="#FF9133"
+                color={COLORS.orange}
                 title="Upgrade skills"
                 message="Empower your team for digital success! Build skills and confidence to excel."
               >
@@ -197,21 +197,21 @@ import website from "../images/website.png";
           <Col size={12}>
             <div class="service-cards">
               <ServiceCard
-                color="#9E00CC"
+                color={COLORS.purpleLight}
                 title="Master your data"
                 message="Company data has a habit of growing out of control. Take charge so finding and storing information is a breeze."
               >
                 <MagnifyingGlass />
               </ServiceCard>
               <ServiceCard
-                color="#FF9F4D"
+                color={COLORS.orangeLight}
                 title="Illuminate insights"
                 message="A lack of effective reporting is like trying to see in the dark. Shine a light on what's important to understand your impact."
               >
                 <LightBulb />
               </ServiceCard>
               <ServiceCard
-                color="#809FFF"
+                color={COLORS.blue}
                 title="Embrace the cloud"
                 message="Paper-based processes are time-consuming and prone to error. Save costs and improve security using cloud services."
               >
@@ -223,7 +223,7 @@ import website from "../images/website.png";
       </Section>
       <HalftoneDivider color="purple" />
     </Section>
-    <Section class="bg-purple is-light no-pb" deep>
+    <Section class="bg-purple--desat is-light no-pb" deep>
       <Section class="no-pt" shallow>
         <Grid>
           <Col size={6}>
@@ -328,7 +328,7 @@ import website from "../images/website.png";
       <Section shallow />
       <HalftoneDivider color="yellow" />
     </Section>
-    <Section class="bg-yellow" deep id="contact">
+    <Section class="bg-yellow--desat" deep id="contact">
       <Grid extended>
         <Col size={12}>
           <Card class="get-in-touch-card" color="orange">
@@ -338,7 +338,7 @@ import website from "../images/website.png";
                 <div class="contact-item">
                   <div class="contact-icon">
                     <svg
-                      fill="#ff7600"
+                      fill={COLORS.orange}
                       viewBox="0 0 24 24"
                       xmlns="http://www.w3.org/2000/svg"
                       aria-hidden="true"
@@ -575,7 +575,7 @@ import website from "../images/website.png";
   }
 
   .divider-filler {
-    background-color: $color-maize;
+    background-color: $color-yellow-desat;
     position: absolute;
     width: 100%;
     height: calc(50% - 103px);

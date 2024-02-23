@@ -9,7 +9,7 @@
 }
 
 %base-input {
-  border: 2px solid $color-dark;
+  border: 2px solid $color-black;
   border-radius: 0.5rem;
   box-sizing: border-box;
   line-height: 1.3625;
@@ -19,8 +19,8 @@
 
   &:focus,
   &:focus-visible {
-    border-color: $color-focus;
-    outline: 2px solid $color-focus;
+    border-color: $color-blue;
+    outline: 2px solid $color-blue;
     outline-offset: 0 !important;
   }
 }
@@ -38,8 +38,8 @@ html {
 }
 
 body {
-  background-color: $color-orange;
-  color: $color-dark;
+  background-color: $color-orange-desat;
+  color: $color-black;
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
   height: 100%;
@@ -133,8 +133,8 @@ button {
 
   &:focus,
   &:focus-visible {
-    border-color: $color-focus;
-    outline: 2px solid $color-focus;
+    border-color: $color-blue;
+    outline: 2px solid $color-blue;
     outline-offset: 0 !important;
   }
 }

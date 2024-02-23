@@ -4,16 +4,48 @@
   background-color: $color-orange;
 }
 
+.bg-orange--desat {
+  background-color: $color-orange-desat;
+}
+
+.bg-orange--light {
+  background-color: $color-orange-light;
+}
+
 .bg-red {
-  background-color: $color-cardinal;
+  background-color: $color-red;
+}
+
+.bg-red--desat {
+  background-color: $color-red-desat;
+}
+
+.bg-red--light {
+  background-color: $color-red-light;
 }
 
 .bg-yellow {
-  background-color: $color-maize;
+  background-color: $color-yellow;
+}
+
+.bg-yellow--desat {
+  background-color: $color-yellow-desat;
+}
+
+.bg-yellow--light {
+  background-color: $color-yellow-light;
 }
 
 .bg-purple {
-  background-color: $color-indigo;
+  background-color: $color-purple;
+}
+
+.bg-purple--desat {
+  background-color: $color-purple-desat;
+}
+
+.bg-purple--light {
+  background-color: $color-purple-light;
 }
 
 .internal-anchor {
@@ -22,8 +54,8 @@
 
 .button {
   border-radius: 0.5rem;
-  border: 2px solid $color-dark;
-  box-shadow: 0.25rem 0.25rem 0 $color-dark;
+  border: 2px solid $color-black;
+  box-shadow: 0.25rem 0.25rem 0 $color-black;
   color: $color-white;
   display: inline-block;
   font-size: 0.875rem;
@@ -34,23 +66,23 @@
   &:hover,
   &:focus,
   &:focus-visible {
-    box-shadow: 0.125rem 0.125rem 0 $color-dark;
+    box-shadow: 0.125rem 0.125rem 0 $color-black;
     transform: translate(0.125rem, 0.125rem);
   }
 
   &:focus,
   &:focus-visible {
-    border-color: $color-focus;
-    outline: 2px solid $color-focus;
+    border-color: $color-blue;
+    outline: 2px solid $color-blue;
     outline-offset: 0 !important;
   }
 
   &.red {
-    background-color: $color-cardinal;
+    background-color: $color-red;
 
     &:hover,
     &:focus {
-      background-color: darken($color-cardinal, 5%);
+      background-color: #b80037;
     }
   }
 
@@ -59,7 +91,7 @@
 
     &:hover,
     &:focus {
-      background-color: darken($color-orange, 5%);
+      background-color: #e65800;
     }
   }
 }
