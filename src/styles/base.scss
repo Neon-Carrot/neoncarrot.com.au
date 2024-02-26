@@ -126,6 +126,14 @@ h6,
   }
 }
 
+a {
+  color: $color-link;
+
+  &:visited {
+    color: $color-purple;
+  }
+}
+
 button {
   &:hover {
     cursor: pointer;
