@@ -52,7 +52,8 @@
   scroll-margin-top: $spacing-16;
 }
 
-.button {
+.button,
+a.button {
   border-radius: 0.5rem;
   border: 2px solid $color-black;
   box-shadow: 0.25rem 0.25rem 0 $color-black;

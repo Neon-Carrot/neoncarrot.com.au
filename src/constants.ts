@@ -3,6 +3,7 @@ export const COLORS = {
   blueDesat: "#7192f4",
   blue: "#4d97ff",
   green: "#00d620",
+  link: "#0039e6",
   orange: "#ff7600",
   orangeDesat: "#f36a1b",
   orangeLight: "#ffa900",
