@@ -25,8 +25,9 @@ const { class: className, color } = Astro.props;
   @import "../styles/variables.scss";
 
   .halftone-divider {
-    mask: url("/images/halftone.png");
-    -webkit-mask: url("/images/halftone.png") repeat-x;
+    mask: url("data:image/svg+xml,%0A%3Csvg width='22' height='206' viewBox='0 0 22 206' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_2611_3279)'%3E%3Ccircle cy='191' r='11' fill='black'/%3E%3Ccircle cx='11' cy='172' r='10' fill='black'/%3E%3Ccircle cy='153' r='9' fill='black'/%3E%3Ccircle cx='11' cy='134' r='8' fill='black'/%3E%3Ccircle cy='115' r='7' fill='black'/%3E%3Ccircle cx='11' cy='96' r='6' fill='black'/%3E%3Ccircle cy='77' r='5' fill='black'/%3E%3Ccircle cx='22' cy='77' r='5' fill='black'/%3E%3Ccircle cx='11' cy='58' r='4' fill='black'/%3E%3Ccircle cy='39' r='3' fill='black'/%3E%3Ccircle cx='22' cy='39' r='3' fill='black'/%3E%3Ccircle cx='11' cy='20' r='2' fill='black'/%3E%3Ccircle cy='1' r='1' fill='black'/%3E%3Ccircle cx='22' cy='1' r='1' fill='black'/%3E%3Ccircle cx='22' cy='115' r='7' fill='black'/%3E%3Ccircle cx='22' cy='153' r='9' fill='black'/%3E%3Ccircle cx='22' cy='191' r='11' fill='black'/%3E%3Ccircle cx='11' cy='210' r='12' fill='black'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_2611_3279'%3E%3Crect width='22' height='206' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A")
+      repeat-x;
+    mask-size: contain;
     height: 206px;
 
     &.red {
