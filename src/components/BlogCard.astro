@@ -1,0 +1,158 @@
+---
+import { Image } from "@astrojs/image/components";
+
+import type { ARTICLE_TOPICS } from "../constants";
+import Chip from "./Chip.astro";
+
+export interface Props {
+  author: string;
+  class?: string;
+  color: string;
+  date: string;
+  href: string;
+  imgAlt: string;
+  imgSrc: ImageMetadata;
+  summary: string;
+  title: string;
+  topic: (typeof ARTICLE_TOPICS)[keyof typeof ARTICLE_TOPICS];
+}
+
+const {
+  author,
+  class: className,
+  color,
+  date,
+  href,
+  imgAlt,
+  imgSrc,
+  summary,
+  title,
+  topic,
+}: Props = Astro.props;
+---
+
+<div class:list={["wrapper", className]}>
+  <div class="card">
+    <Chip class="chip" topic={topic} />
+    <a href={href}>
+      <div class="image-wrapper" style={{ backgroundColor: color }}>
+        <Image
+          alt={imgAlt}
+          class="image"
+          format="webp"
+          width={768}
+          src={imgSrc}
+        />
+      </div>
+    </a>
+    <div class="content">
+      <a class="link display-inline-block spv-2" href={href}>
+        <h3 class="link-underline heading-4">
+          {title}
+        </h3>
+      </a>
+      <p>
+        <em>{author}, {date}</em>
+      </p>
+      <div class="summary">
+        <p>
+          {summary}
+        </p>
+      </div>
+      <div class="keep-reading">
+        <a class="link display-inline-block" href={href}>
+          <span class="link-underline">Keep reading »</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style lang="scss">
+  @import "../styles/variables.scss";
+
+  .wrapper {
+    height: 100%;
+  }
+
+  .card {
+    background-color: $color-white;
+    border-radius: 1rem;
+    border: 2px solid $color-black;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .chip {
+    left: 20px;
+    position: absolute;
+    top: 12px;
+    z-index: 10;
+  }
+
+  .image-wrapper {
+    height: 335px;
+  }
+
+  .image {
+    display: block;
+    filter: brightness(1.5);
+    height: 100%;
+    mix-blend-mode: multiply;
+    object-fit: cover;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 1rem 1.5rem 1.25rem 1.5rem;
+  }
+
+  .summary {
+    flex-grow: 1;
+  }
+
+  .link {
+    color: $color-black !important;
+    text-decoration: none;
+
+    &:hover,
+    &:focus,
+    &:focus-visible {
+      .link-underline {
+        background-size: 100% 2px;
+      }
+    }
+
+    &:focus,
+    &:focus-visible {
+      border-color: $color-blue;
+      outline: 4px solid $color-blue;
+      outline-offset: 2px;
+    }
+  }
+
+  .keep-reading {
+    display: flex;
+    font-weight: 600;
+    justify-content: flex-end;
+    margin-top: $spacing-2;
+  }
+
+  .link-underline {
+    display: inline;
+    background: linear-gradient(to left, $color-black, $color-black);
+    background-size: 0 2px;
+    background-position: 0 100%, 100% 100%;
+    background-repeat: no-repeat;
+    transition: background-size cubic-bezier(0, 0, 0.2, 1) 400ms;
+
+    &:hover {
+      background-size: 100% 2px;
+    }
+  }
+</style>

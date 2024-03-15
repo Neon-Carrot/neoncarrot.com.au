@@ -1,7 +1,7 @@
 ---
 export interface Props {
   class?: string;
-  color?: "red" | "orange" | "yellow" | "purple";
+  color?: "red" | "orange" | "yellow" | "purple" | "purpleLight" | "white";
 }
 
 const { class: className, color } = Astro.props;
@@ -16,6 +16,8 @@ const { class: className, color } = Astro.props;
       orange: color == "orange",
       yellow: color == "yellow",
       purple: color == "purple",
+      white: color == "white",
+      ["purple-light"]: color == "purpleLight",
     },
   ]}
 >
@@ -44,6 +46,14 @@ const { class: className, color } = Astro.props;
 
     &.purple {
       background-color: $color-purple-desat;
+    }
+
+    &.purple-light {
+      background-color: $color-purple-light;
+    }
+
+    &.white {
+      background-color: $color-white;
     }
   }
 </style>

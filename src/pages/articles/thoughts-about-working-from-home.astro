@@ -1,0 +1,137 @@
+---
+import { Image } from "@astrojs/image/components";
+
+import "../../styles/index.scss";
+import { ARTICLE_TOPICS, COLORS } from "../../constants";
+import Col from "../../components/Col.astro";
+import Grid from "../../components/Grid.astro";
+import Article from "../../layouts/Article.astro";
+
+import bed from "../../images/bed.png";
+import ladyOnBed from "../../images/lady-on-bed.png";
+import manOnBed from "../../images/man-on-bed.png";
+---
+
+<Article
+  author="Carolina Fonseca"
+  date="6th March 2024"
+  heroImgSrc={ladyOnBed}
+  heroImgAlt="Lady on bed"
+  heroImgColor={COLORS.orangeLight}
+  title="Thoughts about working from home - it's the best!"
+  topic={ARTICLE_TOPICS.howToGuides}
+>
+  <Grid>
+    <Col size={8} start={3} mdSize={8} mdStart={3} smSize={4} smStart={1}>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at
+        velit non libero accumsan viverra. Pellentesque suscipit erat vel odio
+        fermentum, in feugiat sem suscipit. Suspendisse dignissim nisi in ante
+        fermentum facilisis. Donec imperdiet eleifend risus et laoreet. Morbi at
+        erat ut tellus sodales varius.
+      </p>
+      <p>
+        Aenean pharetra nunc quam, ac sodales nisi rutrum at. Nunc et libero
+        leo. Duis a quam quis turpis tempus laoreet. Sed at ante luctus,
+        imperdiet metus vel, aliquet diam. Nullam vel pharetra diam, in
+        scelerisque leo. In scelerisque turpis nibh, id laoreet dui laoreet
+        eget. Nulla facilisi. Nullam quis pellentesque dui. Donec vitae cursus
+        sapien.
+      </p>
+      <p class="spv-0">
+        Nullam vel nunc pretium, scelerisque tellus eu, viverra turpis.
+        Pellentesque aliquet neque id sem tincidunt, vel pulvinar magna
+        sollicitudin. Aenean non tellus et mi semper vehicula at et erat. Donec
+        at rhoncus diam. Quisque et leo diam. Etiam non scelerisque arcu. Fusce
+        tempor quam quis turpis posuere pulvinar.
+      </p>
+    </Col>
+    <Col size={8} start={3} mdSize={8} mdStart={3} smSize={4} smStart={1}>
+      <div class="image-wrapper">
+        <Image
+          alt="bed"
+          class="image"
+          format="webp"
+          width={768}
+          src={bed}
+        />
+      </div>
+    </Col>
+    <Col size={8} start={3} mdSize={8} mdStart={3} smSize={4} smStart={1}>
+      <h4 class="spv-4">Lorem ipsum</h4>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at
+        velit non libero accumsan viverra. Pellentesque suscipit erat vel odio
+        fermentum, in feugiat sem suscipit. Suspendisse dignissim nisi in ante
+        fermentum facilisis. Donec imperdiet eleifend risus et laoreet. Morbi at
+        erat ut tellus sodales varius.
+      </p>
+      <p class="spv-8">
+        Aenean pharetra nunc quam, ac sodales nisi rutrum at. Nunc et libero
+        leo. Duis a quam quis turpis tempus laoreet. Sed at ante luctus,
+        imperdiet metus vel, aliquet diam. Nullam vel pharetra diam, in
+        scelerisque leo. In scelerisque turpis nibh, id laoreet dui laoreet
+        eget. Nulla facilisi. Nullam quis pellentesque dui. Donec vitae cursus
+        sapien.
+      </p>
+      <h4 class="spv-4">Dolor sit</h4>
+      <p class="spv-0">
+        Nullam vel nunc pretium, scelerisque tellus eu, viverra turpis.
+        Pellentesque aliquet neque id sem tincidunt, vel pulvinar magna
+        sollicitudin. Aenean non tellus et mi semper vehicula at et erat. Donec
+        at rhoncus diam. Quisque et leo diam. Etiam non scelerisque arcu. Fusce
+        tempor quam quis turpis posuere pulvinar.
+      </p>
+    </Col>
+    <Col size={12} mdSize={12} smSize={4}>
+      <div class="portrait-image">
+        <div class="image-wrapper">
+          <Image
+            alt="Man on bed"
+            class="image"
+            format="webp"
+            width={400}
+            src={manOnBed}
+          />
+        </div>
+      </div>
+    </Col>
+    <Col size={8} start={3} mdSize={8} mdStart={3} smSize={4} smStart={1}>
+      <h4 class="spv-4">Lorem ipsum</h4>
+      <p class="spv-12">
+        Aenean pharetra nunc quam, ac sodales nisi rutrum at. Nunc et libero
+        leo. Duis a quam quis turpis tempus laoreet. Sed at ante luctus,
+        imperdiet metus vel, aliquet diam. Nullam vel pharetra diam, in
+        scelerisque leo. In scelerisque turpis nibh, id laoreet dui laoreet
+        eget. Nulla facilisi. Nullam quis pellentesque dui. Donec vitae cursus
+        sapien.
+      </p>
+    </Col>
+  </Grid>
+</Article>
+
+<style lang="scss">
+  @import "../../styles/variables.scss";
+
+  .image-wrapper {
+    border: 2px solid $color-black;
+    border-radius: 1rem;
+    margin: $spacing-12 0;
+    overflow: hidden;
+  }
+
+  .portrait-image {
+    display: flex;
+    justify-content: center;
+
+    > .image-wrapper {
+      max-width: 400px;
+    }
+  }
+
+  .image {
+    display: block;
+    height: 100%;
+    object-fit: cover;
+  }
+</style>

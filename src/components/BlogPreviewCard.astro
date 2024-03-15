@@ -1,0 +1,130 @@
+---
+import { Image } from "@astrojs/image/components";
+
+import Card from "./Card.astro";
+
+export interface Props {
+  author: string;
+  class?: string;
+  color: string;
+  date: string;
+  href: string;
+  imgAlt: string;
+  imgSrc: ImageMetadata;
+  title: string;
+}
+
+const {
+  author,
+  class: className,
+  color,
+  date,
+  href,
+  imgAlt,
+  imgSrc,
+  title,
+}: Props = Astro.props;
+---
+
+<div class={className}>
+  <a class="link" href={href}>
+    <Card class="card" bgColor={color} color={color}>
+      <Image
+        alt={imgAlt}
+        class="image"
+        format="webp"
+        width={768}
+        loading="lazy"
+        src={imgSrc}
+      />
+      <div class="content">
+        <span class="display-inline-block spv-2">
+          <h3 class="heading-5 title">
+            {title}
+          </h3>
+        </span>
+        <p class="spv-0">
+          <em>{author}, {date}</em>
+        </p>
+      </div>
+    </Card>
+  </a>
+</div>
+
+<style lang="scss">
+  @import "../styles/variables.scss";
+
+  .link {
+    border-radius: 1rem;
+    color: $color-white !important;
+    display: block;
+    text-decoration: none;
+
+    &:focus,
+    &:focus-within {
+      outline: 4px solid $color-blue;
+      outline-offset: 0 !important;
+
+      .title {
+        background-size: 100% 2px;
+      }
+    }
+
+    &:hover {
+      .title {
+        background-size: 100% 2px;
+      }
+    }
+  }
+
+  .card {
+    height: 300px;
+    margin-bottom: 3rem;
+    position: relative;
+
+    &::after {
+      background: linear-gradient(
+        to top,
+        rgba(36, 36, 48, 1) 0%,
+        rgba(36, 36, 48, 0) 75%
+      );
+      content: "";
+      height: 100%;
+      position: absolute;
+      width: 100%;
+      left: 0;
+      top: 0;
+      z-index: 1;
+    }
+  }
+
+  .image {
+    display: block;
+    filter: brightness(1.5);
+    height: 300px;
+    mix-blend-mode: multiply;
+    object-fit: cover;
+    position: absolute;
+    z-index: 0;
+  }
+
+  .content {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 300px;
+    padding: 1rem;
+    position: relative;
+    z-index: 100;
+  }
+
+  .title {
+    display: inline;
+    background: linear-gradient(to left, $color-white, $color-white);
+    background-size: 0 2px;
+    background-position: 0 100%, 100% 100%;
+    background-repeat: no-repeat;
+    transition: background-size cubic-bezier(0, 0, 0.2, 1) 400ms;
+  }
+</style>
