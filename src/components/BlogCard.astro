@@ -12,6 +12,7 @@ export interface Props {
   href: string;
   imgAlt: string;
   imgSrc: ImageMetadata;
+  lazyLoad?: boolean;
   summary: string;
   title: string;
   topic: (typeof ARTICLE_TOPICS)[keyof typeof ARTICLE_TOPICS];
@@ -25,6 +26,7 @@ const {
   href,
   imgAlt,
   imgSrc,
+  lazyLoad = false,
   summary,
   title,
   topic,
@@ -40,6 +42,7 @@ const {
           alt={imgAlt}
           class="image"
           format="webp"
+          loading={lazyLoad ? "lazy" : "eager"}
           width={768}
           src={imgSrc}
         />
