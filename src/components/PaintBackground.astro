@@ -31,11 +31,29 @@ const { class: className, color, height, width } = Astro.props;
   const animateEl = document.querySelector(
     "#animate"
   ) as SVGAnimateElement | null;
-  let scrolled = false;
-  document.addEventListener("scroll", () => {
-    if (animateEl && scrolled === false) {
-      animateEl.beginElement();
-      scrolled = true;
-    }
-  });
+
+  if (animateEl) {
+    let scrolled = false;
+    const throttle = (fn: Function, delay: number) => {
+      let time = Date.now();
+
+      return () => {
+        if (time + delay - Date.now() <= 0) {
+          fn();
+          time = Date.now();
+        }
+      };
+    };
+
+    window.addEventListener(
+      "scroll",
+      throttle(() => {
+        console.log("hi");
+        if (!scrolled) {
+          scrolled = true;
+          animateEl.beginElement();
+        }
+      }, 300)
+    );
+  }
 </script>
