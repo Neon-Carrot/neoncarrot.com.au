@@ -11,6 +11,7 @@ import HalftoneDivider from "../components/HalftoneDivider.astro";
 import Layout from "./Layout.astro";
 import Section from "../components/Section.astro";
 import BlogPreviewCard from "../components/BlogPreviewCard.astro";
+import PaintBackground from "../components/PaintBackground.astro";
 
 export type Props = ArticleData & { otherArticles: ArticleData[] };
 
@@ -60,15 +61,18 @@ const {
       <Grid>
         <Col size={8} start={3} mdSize={8} mdStart={3} smSize={4} smStart={1}>
           <div class="hero-image-wrapper">
-            <div class="bg-color" style={{ backgroundColor: color }}>
-              <Image
-                alt={imgAlt}
-                class="image"
-                format="webp"
-                width={768}
-                src={imgSrc}
-              />
-            </div>
+            <PaintBackground
+              class="paint-background"
+              color={color}
+              width={768}
+            />
+            <Image
+              alt={imgAlt}
+              class="image"
+              format="webp"
+              width={768}
+              src={imgSrc}
+            />
           </div>
         </Col>
       </Grid>
@@ -126,7 +130,16 @@ const {
     border: 2px solid $color-black;
     border-radius: 1rem;
     margin: $spacing-12 0;
+    position: relative;
     overflow: hidden;
+  }
+
+  .paint-background {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
   }
 
   .image {
