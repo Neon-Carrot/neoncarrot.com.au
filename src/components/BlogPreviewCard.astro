@@ -2,17 +2,11 @@
 import { Image } from "@astrojs/image/components";
 
 import Card from "./Card.astro";
+import type { ArticleData } from "../articleData";
 
-export interface Props {
-  author: string;
+export type Props = ArticleData & {
   class?: string;
-  color: string;
-  date: string;
-  href: string;
-  imgAlt: string;
-  imgSrc: ImageMetadata;
-  title: string;
-}
+};
 
 const {
   author,

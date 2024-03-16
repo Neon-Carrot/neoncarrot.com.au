@@ -1,19 +1,12 @@
 ---
 import "../../styles/index.scss";
-import { ARTICLE_TOPICS, COLORS } from "../../constants";
+import { ARTICLE_DATA } from "../../articleData";
 import BlogCard from "../../components/BlogCard.astro";
-import ButtonLink from "../../components/ButtonLink.astro";
-import Card from "../../components/Card.astro";
 import Col from "../../components/Col.astro";
 import HalftoneDivider from "../../components/HalftoneDivider.astro";
 import Grid from "../../components/Grid.astro";
 import Layout from "../../layouts/Layout.astro";
 import Section from "../../components/Section.astro";
-
-import girlWithRobot from "../../images/girl-with-robot.png";
-import helloCard from "../../images/hello-card.png";
-import ladyOnBed from "../../images/lady-on-bed.png";
-import laptopsOnTable from "../../images/laptops-on-table.png";
 import GetInTouchCard from "../../components/GetInTouchCard.astro";
 ---
 
@@ -35,74 +28,13 @@ import GetInTouchCard from "../../components/GetInTouchCard.astro";
     </Section>
     <Section class="no-pb" shallow>
       <Grid>
-        <Col class="article-col" size={6} mdSize={6} smSize={4}>
-          <BlogCard
-            href="/articles/thoughts-about-working-from-home"
-            color={COLORS.orangeLight}
-            imgAlt="Lady on bed"
-            imgSrc={ladyOnBed}
-            title="Thoughts about working from home - it's the best!"
-            author="Carolina Fonseca"
-            date="6th March 2024"
-            topic={ARTICLE_TOPICS.howToGuides}
-            summary={`Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Pellentesque accumsan lorem eu velit placerat, tincidunt
-            vehicula quam porttitor. Vivamus faucibus aliquam nibh vitae
-            dapibus. Etiam et orci aliquet, imperdiet elit ut, laoreet
-            nunc. Nunc diam diam, porta et rutrum in, aliquet id purus.`}
-          />
-        </Col>
-        <Col class="article-col" size={6} mdSize={6} smSize={4}>
-          <BlogCard
-            href="/articles/thoughts-about-working-from-home"
-            color={COLORS.redLight}
-            imgAlt="Girl with robot"
-            imgSrc={girlWithRobot}
-            title="AI is coming and it's going to kill us all"
-            author="Caleb Ellis"
-            date="6th March 2024"
-            topic={ARTICLE_TOPICS.techTrends}
-            summary={`In pulvinar ullamcorper lorem non semper. Cras quis neque ut
-              nulla consectetur hendrerit. Vestibulum porta dolor quis
-              nisl consectetur, eget malesuada velit scelerisque. Duis est
-              felis, consequat a mollis id, fringilla et felis. Quisque
-              pharetra nulla enim, sed luctus ex convallis at.`}
-          />
-        </Col>
-        <Col class="article-col" size={6} mdSize={6} smSize={4}>
-          <BlogCard
-            href="/articles/thoughts-about-working-from-home"
-            color={COLORS.yellowLight}
-            imgAlt="Laptops on table"
-            imgSrc={laptopsOnTable}
-            lazyLoad
-            title="How to work collaboratively - even if you work with morons"
-            author="Carolina Fonseca"
-            date="6th March 2024"
-            topic={ARTICLE_TOPICS.howToGuides}
-            summary={`We've all been there. The elevator doors open, you step into
-              your cubicle, and all of a sudden you are beset on all sides by
-              profound ignorance. But what can you do about this unfortunate
-              situation? You could choose to ignore it, or scream in a fit of rage.`}
-          />
-        </Col>
-        <Col class="article-col" size={6} mdSize={6} smSize={4}>
-          <BlogCard
-            href="/articles/thoughts-about-working-from-home"
-            color={COLORS.orange}
-            imgAlt="Hello card"
-            imgSrc={helloCard}
-            lazyLoad
-            title="Announcing the launch of Neon Carrot!"
-            author="Carolina Fonseca"
-            date="6th March 2024"
-            topic={ARTICLE_TOPICS.misc}
-            summary={`Praesent tristique ligula in viverra maximus. Ut facilisis
-              massa elementum vestibulum ornare. In egestas risus ut faucibus
-              posuere. Nulla sollicitudin pellentesque tristique. Donec nec
-              facilisis metus. Phasellus ut lobortis elit.`}
-          />
-        </Col>
+        {
+          Object.entries(ARTICLE_DATA).map(([, article], i) => (
+            <Col class="article-col" size={6} mdSize={6} smSize={4}>
+              <BlogCard {...article} lazyLoad={i > 1} />
+            </Col>
+          ))
+        }
       </Grid>
     </Section>
     <Section shallow />

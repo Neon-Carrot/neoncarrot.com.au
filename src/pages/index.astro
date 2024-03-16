@@ -1,7 +1,8 @@
 ---
-import { Image, Picture } from "@astrojs/image/components";
+import { Picture } from "@astrojs/image/components";
 
 import "../styles/index.scss";
+import { ARTICLE_DATA } from "../articleData";
 import { COLORS } from "../constants";
 import BlogPreviewCard from "../components/BlogPreviewCard.astro";
 import Button from "../components/Button.astro";
@@ -29,9 +30,6 @@ import caleb from "../images/caleb.png";
 import carol from "../images/carol.png";
 import dashboard from "../images/dashboard.png";
 import dataManagement from "../images/data-management.png";
-import girlWithRobot from "../images/girl-with-robot.png";
-import ladyOnBed from "../images/lady-on-bed.png";
-import laptopsOnTable from "../images/laptops-on-table.png";
 import website from "../images/website.png";
 ---
 
@@ -352,39 +350,15 @@ import website from "../images/website.png";
       </Grid>
       <Section shallow>
         <Grid>
-          <Col size={4} mdSize={6} smSize={4}>
-            <BlogPreviewCard
-              author="Carolina Fonseca"
-              color={COLORS.orangeLight}
-              date="6th March 2024"
-              href="/articles/thoughts-about-working-from-home"
-              imgAlt="Lady lying on bed"
-              imgSrc={ladyOnBed}
-              title="Thoughts about working from home - it's the best!"
-            />
-          </Col>
-          <Col size={4} mdSize={6} smSize={4}>
-            <BlogPreviewCard
-              author="Caleb Ellis"
-              color={COLORS.redLight}
-              date="6th March 2024"
-              href="/articles/thoughts-about-working-from-home"
-              imgAlt="Girl with robot"
-              imgSrc={girlWithRobot}
-              title="AI is coming and it's going to kill us all"
-            />
-          </Col>
-          <Col size={4} mdSize={6} smSize={4}>
-            <BlogPreviewCard
-              author="Carolina Fonseca"
-              color={COLORS.yellowLight}
-              date="6th March 2024"
-              href="/articles/thoughts-about-working-from-home"
-              imgAlt="Laptops on table"
-              imgSrc={laptopsOnTable}
-              title="How to work collaboratively - even if you work with morons"
-            />
-          </Col>
+          {
+            Object.entries(ARTICLE_DATA)
+              .slice(0, 3)
+              .map(([, article], i) => (
+                <Col size={4} mdSize={6} smSize={4}>
+                  <BlogPreviewCard {...article} />
+                </Col>
+              ))
+          }
         </Grid>
       </Section>
       <HalftoneDivider color="yellow" />

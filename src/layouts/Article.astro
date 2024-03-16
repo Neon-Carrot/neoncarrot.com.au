@@ -2,7 +2,7 @@
 import { Image } from "@astrojs/image/components";
 
 import "../styles/index.scss";
-import type { ARTICLE_TOPICS } from "../constants";
+import type { ArticleData } from "../articleData";
 import Chip from "../components/Chip.astro";
 import Col from "../components/Col.astro";
 import GetInTouchCard from "../components/GetInTouchCard.astro";
@@ -10,23 +10,27 @@ import Grid from "../components/Grid.astro";
 import HalftoneDivider from "../components/HalftoneDivider.astro";
 import Layout from "./Layout.astro";
 import Section from "../components/Section.astro";
+import BlogPreviewCard from "../components/BlogPreviewCard.astro";
 
-export interface Props {
+export type Props = ArticleData & { otherArticles: ArticleData[] };
+
+export interface OtherArticle {
   author: string;
+  color: string;
   date: string;
-  heroImgAlt: string;
-  heroImgColor: string;
-  heroImgSrc: ImageMetadata;
+  href: string;
+  imgAlt: string;
+  imgSrc: ImageMetadata;
   title: string;
-  topic: (typeof ARTICLE_TOPICS)[keyof typeof ARTICLE_TOPICS];
 }
 
 const {
   author,
+  color,
   date,
-  heroImgAlt,
-  heroImgColor,
-  heroImgSrc,
+  imgAlt,
+  imgSrc,
+  otherArticles,
   title,
   topic,
 }: Props = Astro.props;
@@ -56,13 +60,13 @@ const {
       <Grid>
         <Col size={8} start={3} mdSize={8} mdStart={3} smSize={4} smStart={1}>
           <div class="hero-image-wrapper">
-            <div class="bg-color" style={{ backgroundColor: heroImgColor }}>
+            <div class="bg-color" style={{ backgroundColor: color }}>
               <Image
-                alt={heroImgAlt}
+                alt={imgAlt}
                 class="image"
                 format="webp"
                 width={768}
-                src={heroImgSrc}
+                src={imgSrc}
               />
             </div>
           </div>
@@ -81,6 +85,25 @@ const {
         </Col>
       </Grid>
       <Section class="no-pt" shallow />
+      <HalftoneDivider color="purpleLight" />
+    </Section>
+    <Section class="bg-purple--light no-pb">
+      <Grid>
+        <Col size={12} mdSize={12} smSize={4}>
+          <h2>Other articles you might like</h2>
+        </Col>
+      </Grid>
+      <Section class="no-pt" shallow>
+        <Grid>
+          {
+            otherArticles.map((article) => (
+              <Col size={4} mdSize={6} smSize={4}>
+                <BlogPreviewCard {...article} />
+              </Col>
+            ))
+          }
+        </Grid>
+      </Section>
       <HalftoneDivider color="yellow" />
     </Section>
     <GetInTouchCard />
