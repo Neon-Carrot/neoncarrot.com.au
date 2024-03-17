@@ -1,5 +1,5 @@
 ---
-import { Image } from "@astrojs/image/components";
+import { Picture } from "@astrojs/image/components";
 
 import "../styles/index.scss";
 import type { ArticleData } from "../articleData";
@@ -64,14 +64,17 @@ const {
             <PaintBackground
               class="paint-background"
               color={color}
-              width={768}
+              width={720}
             />
-            <Image
+            <Picture
               alt={imgAlt}
               class="image"
-              format="webp"
-              width={768}
+              formats={["webp"]}
+              height={480}
+              sizes="(min-width: 456px) 720px, 412px"
               src={imgSrc}
+              width={720}
+              widths={[720, 412]}
             />
           </div>
         </Col>

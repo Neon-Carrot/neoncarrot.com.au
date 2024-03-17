@@ -1,5 +1,5 @@
 ---
-import { Image } from "@astrojs/image/components";
+import { Picture } from "@astrojs/image/components";
 
 import type { ArticleData } from "../articleData";
 import Chip from "./Chip.astro";
@@ -29,13 +29,15 @@ const {
     <Chip class="chip" topic={topic} />
     <a href={href}>
       <div class="image-wrapper" style={{ backgroundColor: color }}>
-        <Image
+        <Picture
           alt={imgAlt}
           class="image"
-          format="webp"
+          formats={["webp"]}
           loading={lazyLoad ? "lazy" : "eager"}
-          width={768}
+          sizes="(min-width: 769px) 512px, (min-width: 456px) 768px, 412px"
           src={imgSrc}
+          width={768}
+          widths={[512, 768, 412]}
         />
       </div>
     </a>
@@ -89,6 +91,10 @@ const {
 
   .image-wrapper {
     height: 335px;
+
+    @media only screen and (max-width: $breakpoint-small) {
+      height: 250px;
+    }
   }
 
   .image {

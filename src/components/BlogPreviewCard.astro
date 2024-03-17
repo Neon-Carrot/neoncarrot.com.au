@@ -1,5 +1,5 @@
 ---
-import { Image } from "@astrojs/image/components";
+import { Picture } from "@astrojs/image/components";
 
 import Card from "./Card.astro";
 import type { ArticleData } from "../articleData";
@@ -23,13 +23,16 @@ const {
 <div class={className}>
   <a class="link" href={href}>
     <Card class="card" bgColor={color} color={color} containerClass="spv-12">
-      <Image
+      <Picture
         alt={imgAlt}
         class="image"
-        format="webp"
-        width={768}
+        formats={["webp"]}
+        height={300}
         loading="lazy"
+        sizes="(min-width: 768px) 496px, (min-width: 456px) 720px, 412px"
         src={imgSrc}
+        width={720}
+        widths={[496, 720, 412]}
       />
       <div class="content">
         <span class="display-inline-block spv-2">
