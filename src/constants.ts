@@ -1,7 +1,7 @@
 export const COLORS = {
   black: "#242430",
-  blueDesat: "#7192f4",
   blue: "#4d97ff",
+  blueDesat: "#7192f4",
   green: "#00d620",
   link: "#0039e6",
   orange: "#ff7600",
@@ -10,6 +10,7 @@ export const COLORS = {
   purple: "#52006a",
   purpleDesat: "#46075a",
   purpleMid: "#940fbd",
+  purpleMidLight: "#df80ff",
   purpleLight: "#beb8f9",
   red: "#d1002d",
   redDesat: "#b80f33",

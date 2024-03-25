@@ -1,0 +1,204 @@
+---
+import { Image, Picture } from "@astrojs/image/components";
+
+import "../../styles/index.scss";
+import { ARTICLE_DATA } from "../../articleData";
+import Col from "../../components/Col.astro";
+import Grid from "../../components/Grid.astro";
+import Article from "../../layouts/Article.astro";
+
+import caleb from "../../images/caleb-profile.png";
+import carol from "../../images/carol-profile.png";
+import goodbyeFriends from "../../images/goodbye-friends.png";
+---
+
+<Article {...ARTICLE_DATA.welcomeToNeonCarrot} otherArticles={[]}>
+  <Grid>
+    <Col size={8} start={3} mdSize={8} mdStart={3} smSize={4} smStart={1}>
+      <p>
+        Hello, thanks for stopping by! We're genuinely thrilled to have you
+        here, getting a little sneak peek at our business. So whoever you are,
+        and wherever you're coming from, thanks for visiting! 🙏
+      </p>
+      <p>
+        We're here to share a bit about us and why we're doing what we're doing.
+        Neon Carrot is an IT consultancy dedicated to serving not-for-profits.
+        We're on a mission to maximise their impacts using digital technology,
+        hoping to make a real difference in the sector, one solution at a time!
+      </p>
+      <p>
+        We're also here to announce the launch of our
+        <a href="/articles">articles</a> page 🚀! Tailored for the not-for-profit
+        sector, this space will be used to offer insights on tech topics like AI,
+        cybersecurity and cloud computing, provide how-to guides on software and
+        project management processes, showcase case studies of previous projects,
+        and many other things. For our first post though, it's going to be all about
+        us!
+      </p>
+      <h2>So, who are we?</h2>
+      <p>
+        Neon Carrot is made up of Caleb (that's me!) and Carol - partners in
+        business and in <s>crime</s> life. The company was formed in 2020, amidst
+        a global pandemic that upended modern society and catapulted hidden social
+        inequities into view. During that wild time, we figured we could use our
+        skills in IT and project management to actually help people -
+        <em>real</em> people with <em>real</em> problems. And what started out as
+        a passion project that we contributed to on the side has now evolved into
+        our full-time vocation and top priority!
+      </p>
+      <div class="portrait-image center">
+        <div class="image-wrapper spv-6 bg-orange--light">
+          <Image
+            alt="Profile image of Caleb with a halftone filter applied"
+            class="image"
+            format="webp"
+            height={400}
+            loading="lazy"
+            src={caleb}
+            width={400}
+          />
+        </div>
+      </div>
+      <h4 class="center">Caleb Ellis</h4>
+      <p>
+        👋 Hi! I'm Caleb, a software engineer and IT consultant who has worked
+        in the tech space for more than 7 years.
+      </p>
+      <p>
+        I love the rapidly evolving nature of the tech industry, how it demands
+        an attitude of continuous learning and adaptation, and how much you can
+        accomplish in the world of software, especially in the AI era. I am also
+        a huge advocate of open-source technology, which I believe drives
+        innovation and empowers all - it's incredible the wealth of knowledge
+        and cutting-edge tech available to use even as an individual!
+      </p>
+      <p>
+        Having previously worked at Canonical, which has developed some of the
+        world's most influential open source projects, I wanted to take a step
+        further into using technology for positive change, and working with
+        not-for-profits directly allows for just that. It's one of those rare
+        things where the work doesn't feel like work! It just feels good. 😊
+      </p>
+      <div class="portrait-image center">
+        <div class="image-wrapper spv-6 bg-purple--light">
+          <Image
+            alt="Profile image of Carol with a halftone filter applied"
+            class="image"
+            format="webp"
+            height={400}
+            loading="lazy"
+            src={carol}
+            width={400}
+          />
+        </div>
+      </div>
+      <h4 class="center">Carolina Fonseca</h4>
+      <p>
+        👋 Hi there! I'm Carol, a passionate business analyst and IT consultant
+        with a knack for bridging the gap between business needs and
+        technological solutions.
+      </p>
+      <p>
+        With over a decade involved in the not-for-profit sector, my journey
+        started with a pivotal volunteering experience as a call centre operator
+        at the RSPCA. This is what sparked my commitment to contributing to
+        something greater than myself and fostering community connections.
+      </p>
+      <p>
+        Throughout my experience in the not-for-profit sector, I witnessed the
+        sector's hurdles firsthand, grappling with inefficient systems that
+        don't capture valuable information or measure impact. That's where my
+        passion for tech began - I saw its potential to empower staff, guide
+        decision-making and amplify impact.
+      </p>
+      <h2>But what can we actually do?</h2>
+      <p>We specialise in a range of IT consulting services, including:</p>
+      <ul>
+        <li>
+          Developing modern, engaging and accessible websites and applications;
+        </li>
+        <li>
+          Managing cloud services, with a focus on the Microsoft Azure suite;
+        </li>
+        <li>
+          Creating live data dashboards that transform complex data into
+          actionable insights;
+        </li>
+        <li>Developing and delivering tech training material;</li>
+        <li>
+          …and many other things. Trust me! IT consulting is a never-ending
+          labyrinth of ideas, solutions and software - what's important is
+          exploring problems or opportunities and finding the right technology
+          to tackle them. Sometimes the best move forward doesn't involve a
+          fancy tech solution at all! 🫣
+        </li>
+      </ul>
+      <p>
+        Having experience in the social sector ourselves, we understand some of
+        the unique needs and challenges of not-for-profits (code for “endlessly
+        having to do more with less”). Our approach is grounded in fully
+        understanding each client's needs and goals, and providing the absolute
+        best possible value, regardless of budget. We aim to provide solutions
+        that are not only innovative but also practical and sustainable,
+        ensuring not-for-profits achieve their goals effectively and
+        efficiently.
+      </p>
+      <h2>Now that you know a bit about us…</h2>
+      <p>
+        Reach out! Whether you represent a not-for-profit seeking innovative
+        tech solutions or you're an individual passionate about making a
+        positive impact through technology, we're here to collaborate, support,
+        and innovate together! Contact us at
+        <a href="mailto:info@neoncarrot.com.au">info@neoncarrot.com.au</a> or by
+        using the
+        <a href="/#contact">contact form on our homepage</a> to find out more about
+        how we can work together.
+      </p>
+      <p class="spv-0">Thanks for reading! 👋</p>
+    </Col>
+    <Col size={8} start={3} mdSize={8} mdStart={3} smSize={4} smStart={1}>
+      <div class="image-wrapper">
+        <Picture
+          alt=""
+          class="image"
+          formats={["webp"]}
+          height={480}
+          loading="lazy"
+          sizes="(min-width: 456px) 720px, 412px"
+          src={goodbyeFriends}
+          width={720}
+          widths={[720, 412]}
+        />
+      </div>
+    </Col>
+  </Grid>
+</Article>
+
+<style lang="scss">
+  @import "../../styles/variables.scss";
+
+  .image-wrapper {
+    border: 2px solid $color-black;
+    border-radius: 1rem;
+    margin: $spacing-12 0;
+    overflow: hidden;
+
+    &.spv-6 {
+      margin-bottom: $spacing-6;
+    }
+  }
+
+  .portrait-image {
+    display: flex;
+
+    > .image-wrapper {
+      max-width: 400px;
+    }
+  }
+
+  .image {
+    display: block;
+    height: 100%;
+    object-fit: cover;
+  }
+</style>

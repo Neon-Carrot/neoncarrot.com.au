@@ -41,7 +41,7 @@ const {
   <main class="main bg-purple--light">
     <Section class="hero-section no-pb" deep>
       <Grid>
-        <Col size={8} start={3} mdSize={8} mdStart={3} smSize={4} smStart={1}>
+        <Col size={10} start={2} mdSize={10} mdStart={2} smSize={4} smStart={1}>
           <div class="spv-8">
             <a class="display-inline-block link" href="/articles">
               <strong class="link-underline">« Back to all articles</strong>
@@ -59,22 +59,22 @@ const {
     </Section>
     <Section class="position-relative no-pb no-pt" shallow>
       <Grid>
-        <Col size={8} start={3} mdSize={8} mdStart={3} smSize={4} smStart={1}>
+        <Col size={10} start={2} mdSize={10} mdStart={2} smSize={4} smStart={1}>
           <div class="hero-image-wrapper">
             <PaintBackground
               class="paint-background"
               color={color}
-              width={720}
+              width={861}
             />
             <Picture
               alt={imgAlt}
               class="image"
               formats={["webp"]}
-              height={480}
-              sizes="(min-width: 456px) 720px, 412px"
+              height={574}
+              sizes="(min-width: 920px) 860px, (min-width: 456px) 720px, 412px"
               src={imgSrc}
-              width={720}
-              widths={[720, 412]}
+              width={860}
+              widths={[860, 720, 412]}
             />
           </div>
         </Col>
@@ -103,11 +103,17 @@ const {
       <Section class="no-pt" shallow>
         <Grid>
           {
-            otherArticles.map((article) => (
-              <Col size={4} mdSize={6} smSize={4}>
-                <BlogPreviewCard {...article} />
+            otherArticles.length > 0 ? (
+              otherArticles.map((article) => (
+                <Col size={4} mdSize={6} smSize={4}>
+                  <BlogPreviewCard {...article} />
+                </Col>
+              ))
+            ) : (
+              <Col size={12} mdSize={12} smSize={4}>
+                <p>Coming soon. Keep your eyes peeled.</p>
               </Col>
-            ))
+            )
           }
         </Grid>
       </Section>
@@ -132,9 +138,13 @@ const {
   .hero-image-wrapper {
     border: 2px solid $color-black;
     border-radius: 1rem;
-    margin: $spacing-12 0;
+    margin: $spacing-16 0;
     position: relative;
     overflow: hidden;
+
+    @media only screen and (max-width: $breakpoint-medium) {
+      margin: $spacing-12 0;
+    }
   }
 
   .paint-background {
@@ -151,39 +161,6 @@ const {
     height: 100%;
     mix-blend-mode: multiply;
     object-fit: cover;
-  }
-
-  .link {
-    color: $color-black !important;
-    text-decoration: none;
-
-    &:hover,
-    &:focus,
-    &:focus-visible {
-      .link-underline {
-        background-size: 100% 2px;
-      }
-    }
-
-    &:focus,
-    &:focus-visible {
-      border-color: $color-blue;
-      outline: 4px solid $color-blue;
-      outline-offset: 2px;
-    }
-  }
-
-  .link-underline {
-    display: inline;
-    background: linear-gradient(to left, $color-black, $color-black);
-    background-size: 0 2px;
-    background-position: 0 100%, 100% 100%;
-    background-repeat: no-repeat;
-    transition: background-size cubic-bezier(0, 0, 0.2, 1) 400ms;
-
-    &:hover {
-      background-size: 100% 2px;
-    }
   }
 
   .hero-divider {

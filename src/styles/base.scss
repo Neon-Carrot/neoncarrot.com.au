@@ -5,7 +5,7 @@
 %base-header {
   @extend %base-typography;
   font-family: "Raleway", sans-serif;
-  line-height: 1.2;
+  line-height: 1.4;
 }
 
 %base-input {
@@ -22,6 +22,18 @@
     border-color: $color-blue;
     outline: 2px solid $color-blue;
     outline-offset: 0 !important;
+  }
+}
+
+%base-list {
+  line-height: 1.5;
+  margin-top: 0;
+  margin-left: $spacing-4;
+  padding-left: $spacing-4;
+  margin-bottom: $spacing-6;
+
+  p + & {
+    margin-top: $spacing-2;
   }
 }
 
@@ -46,7 +58,8 @@ body {
 
 p {
   @extend %base-typography;
-  line-height: 1.3625;
+  line-height: 1.5;
+  margin-bottom: $spacing-4;
 }
 
 strong {
@@ -58,7 +71,12 @@ h1,
   @extend %base-header;
   font-size: 4.375rem;
   font-weight: 600;
+  line-height: 1.2;
   margin-bottom: 0.67em;
+
+  p + & {
+    margin-top: 1em;
+  }
 
   @media only screen and (max-width: $breakpoint-medium) {
     font-size: 2.875rem;
@@ -70,7 +88,12 @@ h2,
   @extend %base-header;
   font-size: 2.875rem;
   font-weight: 600;
+  line-height: 1.2;
   margin-bottom: 0.83em;
+
+  p + & {
+    margin-top: 1.2em;
+  }
 
   @media only screen and (max-width: $breakpoint-medium) {
     font-size: 2rem;
@@ -84,6 +107,10 @@ h3,
   font-weight: 500;
   margin-bottom: 1em;
 
+  p + & {
+    margin-top: 1.5em;
+  }
+
   @media only screen and (max-width: $breakpoint-medium) {
     font-size: 1.375rem;
   }
@@ -96,6 +123,10 @@ h4,
   font-weight: 500;
   margin-bottom: 1.25em;
 
+  p + & {
+    margin-top: 1.25em;
+  }
+
   @media only screen and (max-width: $breakpoint-medium) {
     font-size: 1.25rem;
   }
@@ -106,7 +137,11 @@ h5,
   @extend %base-header;
   font-size: 1.25rem;
   font-weight: 500;
-  margin-bottom: 1.5em;
+  margin-bottom: 1.25em;
+
+  p + & {
+    margin-top: 1.5em;
+  }
 
   @media only screen and (max-width: $breakpoint-medium) {
     font-size: 1.125rem;
@@ -119,6 +154,10 @@ h6,
   font-size: 1.125rem;
   font-weight: 500;
   margin-bottom: 1.5em;
+
+  p + & {
+    margin-top: 1.675em;
+  }
 
   @media only screen and (max-width: $breakpoint-medium) {
     font-size: 1rem;
@@ -171,5 +210,13 @@ img {
 }
 
 ol {
-  margin: 0;
+  @extend %base-list;
+}
+
+ul {
+  @extend %base-list;
+}
+
+li {
+  margin-bottom: $spacing-2;
 }
