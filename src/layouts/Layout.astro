@@ -49,6 +49,12 @@ const { alwaysShowNav, title } = Astro.props;
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <script>
+      // Only load goatcounter on production environment.
+      if (!window.location.host.includes("www.neoncarrot.com.au")) {
+        (window as any).goatcounter = { no_onload: true };
+      }
+    </script>
     <script
       data-goatcounter="https://neoncarrot.goatcounter.com/count"
       async
