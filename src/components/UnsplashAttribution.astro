@@ -1,0 +1,19 @@
+---
+export interface Props {
+  class?: string;
+  name?: string;
+  username: string;
+}
+
+const { class: className, name, username } = Astro.props;
+const HOSTNAME = "https://unsplash.com";
+const UTM_SOURCE = "utm_source=neoncarrot";
+const UTM_MEDIUM = "utm_medium=referral";
+---
+
+<figcaption class={className}>
+  Photo by
+  <a href={`${HOSTNAME}/@${username}?${UTM_SOURCE}&${UTM_MEDIUM}`}
+    >{name || username}</a
+  > on <a href={`${HOSTNAME}/?${UTM_SOURCE}&${UTM_MEDIUM}`}>Unsplash</a>
+</figcaption>

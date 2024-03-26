@@ -7,9 +7,10 @@ import Col from "../../components/Col.astro";
 import Grid from "../../components/Grid.astro";
 import Article from "../../layouts/Article.astro";
 
-import caleb from "../../images/caleb-profile.png";
-import carol from "../../images/carol-profile.png";
+import caleb from "../../images/caleb-colour.png";
+import carol from "../../images/carol-colour.png";
 import goodbyeFriends from "../../images/goodbye-friends.png";
+import UnsplashAttribution from "../../components/UnsplashAttribution.astro";
 ---
 
 <Article {...ARTICLE_DATA.welcomeToNeonCarrot} otherArticles={[]}>
@@ -49,7 +50,7 @@ import goodbyeFriends from "../../images/goodbye-friends.png";
       <div class="portrait-image center">
         <div class="image-wrapper spv-6 bg-orange--light">
           <Image
-            alt="Profile image of Caleb with a halftone filter applied"
+            alt="Profile image of Caleb"
             class="image"
             format="webp"
             height={400}
@@ -82,7 +83,7 @@ import goodbyeFriends from "../../images/goodbye-friends.png";
       <div class="portrait-image center">
         <div class="image-wrapper spv-6 bg-purple--light">
           <Image
-            alt="Profile image of Carol with a halftone filter applied"
+            alt="Profile image of Carol"
             class="image"
             format="webp"
             height={400}
@@ -158,17 +159,20 @@ import goodbyeFriends from "../../images/goodbye-friends.png";
     </Col>
     <Col size={8} start={3} mdSize={8} mdStart={3} smSize={4} smStart={1}>
       <div class="image-wrapper">
-        <Picture
-          alt="Small sign in conference room, reading 'Goodbye friends'. Credit Jan Tinneberg on unsplash.com"
-          class="image"
-          formats={["webp"]}
-          height={480}
-          loading="lazy"
-          sizes="(min-width: 456px) 720px, 412px"
-          src={goodbyeFriends}
-          width={720}
-          widths={[720, 412]}
-        />
+        <figure>
+          <Picture
+            alt="Small sign in conference room, reading 'Goodbye friends'. Photo by Jan Tinneberg on Unsplash"
+            class="image"
+            formats={["webp"]}
+            height={480}
+            loading="lazy"
+            sizes="(min-width: 456px) 720px, 412px"
+            src={goodbyeFriends}
+            width={720}
+            widths={[720, 412]}
+          />
+          <UnsplashAttribution name="Jan Tinneberg" username="craft_ear" />
+        </figure>
       </div>
     </Col>
   </Grid>
