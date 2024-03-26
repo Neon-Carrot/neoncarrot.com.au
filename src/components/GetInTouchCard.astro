@@ -1,0 +1,47 @@
+---
+import "../styles/index.scss";
+import { COLORS } from "../constants";
+import ButtonLink from "./ButtonLink.astro";
+import Card from "./Card.astro";
+import Col from "./Col.astro";
+import Grid from "./Grid.astro";
+import Section from "./Section.astro";
+---
+
+<Section class="bg-yellow--desat">
+  <Grid extended>
+    <Col size={12}>
+      <Card class="get-in-touch-card" color={COLORS.orange}>
+        <Grid>
+          <Col size={6} mdSize={5} smSize={4}>
+            <h1>Get in touch</h1>
+          </Col>
+          <Col size={6} mdSize={7} smSize={4}>
+            <div class="spv-6 hide--small"></div>
+            <h2 class="heading-4">
+              Have a question or idea for an article?<br />Let us know!
+            </h2>
+            <ButtonLink class="spv-8" color="red" href="/#contact">
+              Contact us
+            </ButtonLink>
+          </Col>
+        </Grid>
+      </Card>
+    </Col>
+  </Grid>
+</Section>
+
+<style lang="scss">
+  @import "../styles/variables.scss";
+  .get-in-touch-card {
+    padding: $spacing-12 $spacing-8 $spacing-8 $spacing-8;
+
+    @media only screen and (max-width: $breakpoint-large) {
+      padding: $spacing-8 $spacing-6 $spacing-6 $spacing-6;
+    }
+
+    @media only screen and (max-width: $breakpoint-medium) {
+      padding-bottom: $spacing-4;
+    }
+  }
+</style>

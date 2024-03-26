@@ -1,7 +1,6 @@
 ---
 import Footer from "../components/Footer.astro";
 import NavBar from "../components/NavBar.astro";
-import ogImage from "../images/og-image.png";
 
 export interface Props {
   alwaysShowNav?: boolean;
@@ -50,6 +49,12 @@ const { alwaysShowNav, title } = Astro.props;
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <script is:inline>
+      // Only load goatcounter on production environment.
+      if (!window.location.host.includes("www.neoncarrot.com.au")) {
+        window.goatcounter = { no_onload: true };
+      }
+    </script>
     <script
       data-goatcounter="https://neoncarrot.goatcounter.com/count"
       async

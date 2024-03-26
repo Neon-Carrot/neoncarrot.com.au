@@ -1,0 +1,130 @@
+---
+import { Picture } from "@astrojs/image/components";
+
+import type { ArticleData } from "../articleData";
+import Chip from "./Chip.astro";
+
+export type Props = ArticleData & {
+  class?: string;
+  lazyLoad?: boolean;
+};
+
+const {
+  author,
+  class: className,
+  color,
+  date,
+  href,
+  imgAlt,
+  imgSrc,
+  lazyLoad = false,
+  summary,
+  title,
+  topic,
+}: Props = Astro.props;
+---
+
+<div class:list={["wrapper", className]}>
+  <div class="card">
+    <Chip class="chip" topic={topic} />
+    <a href={href}>
+      <div class="image-wrapper" style={{ backgroundColor: color }}>
+        <Picture
+          alt={imgAlt}
+          class="image"
+          formats={["webp"]}
+          loading={lazyLoad ? "lazy" : "eager"}
+          sizes="(min-width: 769px) 512px, (min-width: 456px) 768px, 412px"
+          src={imgSrc}
+          width={768}
+          widths={[512, 768, 412]}
+        />
+      </div>
+    </a>
+    <div class="content">
+      <a class="link display-inline-block spv-2" href={href}>
+        <h3 class="link-underline heading-4">
+          {title}
+        </h3>
+      </a>
+      <p>
+        <em>{author}, {date}</em>
+      </p>
+      <div class="summary">
+        <p>
+          {summary}
+        </p>
+      </div>
+      <div class="keep-reading">
+        <a class="link display-inline-block" href={href}>
+          <span class="link-underline">Keep reading »</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style lang="scss">
+  @import "../styles/variables.scss";
+
+  .wrapper {
+    height: 100%;
+  }
+
+  .card {
+    background-color: $color-white;
+    border-radius: 1rem;
+    border: 2px solid $color-black;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .chip {
+    left: 20px;
+    position: absolute;
+    top: 12px;
+    z-index: 10;
+  }
+
+  .image-wrapper {
+    height: 335px;
+
+    @media only screen and (max-width: $breakpoint-small) {
+      height: 250px;
+    }
+  }
+
+  .image {
+    display: block;
+    filter: brightness(1.5);
+    height: 100%;
+    mix-blend-mode: multiply;
+    object-fit: cover;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 1rem 1.5rem 1.25rem 1.5rem;
+
+    @media only screen and (max-width: $breakpoint-medium) {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+
+  .summary {
+    flex-grow: 1;
+  }
+
+  .keep-reading {
+    display: flex;
+    font-weight: 600;
+    justify-content: flex-end;
+    margin-top: $spacing-2;
+  }
+</style>

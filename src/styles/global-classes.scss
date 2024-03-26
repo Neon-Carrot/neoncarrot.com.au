@@ -44,8 +44,16 @@
   background-color: $color-purple-desat;
 }
 
+.bg-purple--mid {
+  background-color: $color-purple-mid;
+}
+
 .bg-purple--light {
   background-color: $color-purple-light;
+}
+
+.bg-white {
+  background-color: $color-white;
 }
 
 .internal-anchor {
@@ -61,7 +69,7 @@ a.button {
   display: inline-block;
   font-size: 0.875rem;
   font-weight: 700;
-  padding: $spacing-3 $spacing-4;
+  padding: 0.675rem $spacing-4;
   text-decoration: none;
 
   &:hover,
@@ -95,6 +103,43 @@ a.button {
       background-color: #e65800;
     }
   }
+}
+
+.link {
+  color: $color-black !important;
+  text-decoration: none;
+
+  &:hover,
+  &:focus,
+  &:focus-visible {
+    .link-underline {
+      background-size: 100% 2px;
+    }
+  }
+
+  &:focus,
+  &:focus-visible {
+    border-color: $color-blue;
+    outline: 4px solid $color-blue;
+    outline-offset: 2px;
+  }
+}
+
+.link-underline {
+  display: inline;
+  background: linear-gradient(to left, $color-black, $color-black);
+  background-size: 0 2px;
+  background-position: 0 100%, 100% 100%;
+  background-repeat: no-repeat;
+  transition: background-size cubic-bezier(0, 0, 0.2, 1) 400ms;
+
+  &:hover {
+    background-size: 100% 2px;
+  }
+}
+
+.display-inline-block {
+  display: inline-block;
 }
 
 .display-flex {
@@ -144,6 +189,10 @@ a.button {
 
 .no-pt {
   padding-top: 0 !important;
+}
+
+.no-underline {
+  text-decoration: none;
 }
 
 .spv-px {

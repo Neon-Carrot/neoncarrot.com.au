@@ -1,0 +1,182 @@
+---
+import { Picture } from "@astrojs/image/components";
+
+import "../styles/index.scss";
+import type { ArticleData } from "../articleData";
+import Chip from "../components/Chip.astro";
+import Col from "../components/Col.astro";
+import GetInTouchCard from "../components/GetInTouchCard.astro";
+import Grid from "../components/Grid.astro";
+import HalftoneDivider from "../components/HalftoneDivider.astro";
+import Layout from "./Layout.astro";
+import Section from "../components/Section.astro";
+import BlogPreviewCard from "../components/BlogPreviewCard.astro";
+import PaintBackground from "../components/PaintBackground.astro";
+
+export type Props = ArticleData & { otherArticles: ArticleData[] };
+
+export interface OtherArticle {
+  author: string;
+  color: string;
+  date: string;
+  href: string;
+  imgAlt: string;
+  imgSrc: ImageMetadata;
+  title: string;
+}
+
+const {
+  author,
+  color,
+  date,
+  imgAlt,
+  imgSrc,
+  otherArticles,
+  title,
+  topic,
+}: Props = Astro.props;
+---
+
+<Layout alwaysShowNav title={`${title} | Neon Carrot`}>
+  <main class="main bg-purple--light">
+    <Section class="hero-section no-pb" deep>
+      <Grid>
+        <Col size={10} start={2} mdSize={10} mdStart={2} smSize={4} smStart={1}>
+          <div class="spv-8">
+            <a class="display-inline-block link" href="/articles">
+              <strong class="link-underline">« Back to all articles</strong>
+            </a>
+          </div>
+          <Chip class="spv-4" topic={topic} />
+          <h1 class="heading-2 spv-4">
+            {title}
+          </h1>
+          <div>
+            <em>{author}, {date}</em>
+          </div>
+        </Col>
+      </Grid>
+    </Section>
+    <Section class="position-relative no-pb no-pt" shallow>
+      <Grid>
+        <Col size={10} start={2} mdSize={10} mdStart={2} smSize={4} smStart={1}>
+          <div class="hero-image-wrapper">
+            <PaintBackground
+              class="paint-background"
+              color={color}
+              width={861}
+            />
+            <Picture
+              alt={imgAlt}
+              class="image"
+              formats={["webp"]}
+              height={574}
+              loading="eager"
+              sizes="(min-width: 920px) 860px, (min-width: 456px) 720px, 412px"
+              src={imgSrc}
+              width={860}
+              widths={[860, 720, 412]}
+            />
+          </div>
+        </Col>
+      </Grid>
+      <HalftoneDivider class="hero-divider" color="white" />
+      <div class="divider-filler"></div>
+    </Section>
+    <Section class="bg-white no-pt no-pb">
+      <slot />
+      <Grid>
+        <Col size={8} start={3} mdSize={8} mdStart={3} smSize={4} smStart={1}>
+          <a class="display-inline-block link" href="/articles">
+            <strong class="link-underline">« Back to all articles</strong>
+          </a>
+        </Col>
+      </Grid>
+      <Section class="no-pt" shallow />
+      <HalftoneDivider color="purpleLight" />
+    </Section>
+    <Section class="bg-purple--light no-pb">
+      <Grid>
+        <Col size={12} mdSize={12} smSize={4}>
+          <h2>Other articles you might like</h2>
+        </Col>
+      </Grid>
+      <Section class="no-pt" shallow>
+        <Grid>
+          {
+            otherArticles.length > 0 ? (
+              otherArticles.map((article) => (
+                <Col size={4} mdSize={6} smSize={4}>
+                  <BlogPreviewCard {...article} />
+                </Col>
+              ))
+            ) : (
+              <Col size={12} mdSize={12} smSize={4}>
+                <p>Coming soon. Keep your eyes peeled.</p>
+              </Col>
+            )
+          }
+        </Grid>
+      </Section>
+      <HalftoneDivider color="yellow" />
+    </Section>
+    <GetInTouchCard />
+  </main>
+</Layout>
+
+<style lang="scss">
+  @import "../styles/variables.scss";
+
+  .main {
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-section {
+    padding-top: $spacing-32 !important;
+  }
+
+  .hero-image-wrapper {
+    border: 2px solid $color-black;
+    border-radius: 1rem;
+    margin: $spacing-16 0;
+    position: relative;
+    overflow: hidden;
+
+    @media only screen and (max-width: $breakpoint-medium) {
+      margin: $spacing-12 0;
+    }
+  }
+
+  .paint-background {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  .image {
+    display: block;
+    filter: brightness(1.5);
+    height: 100%;
+    mix-blend-mode: multiply;
+    object-fit: cover;
+  }
+
+  .hero-divider {
+    position: absolute;
+    width: 100%;
+    top: calc(50% - 103px);
+    z-index: -10;
+  }
+
+  .divider-filler {
+    background-color: $color-white;
+    position: absolute;
+    width: 100%;
+    height: calc(50% - 103px);
+    top: calc(50% + 103px);
+    z-index: -10;
+  }
+</style>

@@ -1,0 +1,26 @@
+---
+import type { ARTICLE_TOPICS } from "../constants";
+
+export interface Props {
+  class?: string;
+  topic: (typeof ARTICLE_TOPICS)[keyof typeof ARTICLE_TOPICS];
+}
+
+const { class: className, topic } = Astro.props;
+---
+
+<div class:list={["chip", className]}>{topic}</div>
+
+<style lang="scss">
+  @import "../styles/variables.scss";
+
+  .chip {
+    background-color: $color-black;
+    border-radius: 16px;
+    color: $color-white;
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 4px 14px;
+  }
+</style>

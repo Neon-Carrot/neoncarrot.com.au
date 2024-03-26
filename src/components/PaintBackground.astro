@@ -1,0 +1,58 @@
+---
+import { COLORS } from "../constants";
+
+const { class: className, color, height, width } = Astro.props;
+---
+
+<svg
+  class:list={["paint-background", className]}
+  width={width}
+  height={height}
+  viewBox="0 0 698 466"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <rect x="0" y="0" width="698" height="466" fill={COLORS.white}></rect>
+  <circle cx="0.5" cy="0.5" r="0.5" fill={color}>
+    <animate
+      attributeName="r"
+      calcMode="spline"
+      id="animate"
+      fill="freeze"
+      values="0.5; 850"
+      keySplines="0.4 0.1 0.2 1"
+      dur="1.25s"
+      begin="indefinite"
+    >
+    </animate>
+  </circle>
+</svg>
+<script>
+  const animateEl = document.querySelector(
+    "#animate"
+  ) as SVGAnimateElement | null;
+
+  if (animateEl) {
+    let scrolled = false;
+    const throttle = (fn: Function, delay: number) => {
+      let time = Date.now();
+
+      return () => {
+        if (time + delay - Date.now() <= 0) {
+          fn();
+          time = Date.now();
+        }
+      };
+    };
+
+    window.addEventListener(
+      "scroll",
+      throttle(() => {
+        if (!scrolled) {
+          scrolled = true;
+          animateEl.beginElement();
+        }
+      }, 300)
+    );
+  }
+</script>
