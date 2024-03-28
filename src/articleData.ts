@@ -22,7 +22,7 @@ export const ARTICLE_DATA = {
     href: "/articles/welcome-to-neon-carrot",
     imgAlt: "A sign in front of a house that says 'Welcome! Please come in'",
     imgSrc: welcomeSign,
-    ogImage: "/images/og-welcome-sign.png",
+    ogImage: "/images/og-welcome-to-neon-carrot.png",
     title: "Welcome to Neon Carrot!",
     topic: ARTICLE_TOPICS.misc,
     summary:
