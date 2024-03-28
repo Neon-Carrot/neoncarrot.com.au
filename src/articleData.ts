@@ -8,6 +8,7 @@ export type ArticleData = {
   href: string;
   imgAlt: string;
   imgSrc: ImageMetadata;
+  ogImage?: string;
   title: string;
   topic: (typeof ARTICLE_TOPICS)[keyof typeof ARTICLE_TOPICS];
   summary: string;
@@ -21,6 +22,7 @@ export const ARTICLE_DATA = {
     href: "/articles/welcome-to-neon-carrot",
     imgAlt: "A sign in front of a house that says 'Welcome! Please come in'",
     imgSrc: welcomeSign,
+    ogImage: "/images/og-welcome-to-neon-carrot.png",
     title: "Welcome to Neon Carrot!",
     topic: ARTICLE_TOPICS.misc,
     summary:
