@@ -1,18 +1,80 @@
 ---
 import Col from "./Col.astro";
 import Grid from "./Grid.astro";
-import Logo from "./LogoWhite.astro";
+import LogoWhite from "./LogoWhite.astro";
 ---
 
 <footer class="footer">
   <Grid>
     <Col size={12}>
       <div class="footer-contents">
-        <a class="left-container" href="/#top" aria-label="Back to top">
-          <Logo height={24} />
-        </a>
-        <div class="right-container">
+        <div class="logo">
+          <a class="svg-link" href="/#top" aria-label="Back to top">
+            <LogoWhite height={24} />
+          </a>
+        </div>
+        <div class="social">
+          <a
+            class="svg-link"
+            href="https://www.facebook.com/neoncarrotau"
+            aria-label="Neon Carrot Facebook"
+          >
+            <svg
+              width="25"
+              height="24"
+              viewBox="0 0 25 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g clip-path="url(#clip0_4759_612)">
+                <path
+                  d="M12.4277 0C5.80037 0 0.427734 5.37264 0.427734 12C0.427734 17.6275 4.30229 22.3498 9.52901 23.6467V15.6672H7.05461V12H9.52901V10.4198C9.52901 6.33552 11.3775 4.4424 15.3874 4.4424C16.1477 4.4424 17.4596 4.59168 17.9962 4.74048V8.06448C17.713 8.03472 17.221 8.01984 16.61 8.01984C14.6425 8.01984 13.8821 8.76528 13.8821 10.703V12H17.8018L17.1284 15.6672H13.8821V23.9122C19.8241 23.1946 24.4282 18.1354 24.4282 12C24.4277 5.37264 19.0551 0 12.4277 0Z"
+                ></path>
+              </g>
+              <defs>
+                <clipPath id="clip0_4759_612">
+                  <rect
+                    width="24"
+                    height="24"
+                    fill="white"
+                    transform="translate(0.427734)"></rect>
+                </clipPath>
+              </defs>
+            </svg>
+          </a>
+          <a
+            class="svg-link"
+            href="https://www.linkedin.com/company/neoncarrot"
+            aria-label="Neon Carrot LinkedIn"
+          >
+            <svg
+              width="25"
+              height="24"
+              viewBox="0 0 25 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g clip-path="url(#clip0_4759_610)">
+                <path
+                  d="M22.6507 0H2.19912C1.21943 0 0.427246 0.773438 0.427246 1.72969V22.2656C0.427246 23.2219 1.21943 24 2.19912 24H22.6507C23.6304 24 24.4272 23.2219 24.4272 22.2703V1.72969C24.4272 0.773438 23.6304 0 22.6507 0ZM7.54756 20.4516H3.98506V8.99531H7.54756V20.4516ZM5.76631 7.43438C4.62256 7.43438 3.69912 6.51094 3.69912 5.37187C3.69912 4.23281 4.62256 3.30937 5.76631 3.30937C6.90537 3.30937 7.82881 4.23281 7.82881 5.37187C7.82881 6.50625 6.90537 7.43438 5.76631 7.43438ZM20.8788 20.4516H17.321V14.8828C17.321 13.5563 17.2976 11.8453 15.4694 11.8453C13.6179 11.8453 13.3366 13.2938 13.3366 14.7891V20.4516H9.7835V8.99531H13.196V10.5609H13.2429C13.7163 9.66094 14.8788 8.70938 16.6085 8.70938C20.2132 8.70938 20.8788 11.0813 20.8788 14.1656V20.4516V20.4516Z"
+                ></path>
+              </g>
+              <defs>
+                <clipPath id="clip0_4759_610">
+                  <rect
+                    width="24"
+                    height="24"
+                    fill="white"
+                    transform="translate(0.427246)"></rect>
+                </clipPath>
+              </defs>
+            </svg>
+          </a>
+        </div>
+        <div class="links">
           <a class="footer-link" href="/privacy">Privacy policy</a>
+        </div>
+        <div class="copyright">
           <span
             >&copy; {new Date().getFullYear()} Neon Carrot. All rights reserved.</span
           >
@@ -28,35 +90,77 @@ import Logo from "./LogoWhite.astro";
   .footer {
     background-color: $color-black;
     color: $color-white;
-    padding: $spacing-12 0;
+    padding: $spacing-8 0;
   }
 
   .footer-contents {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
+    display: grid;
+    grid-template-areas:
+      "logo social"
+      "copyright links";
+    grid-template-columns: 1fr max-content;
+    row-gap: $spacing-6;
 
-  .left-container {
-    display: inline-flex;
-    padding: $spacing-3 $spacing-8 $spacing-3 0;
-  }
-
-  .right-container {
-    display: flex;
-    flex-wrap: wrap;
-
-    > *:not(:last-child) {
-      margin-right: $spacing-8;
+    @media only screen and (max-width: $breakpoint-medium) {
+      grid-template-areas:
+        "logo"
+        "social"
+        "links"
+        "copyright";
     }
+  }
 
-    > * {
-      padding: $spacing-4 0;
+  .logo {
+    grid-area: logo;
+  }
+
+  .social {
+    grid-area: social;
+    text-align: right;
+
+    @media only screen and (max-width: $breakpoint-medium) {
+      text-align: left;
+    }
+  }
+
+  .copyright {
+    grid-area: copyright;
+  }
+
+  .links {
+    grid-area: links;
+    text-align: right;
+
+    @media only screen and (max-width: $breakpoint-medium) {
+      text-align: left;
     }
   }
 
   .footer-link {
-    color: $color-white !important;
+    color: $color-white;
+
+    &:visited {
+      color: $color-white;
+    }
+
+    &:hover {
+      color: $color-grey-60;
+    }
+  }
+
+  .svg-link {
+    display: inline-block;
+
+    svg {
+      fill: $color-white;
+    }
+
+    &:hover svg {
+      fill: $color-grey-80;
+    }
+
+    &:not(:first-of-type) {
+      margin-left: $spacing-4;
+    }
   }
 </style>
