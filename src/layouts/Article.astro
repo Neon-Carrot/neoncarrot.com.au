@@ -12,18 +12,9 @@ import Layout from "./Layout.astro";
 import Section from "../components/Section.astro";
 import BlogPreviewCard from "../components/BlogPreviewCard.astro";
 import PaintBackground from "../components/PaintBackground.astro";
+import { truncateString } from "../utils";
 
 export type Props = ArticleData & { otherArticles: ArticleData[] };
-
-export interface OtherArticle {
-  author: string;
-  color: string;
-  date: string;
-  href: string;
-  imgAlt: string;
-  imgSrc: ImageMetadata;
-  title: string;
-}
 
 const {
   author,
@@ -31,13 +22,20 @@ const {
   date,
   imgAlt,
   imgSrc,
+  ogImage,
   otherArticles,
+  summary,
   title,
   topic,
 }: Props = Astro.props;
 ---
 
-<Layout alwaysShowNav title={`${title} | Neon Carrot`}>
+<Layout
+  alwaysShowNav
+  description={truncateString(summary, 300)}
+  ogImage={ogImage}
+  title={`${title} | Neon Carrot`}
+>
   <main class="main bg-purple--light">
     <Section class="hero-section no-pb" deep>
       <Grid>
