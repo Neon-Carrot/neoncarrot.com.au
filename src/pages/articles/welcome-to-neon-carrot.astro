@@ -13,7 +13,10 @@ import goodbyeFriends from "../../images/goodbye-friends.png";
 import UnsplashAttribution from "../../components/UnsplashAttribution.astro";
 ---
 
-<Article {...ARTICLE_DATA.welcomeToNeonCarrot} otherArticles={[]}>
+<Article
+  {...ARTICLE_DATA.welcomeToNeonCarrot}
+  otherArticles={[ARTICLE_DATA.freeAndDiscountedSoftware]}
+>
   <Grid>
     <Col size={8} start={3} mdSize={8} mdStart={3} smSize={4} smStart={1}>
       <p>

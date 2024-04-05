@@ -1,0 +1,378 @@
+---
+import { Image, Picture } from "@astrojs/image/components";
+
+import "../../styles/index.scss";
+import { ARTICLE_DATA } from "../../articleData";
+import Col from "../../components/Col.astro";
+import Grid from "../../components/Grid.astro";
+import Article from "../../layouts/Article.astro";
+
+import adobeExpress from "../../images/adobe-express.webp";
+import atlassian from "../../images/atlassian.png";
+import canva from "../../images/canva.webp";
+import googleWorkspace from "../../images/google-workspace.jpg";
+import microsoftAzure from "../../images/azure.webp";
+import microsoft365 from "../../images/microsoft-365.jpg";
+---
+
+<Article
+  {...ARTICLE_DATA.freeAndDiscountedSoftware}
+  otherArticles={[ARTICLE_DATA.welcomeToNeonCarrot]}
+>
+  <Grid>
+    <Col size={8} start={3} mdSize={8} mdStart={3} smSize={4} smStart={1}>
+      <p>
+        Hello, friends! 👋 At Neon Carrot, we're all about empowering the
+        not-for-profit sector with digital technology, so let's dive into the
+        world of software offerings that are either free or discounted for
+        not-for-profits!
+      </p>
+      <h2>General process for accessing the software</h2>
+      <p>
+        Getting your hands on these resources is simpler than you might think,
+        though keep in mind it may take a bit of time for your organisation's
+        eligibility to be confirmed.
+      </p>
+      <p>
+        Start by visiting the “not-for-profit”/”nonprofit” section of the
+        software provider's website - a link has been included for each offering
+        mentioned here. You'll need to pass an eligibility test, which usually
+        constitutes filling out an online form with details about the operation
+        of your not-for-profit. Common requirements for eligibility are that
+        your organisation:
+      </p>
+      <ul>
+        <li>
+          Is recognised as a not-for-profit organisation in the country in which
+          you are registered. In Australia this would require registering with
+          the <a href="https://www.acnc.gov.au/"
+            >ACNC (Australian Charities and Not-for-profits Commission)</a
+          >;
+        </li>
+        <li>
+          Does not discriminate against, marginalise or exclude any person or
+          group on the basis of personal characteristics or attributes;
+        </li>
+        <li>
+          Does not advocate for or against any political party, candidate, or
+          campaign.
+        </li>
+      </ul>
+      <p>
+        Other eligibility requirements will vary between software providers, so
+        be sure to double-check them before you apply.
+      </p>
+      <p>
+        Once your application is approved, you should be credited with whatever
+        discount was on offer! Easy as that!
+      </p>
+      <h2>Our recommendations</h2>
+      <p>
+        Without further ado, here is a list of software offerings that we think
+        could really help elevate your impact:
+      </p>
+      <div class="image-wrapper">
+        <Picture
+          alt="Microsoft 365 logo with their base product offerings"
+          class="image"
+          formats={["webp"]}
+          height={450}
+          loading="lazy"
+          sizes="(min-width: 456px) 673px, 412px"
+          src={microsoft365}
+          width={673}
+          widths={[673, 412]}
+        />
+      </div>
+      <h3 class="heading-4">
+        <a href="https://www.microsoft.com/en-au/microsoft-365/nonprofit"
+          >Microsoft 365</a
+        >
+      </h3>
+      <p>
+        This one's a no-brainer, and you might already be part of the <a
+          href="https://www.infoxchange.org/sites/default/files/infoxchanges_2023_digital_technology_in_the_not-for-profit_sector_report.pdf"
+          >46% of Australian/New Zealand not-for-profits</a
+        > already using Microsoft 365 for your file storage, collaboration and productivity
+        needs - let's just hope you're not paying full-price!
+      </p>
+      <p>
+        Microsoft 365 is a subscription service that includes familiar apps like
+        Word, PowerPoint, Excel and Outlook, as well as the collaboration
+        platform Teams and cloud storage with OneDrive. Their Business Basic
+        tier is very generous, which includes the apps I just mentioned, 1TB of
+        cloud storage and Teams for up to 300 attendees, all for the price of
+        <em>literally nothing</em> if you're an eligible not-for-profit. They offer
+        discounts on higher-tier plans too, but honestly you can go pretty far just
+        with the free offering.
+      </p>
+      <p>
+        Find out more about <a
+          href="https://www.microsoft.com/en-au/microsoft-365/nonprofit"
+          >Microsoft 365 for not-for-profits</a
+        > or <a
+          href="https://www.microsoft.com/en-au/microsoft-365/enterprise/nonprofit-plans-and-pricing"
+          >view their pricing page</a
+        >.
+      </p>
+      <div class="image-wrapper">
+        <Picture
+          alt="Google Workspace logo with their base product offerings"
+          class="image"
+          formats={["webp"]}
+          height={281}
+          loading="lazy"
+          sizes="(min-width: 456px) 673px, 412px"
+          src={googleWorkspace}
+          width={673}
+          widths={[673, 412]}
+        />
+      </div>
+      <h3 class="heading-4">
+        <a href="https://www.google.com/nonprofits/offerings/workspace/"
+          >Google Workspace</a
+        >
+      </h3>
+      <p>
+        If Microsoft isn't your jam, Google also has a similar offering with
+        their Workspace suite of tools, which includes Gmail, Calendar, Meet,
+        Docs, Sheets, Slides, Forms and a couple other apps (that no one uses
+        😬). Google also offers a free-tier for not-or-profits which includes
+        100-participant video meetings on Meet and 100TB of shared data in
+        Drive. Like 365, there are huge discounts on higher-tier plans if the
+        free-tier doesn't get you what you need.
+      </p>
+      <p>
+        We ourselves at Neon Carrot use Google Workspace, partially due to
+        inertia from already using their tools in our earlier professional
+        lives, but also because their user interfaces are just that little bit
+        slicker than Microsoft's (in our opinion). Nevertheless, you can't go
+        wrong with either option.
+      </p>
+      <p>
+        Find out more about <a
+          href="https://www.google.com/nonprofits/offerings/workspace/"
+          >Google Workspace for not-for-profits</a
+        >.
+      </p>
+      <div class="image-wrapper">
+        <Picture
+          alt="Microsoft Azure logo"
+          class="image"
+          formats={["webp"]}
+          height={367}
+          loading="lazy"
+          sizes="(min-width: 456px) 673px, 412px"
+          src={microsoftAzure}
+          width={673}
+          widths={[673, 412]}
+        />
+      </div>
+      <h3 class="heading-4">
+        <a href="https://www.microsoft.com/en-us/nonprofits/azure"
+          >Microsoft Azure</a
+        >
+      </h3>
+      <p>
+        I swear we're not shilling for Microsoft! It's just hard to argue with
+        their efforts to enable not-for-profit missions.
+      </p>
+      <p>
+        Azure is Microsoft's platform for cloud services, which includes tools
+        for hosting websites, analysing data and using AI for automation, among
+        a ridiculous number of other services. Currently, Microsoft offers
+        eligible not-for-profits a yearly recurring USD$2000 grant as well as
+        free/discounted rates on individual cloud services. It can be difficult
+        to determine what <em>exactly</em> USD$2000 gets you (cloud pricing is notoriously
+        complicated), but in most situations it sure beats managing your own IT infrastructure.
+      </p>
+      <p>
+        In the interest of fairness, <a
+          href="https://aws.amazon.com/government-education/nonprofits/"
+          >Amazon Web Services (AWS) also provides USD$1000 credit for eligible
+          not-for-profits</a
+        >, but I personally find Amazon's design tendency toward “information
+        density” and Amazon-specific acronyms to be a bit unintuitive and
+        intimidating, and issues with pricing ambiguity are even more
+        pronounced. That's not to say Azure is a work of pure clarity, but in my
+        experience it's a bit more user-friendly.
+      </p>
+      <p>
+        Find out more about <a
+          href="https://www.microsoft.com/en-us/nonprofits/azure"
+          >Microsoft Azure for not-for-profits</a
+        >.
+      </p>
+      <div class="image-wrapper">
+        <Picture
+          alt="Canva logo with a showcase of some of their templates"
+          class="image"
+          formats={["webp"]}
+          height={353}
+          loading="lazy"
+          sizes="(min-width: 456px) 673px, 412px"
+          src={canva}
+          width={673}
+          widths={[673, 412]}
+        />
+      </div>
+      <h3 class="heading-4">
+        <a href="https://www.canva.com/canva-for-nonprofits/">Canva</a>
+      </h3>
+      <p>
+        Canva is an online design and publishing tool that enables users to
+        create a variety of visual content, including graphic design,
+        presentations, posters and documents. It's aimed towards individuals who
+        want to create visually appealing content but who may not have advanced
+        design skills, owing to its frankly <em>ludicrous</em> amount of templates
+        on offer.
+      </p>
+      <p>
+        Canva's free tier is already insanely good value, but eligible
+        not-for-profits can get access to their “Canva for Teams” tier for free
+        too. This includes premium templates, 100+ million stock photos, videos,
+        and graphics, generative AI features and 1TB of cloud storage, among
+        many other things. Unless you're doing some really custom design work,
+        Canva's premium features will be more than enough to cover your
+        not-for-profit's online presence, marketing and fundraising design
+        needs.
+      </p>
+      <p>
+        Find out more about <a
+          href="https://www.canva.com/canva-for-nonprofits/"
+          >Canva for not-for-profits</a
+        >.
+      </p>
+      <div class="image-wrapper">
+        <Picture
+          alt="Adobe Express app homepage"
+          class="image"
+          formats={["webp"]}
+          height={379}
+          loading="lazy"
+          sizes="(min-width: 456px) 673px, 412px"
+          src={adobeExpress}
+          width={673}
+          widths={[673, 412]}
+        />
+      </div>
+      <h3 class="heading-4">
+        <a href="https://www.adobe.com/express/nonprofits">Adobe Express</a>
+      </h3>
+      <p>
+        Like Canva, Adobe Express is a web-based application for graphic design,
+        video editing and creating web pages, whose main draw is its
+        user-friendliness.
+      </p>
+      <p>
+        Eligible not-for-profits can receive the Adobe Express Premium plan for
+        free 🎉, which includes all premium templates and design assets, over
+        20,000 licensed fonts from the Adobe Fonts library, over 160 million
+        Adobe Stock collection photos, and 100GB of cloud storage.
+      </p>
+      <p>
+        I would say that for the average non-designer, Canva is the more
+        feature-rich and user-friendly of the two, but if your organisation is
+        already in the Adobe ecosystem, Express is a great resource. And how can
+        you say no to “free”? I should also mention that Adobe offers <a
+          href="https://www.connectingup.org/partner/adobe-charity-licensing"
+          >discounts for not-for-profits on its full Creative Cloud suite</a
+        >, which includes much more sophisticated and heavy-duty design software
+        than what you get with either Canva or Express. Something to keep in
+        mind for when your not-for-profit's design needs grow!
+      </p>
+      <p>
+        Find out more about <a href="https://www.adobe.com/express/nonprofits"
+          >Adobe Express for not-for-profits</a
+        >.
+      </p>
+      <div class="image-wrapper">
+        <Picture
+          alt="Atlassian logo"
+          class="image"
+          formats={["webp"]}
+          height={328}
+          loading="lazy"
+          sizes="(min-width: 456px) 673px, 412px"
+          src={atlassian}
+          width={673}
+          widths={[673, 412]}
+        />
+      </div>
+      <h3 class="heading-4">
+        <a href="https://www.atlassian.com/teams/nonprofits">Atlassian</a>
+      </h3>
+      <p>
+        Atlassian's suite of project management and productivity tools are
+        ubiquitous and well-regarded in the software development world. Whether
+        your team follows Agile, Scrum, Kanban, or some sort of glued-together
+        Franken-methodology that works for you (this is how it always ends up),
+        Atlassian's tools can fit your project management needs.
+      </p>
+      <p>
+        Eligible not-for-profit organisations are offered 75% off Atlassian's
+        teamwork tools, including Jira, Trello, Confluence and Atlas. Whether
+        you're driving fundraising campaigns, delivering programs, managing
+        volunteers, or communicating your impact, Atlassian's tools help you
+        stay organised.
+      </p>
+      <p>
+        We at Neon Carrot use Trello extensively, to track general business
+        tasks as well as when working with clients to deliver projects. For us,
+        it offers just the right amount of ease-of-use and flexibility to be
+        effective without being overwhelming.
+      </p>
+      <p>
+        Find out more about <a href="https://www.atlassian.com/teams/nonprofits"
+          >Atlassian for not-for-profits</a
+        >.
+      </p>
+      <h2>Explore even more free and discounted resources</h2>
+      <p>
+        There are many, <em>many</em> more resources available for your organisation
+        to use, but these are ones we think could be really transformative for your
+        organisation. For a much more extensive list of free and discounted products
+        available for not-for-profits, head over to <a
+          href="https://www.connectingup.org/products"
+          >Connecting Up's product list</a
+        >. The Connecting Up program supports Australian and New Zealand
+        not-for-profits by providing discounted and donated tech products
+        (including both software and hardware), online learning, and resources
+        specifically tailored for the not-for-profit sector.
+      </p>
+      <p>
+        Stay tuned for <a href="/articles">more insights</a>, and to find out
+        how we can help your organisation make the most out of these digital
+        resources, contact us at
+        <a href="mailto:info@neoncarrot.com.au">info@neoncarrot.com.au</a> or by
+        using the <a href="/#contact">contact form on our homepage</a>.
+      </p>
+      <p class="spv-12">Until next time! 💡🥕</p>
+    </Col>
+  </Grid>
+
+  <style lang="scss">
+    @import "../../styles/variables.scss";
+
+    .image-wrapper {
+      border: 2px solid $color-black;
+      border-radius: 1rem;
+      margin: $spacing-16 0 $spacing-6 0;
+      overflow: hidden;
+    }
+
+    .portrait-image {
+      display: flex;
+
+      > .image-wrapper {
+        max-width: 400px;
+      }
+    }
+
+    .image {
+      display: block;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
+</Article>

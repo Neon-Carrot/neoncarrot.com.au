@@ -1,4 +1,5 @@
 import { ARTICLE_TOPICS, COLORS } from "./constants";
+import friendsWithLaptops from "./images/friends-with-laptops.png";
 import welcomeSign from "./images/welcome-sign.png";
 
 export type ArticleData = {
@@ -15,6 +16,19 @@ export type ArticleData = {
 };
 
 export const ARTICLE_DATA = {
+  freeAndDiscountedSoftware: {
+    author: "Caleb Ellis",
+    color: COLORS.blueLight,
+    date: "11th April 2024",
+    href: "/articles/free-and-discounted-software",
+    imgAlt: "Friends laughing while working in a cafe with their laptops",
+    imgSrc: friendsWithLaptops,
+    ogImage: "/images/og-free-and-discounted-software.png",
+    title: "Free and discounted software for not-for-profits",
+    topic: ARTICLE_TOPICS.howToGuides,
+    summary:
+      "Explore our curated selection of professional software solutions available at free or discounted rates for not-for-profits. Featuring offers from Microsoft, Google and Adobe, enhance your organisation's impact and elevate your mission with the right tech tools!",
+  },
   welcomeToNeonCarrot: {
     author: "Caleb Ellis",
     color: COLORS.orangeLight,
