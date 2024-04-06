@@ -282,3 +282,28 @@ a.button {
 .sph-12 {
   margin-right: $spacing-12;
 }
+
+.article-image-wrapper {
+  border: 2px solid $color-black;
+  border-radius: 1rem;
+  margin: $spacing-12 0 $spacing-8 0;
+  overflow: hidden;
+
+  &.spv-6 {
+    margin-bottom: $spacing-6;
+  }
+}
+
+.article-portrait-image {
+  display: flex;
+
+  > .image-wrapper {
+    max-width: 400px;
+  }
+}
+
+.article-image {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+}

@@ -1,36 +1,33 @@
 ---
 import { Picture } from "astro:assets";
+import { type CollectionEntry } from "astro:content";
 
 import Card from "./Card.astro";
-import type { ArticleData } from "../articleData";
+import PublishedBy from "./PublishedBy.astro";
 
-export type Props = ArticleData & {
-  class?: string;
-};
+type Props = CollectionEntry<"articles"> & { class?: string };
 
-const {
-  author,
-  class: className,
-  color,
-  date,
-  href,
-  imgAlt,
-  imgSrc,
-  title,
-}: Props = Astro.props;
+const { class: className, data, slug }: Props = Astro.props;
+const { author, heroImageColor, pubDate, heroImageAlt, heroImage, title } =
+  data;
 ---
 
 <div class={className}>
-  <a class="link" href={href}>
-    <Card class="card" bgColor={color} color={color} containerClass="spv-12">
+  <a class="link" href={`/articles/${slug}`}>
+    <Card
+      class="card"
+      bgColor={heroImageColor}
+      color={heroImageColor}
+      containerClass="spv-12"
+    >
       <Picture
-        alt={imgAlt}
+        alt={heroImageAlt}
         class="image"
         formats={["webp"]}
         height={300}
         loading="lazy"
         sizes="(min-width: 768px) 496px, (min-width: 456px) 720px, 412px"
-        src={imgSrc}
+        src={heroImage}
         width={720}
         widths={[496, 720, 412]}
       />
@@ -41,7 +38,7 @@ const {
           </h3>
         </span>
         <p class="spv-0">
-          <em>{author}, {date}</em>
+          <PublishedBy authorId={author.id} pubDate={pubDate} />
         </p>
       </div>
     </Card>
@@ -120,7 +117,9 @@ const {
     display: inline;
     background: linear-gradient(to left, $color-white, $color-white);
     background-size: 0 2px;
-    background-position: 0 100%, 100% 100%;
+    background-position:
+      0 100%,
+      100% 100%;
     background-repeat: no-repeat;
     transition: background-size cubic-bezier(0, 0, 0.2, 1) 400ms;
   }
