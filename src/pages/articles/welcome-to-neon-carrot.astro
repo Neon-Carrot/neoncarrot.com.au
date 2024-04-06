@@ -1,5 +1,5 @@
 ---
-import { Image, Picture } from "@astrojs/image/components";
+import { Image, Picture } from "astro:assets";
 
 import "../../styles/index.scss";
 import { ARTICLE_DATA } from "../../articleData";
@@ -50,7 +50,7 @@ import UnsplashAttribution from "../../components/UnsplashAttribution.astro";
       <div class="portrait-image center">
         <div class="image-wrapper spv-6 bg-orange--light">
           <Image
-            alt="Profile image of Caleb"
+            alt="Profile of Caleb"
             class="image"
             format="webp"
             height={400}
@@ -83,7 +83,7 @@ import UnsplashAttribution from "../../components/UnsplashAttribution.astro";
       <div class="portrait-image center">
         <div class="image-wrapper spv-6 bg-purple--light">
           <Image
-            alt="Profile image of Carol"
+            alt="Profile of Carol"
             class="image"
             format="webp"
             height={400}
