@@ -1,0 +1,22 @@
+---
+import { type CollectionEntry, getEntry } from "astro:content";
+
+import { getOrdinalDate } from "../utils";
+
+type Props = {
+  authorId: CollectionEntry<"team">["id"];
+  pubDate: Date;
+};
+
+const { authorId, pubDate } = Astro.props;
+const author = await getEntry("team", authorId);
+const day = pubDate.getDate();
+const month = pubDate.toLocaleString("default", { month: "long" });
+const year = pubDate.getFullYear();
+const formattedPubDate = `${day}${getOrdinalDate(day)} ${month} ${year}`;
+---
+
+<em>
+  {author.data.name || "Unknown author"},
+  <time datetime={pubDate.toISOString()}>{formattedPubDate}</time>
+</em>

@@ -1,8 +1,8 @@
 ---
 import { Picture } from "astro:assets";
+import { getCollection } from "astro:content";
 
 import "../styles/index.scss";
-import { ARTICLE_DATA } from "../articleData";
 import { COLORS } from "../constants";
 import BlogPreviewCard from "../components/BlogPreviewCard.astro";
 import Button from "../components/Button.astro";
@@ -31,6 +31,11 @@ import carol from "../images/carol-halftone.png";
 import dashboard from "../images/dashboard.png";
 import dataManagement from "../images/data-management.png";
 import website from "../images/website.png";
+
+const articles = await getCollection("articles");
+const latestArticles = articles
+  .sort((a, b) => (a.data.pubDate > b.data.pubDate ? -1 : 1))
+  .slice(0, 3);
 ---
 
 <Layout
@@ -121,7 +126,7 @@ import website from "../images/website.png";
                   for the future.
                 </p>
                 <p class="spv-0">
-                  <a class="link" href={ARTICLE_DATA.welcomeToNeonCarrot.href}>
+                  <a class="link" href="/articles/welcome-to-neon-carrot">
                     <strong class="link-underline">Find out more »</strong>
                   </a>
                 </p>
@@ -359,13 +364,11 @@ import website from "../images/website.png";
       <Section shallow>
         <Grid>
           {
-            Object.entries(ARTICLE_DATA)
-              .slice(0, 3)
-              .map(([, article], i) => (
-                <Col size={4} mdSize={6} smSize={4}>
-                  <BlogPreviewCard {...article} />
-                </Col>
-              ))
+            latestArticles.map((article, i) => (
+              <Col size={4} mdSize={6} smSize={4}>
+                <BlogPreviewCard {...article} />
+              </Col>
+            ))
           }
         </Grid>
       </Section>

@@ -1,6 +1,5 @@
 ---
 import "../../styles/index.scss";
-import { ARTICLE_DATA } from "../../articleData";
 import BlogCard from "../../components/BlogCard.astro";
 import Col from "../../components/Col.astro";
 import HalftoneDivider from "../../components/HalftoneDivider.astro";
@@ -8,6 +7,9 @@ import Grid from "../../components/Grid.astro";
 import Layout from "../../layouts/Layout.astro";
 import Section from "../../components/Section.astro";
 import GetInTouchCard from "../../components/GetInTouchCard.astro";
+import { getCollection } from "astro:content";
+
+const articles = await getCollection("articles");
 ---
 
 <Layout
@@ -33,7 +35,7 @@ import GetInTouchCard from "../../components/GetInTouchCard.astro";
     <Section class="no-pb" shallow>
       <Grid>
         {
-          Object.entries(ARTICLE_DATA).map(([, article], i) => (
+          articles.map((article, i) => (
             <Col class="article-col" size={6} mdSize={6} smSize={4}>
               <BlogCard {...article} lazyLoad={i > 1} />
             </Col>

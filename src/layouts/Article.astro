@@ -1,33 +1,36 @@
 ---
 import { Picture } from "astro:assets";
+import { getEntries, type CollectionEntry } from "astro:content";
 
 import "../styles/index.scss";
-import type { ArticleData } from "../articleData";
 import Chip from "../components/Chip.astro";
 import Col from "../components/Col.astro";
 import GetInTouchCard from "../components/GetInTouchCard.astro";
 import Grid from "../components/Grid.astro";
 import HalftoneDivider from "../components/HalftoneDivider.astro";
-import Layout from "./Layout.astro";
+import PublishedBy from "../components/PublishedBy.astro";
 import Section from "../components/Section.astro";
 import BlogPreviewCard from "../components/BlogPreviewCard.astro";
 import PaintBackground from "../components/PaintBackground.astro";
+import Layout from "./Layout.astro";
 import { truncateString } from "../utils";
 
-export type Props = ArticleData & { otherArticles: ArticleData[] };
+type Props = CollectionEntry<"articles">;
 
+const { data } = Astro.props;
 const {
   author,
-  color,
-  date,
-  imgAlt,
-  imgSrc,
+  heroImageColor,
+  heroImage,
+  heroImageAlt,
+  pubDate,
   ogImage,
   otherArticles,
   summary,
   title,
   topic,
-}: Props = Astro.props;
+} = data;
+const others = await getEntries(otherArticles);
 ---
 
 <Layout
@@ -50,7 +53,7 @@ const {
             {title}
           </h1>
           <div>
-            <em>{author}, {date}</em>
+            <PublishedBy authorId={author.id} pubDate={pubDate} />
           </div>
         </Col>
       </Grid>
@@ -61,17 +64,17 @@ const {
           <div class="hero-image-wrapper">
             <PaintBackground
               class="paint-background"
-              color={color}
+              color={heroImageColor}
               width={861}
             />
             <Picture
-              alt={imgAlt}
+              alt={heroImageAlt}
               class="image"
               formats={["webp"]}
               height={574}
               loading="eager"
               sizes="(min-width: 920px) 860px, (min-width: 456px) 720px, 412px"
-              src={imgSrc}
+              src={heroImage}
               width={860}
               widths={[860, 720, 412]}
             />
@@ -82,9 +85,10 @@ const {
       <div class="divider-filler"></div>
     </Section>
     <Section class="bg-white no-pt no-pb">
-      <slot />
       <Grid>
         <Col size={8} start={3} mdSize={8} mdStart={3} smSize={4} smStart={1}>
+          <slot />
+          <br />
           <a class="display-inline-block link" href="/articles">
             <strong class="link-underline">« Back to all articles</strong>
           </a>
@@ -102,8 +106,8 @@ const {
       <Section class="no-pt" shallow>
         <Grid>
           {
-            otherArticles.length > 0 ? (
-              otherArticles.map((article) => (
+            others.length > 0 ? (
+              others.map((article) => (
                 <Col size={4} mdSize={6} smSize={4}>
                   <BlogPreviewCard {...article} />
                 </Col>

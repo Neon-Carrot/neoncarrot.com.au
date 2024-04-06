@@ -1,41 +1,41 @@
 ---
 import { Picture } from "astro:assets";
+import { type CollectionEntry } from "astro:content";
 
-import type { ArticleData } from "../articleData";
 import Chip from "./Chip.astro";
+import PublishedBy from "./PublishedBy.astro";
 
-export type Props = ArticleData & {
+type Props = CollectionEntry<"articles"> & {
   class?: string;
   lazyLoad?: boolean;
 };
 
+const { class: className, data, lazyLoad = false, slug }: Props = Astro.props;
 const {
   author,
-  class: className,
-  color,
-  date,
-  href,
-  imgAlt,
-  imgSrc,
-  lazyLoad = false,
+  heroImage,
+  heroImageAlt,
+  heroImageColor,
+  pubDate,
   summary,
   title,
   topic,
-}: Props = Astro.props;
+} = data;
+const href = `/articles/${slug}`;
 ---
 
 <div class:list={["wrapper", className]}>
   <div class="card">
     <Chip class="chip" topic={topic} />
     <a href={href}>
-      <div class="image-wrapper" style={{ backgroundColor: color }}>
+      <div class="image-wrapper" style={{ backgroundColor: heroImageColor }}>
         <Picture
-          alt={imgAlt}
+          alt={heroImageAlt}
           class="image"
           formats={["webp"]}
           loading={lazyLoad ? "lazy" : "eager"}
           sizes="(min-width: 769px) 512px, (min-width: 456px) 768px, 412px"
-          src={imgSrc}
+          src={heroImage}
           width={768}
           widths={[512, 768, 412]}
         />
@@ -48,7 +48,7 @@ const {
         </h3>
       </a>
       <p>
-        <em>{author}, {date}</em>
+        <PublishedBy authorId={author.id} pubDate={pubDate} />
       </p>
       <div class="summary">
         <p>
