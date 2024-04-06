@@ -1,9 +1,3 @@
 import { defineConfig } from "astro/config";
 
-import image from "@astrojs/image";
-
-export default defineConfig({
-  integrations: [image({
-    serviceEntryPoint: "@astrojs/image/sharp",
-  })]
-});
+export default defineConfig({ scopedStyleStrategy: "where" });

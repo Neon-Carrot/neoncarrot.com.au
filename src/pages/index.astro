@@ -1,5 +1,5 @@
 ---
-import { Picture } from "@astrojs/image/components";
+import { Picture } from "astro:assets";
 
 import "../styles/index.scss";
 import { ARTICLE_DATA } from "../articleData";
@@ -42,7 +42,7 @@ import website from "../images/website.png";
       <Grid>
         <Col size={10} start={2} mdSize={10} mdStart={2} smSize={4} smStart={0}>
           <SplashLogo />
-          <h1 class="hide">Neon Carrot</h1>
+          <h1 aria-label="Neon Carrot" class="hide">Neon Carrot</h1>
           <h2 class="heading-3 center is-light spv-12 slogan">
             Tech with an impact
           </h2>
@@ -74,8 +74,8 @@ import website from "../images/website.png";
                       src={carol}
                       height={177}
                       width={191}
-                      alt="Image of Carol with a halftone pop art effect"
-                      loading="lazy"
+                      alt="Carol with a halftone pop art effect"
+                      loading="eager"
                       formats={["webp"]}
                       widths={[191, 382]}
                       sizes="(min-width: 1160px) 191px, 382px"
@@ -90,8 +90,8 @@ import website from "../images/website.png";
                       src={caleb}
                       height={202}
                       width={233}
-                      alt="Image of Caleb with a halftone pop art effect"
-                      loading="lazy"
+                      alt="Caleb with a halftone pop art effect"
+                      loading="eager"
                       formats={["webp"]}
                       widths={[233, 466]}
                       sizes="(min-width: 1160px) 233px, 466px"
