@@ -1,7 +1,15 @@
 {
   "name": "neoncarrot.com.au",
+  "homepage": "https://www.neoncarrot.com.au",
+  "author": "Caleb Ellis <caleb@neoncarrot.com.au> (https://www.neoncarrot.com.au)",
+  "repository": "github:Caleb-Ellis/neoncarrot.com.au",
+  "bugs": {
+    "url": "https://github.com/Caleb-Ellis/neoncarrot.com.au/issues",
+    "email": "caleb@neoncarrot.com.au"
+  },
+  "license": "BSD-3-Clause",
   "type": "module",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
