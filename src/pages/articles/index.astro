@@ -4,7 +4,7 @@ import BlogCard from "../../components/BlogCard.astro";
 import Col from "../../components/Col.astro";
 import HalftoneDivider from "../../components/HalftoneDivider.astro";
 import Grid from "../../components/Grid.astro";
-import Layout from "../../layouts/Layout.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
 import Section from "../../components/Section.astro";
 import GetInTouchCard from "../../components/GetInTouchCard.astro";
 import { getCollection } from "astro:content";
@@ -12,7 +12,7 @@ import { getCollection } from "astro:content";
 const articles = await getCollection("articles");
 ---
 
-<Layout
+<BaseLayout
   alwaysShowNav
   description="Insights on technology, the not-for-profit sector, and where the two intersect. Published by Neon Carrot."
   title="Articles"
@@ -47,7 +47,7 @@ const articles = await getCollection("articles");
     <HalftoneDivider color="yellow" />
     <GetInTouchCard />
   </main>
-</Layout>
+</BaseLayout>
 
 <style lang="scss">
   @import "../../styles/variables.scss";

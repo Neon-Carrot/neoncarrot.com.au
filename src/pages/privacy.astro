@@ -1,13 +1,13 @@
 ---
 import "../styles/index.scss";
 import Grid from "../components/Grid.astro";
-import Layout from "../layouts/Layout.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 import Card from "../components/Card.astro";
 import Col from "../components/Col.astro";
 import Section from "../components/Section.astro";
 ---
 
-<Layout
+<BaseLayout
   alwaysShowNav
   description="Neon Carrot's privacy policy"
   title="Privacy policy"
@@ -220,4 +220,4 @@ import Section from "../components/Section.astro";
       }
     }
   </style>
-</Layout>
+</BaseLayout>

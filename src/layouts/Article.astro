@@ -12,7 +12,7 @@ import PublishedBy from "../components/PublishedBy.astro";
 import Section from "../components/Section.astro";
 import BlogPreviewCard from "../components/BlogPreviewCard.astro";
 import PaintBackground from "../components/PaintBackground.astro";
-import Layout from "./Layout.astro";
+import BaseLayout from "./BaseLayout.astro";
 import { truncateString } from "../utils";
 
 type Props = CollectionEntry<"articles">;
@@ -33,7 +33,7 @@ const {
 const others = await getEntries(otherArticles);
 ---
 
-<Layout
+<BaseLayout
   alwaysShowNav
   description={truncateString(summary, 300)}
   ogImage={ogImage}
@@ -124,7 +124,7 @@ const others = await getEntries(otherArticles);
     </Section>
     <GetInTouchCard />
   </main>
-</Layout>
+</BaseLayout>
 
 <style lang="scss">
   @import "../styles/variables.scss";

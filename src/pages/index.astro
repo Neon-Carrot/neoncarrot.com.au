@@ -15,7 +15,7 @@ import Col from "../components/Col.astro";
 import HalftoneDivider from "../components/HalftoneDivider.astro";
 import Grid from "../components/Grid.astro";
 import Heart from "../components/Heart.astro";
-import Layout from "../layouts/Layout.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 import LightBulb from "../components/LightBulb.astro";
 import LightningBolt from "../components/LightningBolt.astro";
 import MagnifyingGlass from "../components/MagnifyingGlass.astro";
@@ -38,7 +38,7 @@ const latestArticles = articles
   .slice(0, 3);
 ---
 
-<Layout
+<BaseLayout
   description="Neon Carrot is an IT consultancy dedicated to serving not-for-profits."
   title="Tech with an impact"
 >
@@ -692,4 +692,4 @@ const latestArticles = articles
       margin-bottom: $spacing-8;
     }
   </style>
-</Layout>
+</BaseLayout>
