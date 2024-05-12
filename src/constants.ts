@@ -16,6 +16,7 @@ export const COLORS = {
   red: "#d1002d",
   redDesat: "#b80f33",
   redLight: "#f4718f",
+  t4sjconf: "#39e8c8",
   white: "#ffffff",
   yellow: "#ffea00",
   yellowDesat: "#f9ee76",
@@ -23,6 +24,7 @@ export const COLORS = {
 } as const;
 
 export const ARTICLE_TOPICS = {
+  conferenceWrapUps: "Conference wrap-ups",
   howToGuides: "How-to guides",
   techTrends: "Tech trends",
   misc: "Miscellaneous",
