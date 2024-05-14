@@ -10,6 +10,9 @@ import GetInTouchCard from "../../components/GetInTouchCard.astro";
 import { getCollection } from "astro:content";
 
 const articles = await getCollection("articles");
+const sortedArticles = articles.sort((a, b) =>
+  a.data.pubDate > b.data.pubDate ? -1 : 1
+);
 ---
 
 <BaseLayout
@@ -35,7 +38,7 @@ const articles = await getCollection("articles");
     <Section class="no-pb" shallow>
       <Grid>
         {
-          articles.map((article, i) => (
+          sortedArticles.map((article, i) => (
             <Col class="article-col" size={6} mdSize={6} smSize={4}>
               <BlogCard {...article} lazyLoad={i > 1} />
             </Col>
