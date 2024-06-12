@@ -27,7 +27,7 @@
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/Caleb-Ellis/neoncarrot.com.au.git
+   git clone https://github.com/Neon-Carrot/neoncarrot.com.au.git
    ```
 2. Install NPM packages
    ```sh
