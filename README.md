@@ -12,7 +12,7 @@
     <br />
     <a href="https://www.neoncarrot.com.au">View site</a>
     ·
-    <a href="https://github.com/Caleb-Ellis/neoncarrot.com.au/issues/new">Report a bug</a>
+    <a href="https://github.com/Neon-Carrot/neoncarrot.com.au/issues/new">Report a bug</a>
   </p>
 </div>
 
