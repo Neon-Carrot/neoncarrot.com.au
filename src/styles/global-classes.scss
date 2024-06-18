@@ -72,7 +72,7 @@ a.button {
   padding: 0.675rem $spacing-4;
   text-decoration: none;
 
-  &:hover,
+  &:hover:not(:disabled),
   &:focus,
   &:focus-visible {
     box-shadow: 0.125rem 0.125rem 0 $color-black;
@@ -89,7 +89,7 @@ a.button {
   &.red {
     background-color: $color-red;
 
-    &:hover,
+    &:hover:not(:disabled),
     &:focus {
       background-color: #b80037;
     }
@@ -98,10 +98,14 @@ a.button {
   &.orange {
     background-color: $color-orange;
 
-    &:hover,
+    &:hover:not(:disabled),
     &:focus {
       background-color: #e65800;
     }
+  }
+
+  &.grey {
+    background-color: $color-grey-20;
   }
 }
 

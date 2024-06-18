@@ -1,0 +1,38 @@
+---
+import "./styles.scss";
+import "../../styles/index.scss";
+import Grid from "../../components/Grid.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Col from "../../components/Col.astro";
+import Section from "../../components/Section.astro";
+import RAGDemo from "../../components/rag-demo/RAGDemo";
+---
+
+<BaseLayout
+  alwaysShowNav
+  description="A demonstration for how Retrieval-Augmented Generation could improve querying organisational data"
+  title="Retrieval-Augmented Generation demo"
+>
+  <main class="bg-yellow--desat">
+    <Section deep class="hero-section no-pb">
+      <Grid>
+        <Col size={8}>
+          <h1 class="heading-2">Retrieval-Augmented Generation demo</h1>
+          <p>
+            <strong>Disclaimer: </strong>
+            This demo is for illustrative purposes only. The provided documents as
+            well as the AI model's responses have not been evaluated on accuracy.
+            Do not use these responses to inform your work.
+          </p>
+        </Col>
+      </Grid>
+    </Section>
+    <Section shallow>
+      <Grid extended>
+        <Col size={12}>
+          <RAGDemo client:load />
+        </Col>
+      </Grid>
+    </Section>
+  </main>
+</BaseLayout>

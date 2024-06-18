@@ -172,7 +172,8 @@ a {
   }
 }
 
-button {
+button,
+input[type="submit"] {
   &:hover {
     cursor: pointer;
   }
@@ -182,6 +183,11 @@ button {
     border-color: $color-blue;
     outline: 2px solid $color-blue;
     outline-offset: 0 !important;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
   }
 }
 
