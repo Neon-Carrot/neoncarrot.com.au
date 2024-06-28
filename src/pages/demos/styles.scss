@@ -17,10 +17,16 @@
   flex-direction: row;
   gap: 3rem;
   justify-content: space-between;
+  padding: 2rem 1.5rem;
 
   @media only screen and (max-width: 896px) {
     flex-direction: column;
   }
+}
+
+.chat-section,
+.source-section {
+  flex: 1;
 }
 
 .buttons {
@@ -28,54 +34,8 @@
   justify-content: flex-end;
 }
 
-.card-container {
-  flex: 1;
-  position: relative;
-  z-index: 1;
-}
-
-.card {
-  background-color: $color-white;
-  border-radius: 1rem;
-  border: 2px solid $color-black;
-  box-sizing: border-box;
-  height: 100%;
-  padding: 2rem 1.5rem;
-  overflow: hidden;
-  position: relative;
-}
-
-.card-shadow {
-  border-radius: 1rem;
-  border: 2px solid $color-black;
-  box-sizing: border-box;
-  content: "";
-  height: 100%;
-  left: 10px;
-  position: absolute;
-  top: 10px;
-  width: 100%;
-  z-index: -1;
-
-  &.red {
-    background-color: $color-red;
-  }
-
-  &.orange {
-    background-color: $color-orange;
-  }
-
-  &.yellow {
-    background-color: $color-yellow;
-  }
-
-  &.black {
-    background-color: $color-black;
-  }
-}
-
 .pdf-iframe {
-  height: 95%;
+  height: 93%;
   min-height: 28rem;
   width: 100%;
 }

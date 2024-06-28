@@ -47,7 +47,7 @@ function ChatForm({
             onClick={onClear}
             type="button"
           >
-            Clear
+            Reset
           </button>
           <input
             className="button red"

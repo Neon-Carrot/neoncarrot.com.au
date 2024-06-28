@@ -1,10 +1,11 @@
 import { useState, type FormEventHandler } from "react";
 
 import type { History, Response, Source } from "./types";
-import ChatCard from "./ChatCard";
+import ChatForm from "./ChatForm";
+import ChatHistory from "./ChatHistory";
 import SourceCard from "./SourceCard";
 
-const apiBaseUrl = import.meta.env.PROD
+const apiBaseUrl = import.meta.env.DEV
   ? import.meta.env.PUBLIC_AZURE_FUNCTION_BASE_URL
   : "http://localhost:7071";
 
@@ -83,19 +84,26 @@ function RAGDemo() {
   };
 
   return (
-    <div className="rag-demo spv-12">
-      <ChatCard
-        error={error}
-        history={history}
-        loading={loading}
-        onClear={clearAll}
-        onQuestionChange={(e) => setQuestion(e.target.value)}
-        onSourceSelect={(source) => setSelectedSource(source)}
-        onSubmit={handleSubmit}
-        question={question}
-        sources={sources}
-      />
-      <SourceCard selectedSource={selectedSource} />
+    <div className="rag-demo">
+      <div className="chat-section">
+        <ChatHistory
+          history={history}
+          loading={loading}
+          onSourceSelect={(source) => setSelectedSource(source)}
+          sources={sources}
+        />
+        <ChatForm
+          disabled={loading}
+          error={error}
+          onClear={clearAll}
+          onQuestionChange={(e) => setQuestion(e.target.value)}
+          onSubmit={handleSubmit}
+          question={question}
+        />
+      </div>
+      <div className="source-section">
+        <SourceCard selectedSource={selectedSource} />
+      </div>
     </div>
   );
 }

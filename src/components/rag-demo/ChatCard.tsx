@@ -27,24 +27,21 @@ function ChatCard({
   sources,
 }: Props) {
   return (
-    <div className="card-container">
-      <div className="card">
-        <ChatHistory
-          history={history}
-          loading={loading}
-          onSourceSelect={onSourceSelect}
-          sources={sources}
-        />
-        <ChatForm
-          disabled={loading}
-          error={error}
-          onClear={onClear}
-          onQuestionChange={onQuestionChange}
-          onSubmit={onSubmit}
-          question={question}
-        />
-      </div>
-      <div className="card-shadow" style={{ backgroundColor: COLORS.orange }} />
+    <div>
+      <ChatHistory
+        history={history}
+        loading={loading}
+        onSourceSelect={onSourceSelect}
+        sources={sources}
+      />
+      <ChatForm
+        disabled={loading}
+        error={error}
+        onClear={onClear}
+        onQuestionChange={onQuestionChange}
+        onSubmit={onSubmit}
+        question={question}
+      />
     </div>
   );
 }

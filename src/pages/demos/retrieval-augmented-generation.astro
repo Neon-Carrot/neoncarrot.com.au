@@ -6,6 +6,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Col from "../../components/Col.astro";
 import Section from "../../components/Section.astro";
 import RAGDemo from "../../components/rag-demo/RAGDemo";
+import Card from "../../components/Card.astro";
 ---
 
 <BaseLayout
@@ -17,12 +18,54 @@ import RAGDemo from "../../components/rag-demo/RAGDemo";
     <Section deep class="hero-section no-pb">
       <Grid>
         <Col size={8}>
-          <h1 class="heading-2">Retrieval-Augmented Generation demo</h1>
+          <h1 class="heading-2">
+            Proof of Concept - Chatbot for Aged Care Workers
+          </h1>
+          <p>
+            This is a proof of concept Retrieval-Augmented Generation (RAG)
+            application for aged care workers, using a set of documents from the
+            <a
+              href="https://www.agedcarequality.gov.au/resource-library?resources%5B0%5D=audience%3A8586&resources%5B1%5D=languages%3A371&resources%5B2%5D=type%3A251&resources%5B3%5D=type%3A261&resources%5B4%5D=type%3A7923"
+              >Australian Government's Aged Care Quality and Safety Commission</a
+            > for its knowledge base. You can refer to <a
+              href="/articles/ai-action-making-sense-all-your-data"
+              >our article on AI for not-for-profits</a
+            > for an overview of what RAG is and what it can do for your organisation.
+          </p>
+          <p>
+            The documents are specifically <em>for</em> aged care workers, and include
+            things like a code of conduct, case studies of behaviours that do and
+            do not comply with the code, and a couple of documents specifically about
+            meal times. It uses a simple chatbot interface with a side panel for
+            viewing referenced PDF documents - all you do is ask the chatbot a question
+            about aged care work and it should return a response alongside references
+            to documents in the knowledge base, if that knowledge exists.
+          </p>
+          <p>Some example questions you could ask are:</p>
+          <ul>
+            <li>What is aged care?</li>
+            <li>When was the Code of Conduct introduced?</li>
+            <li>Is it okay for me to accept a gift from a client?</li>
+            <li>Who do I contact if I have a concern?</li>
+            <li>
+              An aged person has trouble eating. What do I need to be aware of?
+            </li>
+            <li>
+              My client has reported feelings of loneliness. How can I help
+              them?
+            </li>
+          </ul>
+          <p>
+            For the purposes of demonstration the documents have been stored
+            publicly, and they're public documents anyway, but in practice it
+            would all be limited to your organisation's private network.
+          </p>
           <p>
             <strong>Disclaimer: </strong>
             This demo is for illustrative purposes only. The provided documents as
             well as the AI model's responses have not been evaluated on accuracy.
-            Do not use these responses to inform your work.
+            Do not use these responses to inform any part of your work. None of the
+            data you enter will be stored or be visible to anyone else.
           </p>
         </Col>
       </Grid>
@@ -30,7 +73,9 @@ import RAGDemo from "../../components/rag-demo/RAGDemo";
     <Section shallow>
       <Grid extended>
         <Col size={12}>
-          <RAGDemo client:load />
+          <Card color="orange">
+            <RAGDemo client:load />
+          </Card>
         </Col>
       </Grid>
     </Section>

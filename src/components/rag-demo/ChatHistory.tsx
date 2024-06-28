@@ -15,22 +15,13 @@ type Props = {
 function ChatHistory({ history, loading, onSourceSelect, sources }: Props) {
   return (
     <>
-      <p className="spv-1">Chat history</p>
+      <h2 className="heading-6">Chat history</h2>
       <div className="chat-history-container spv-8">
         <div className={`chat-history ${loading ? "loading" : ""}`}>
           <ChatMessage author="ai">
             Hi there! I am a helpful robot assistant who will try to answer
-            questions that aged care workers may have about their role and
-            responsibilities. I have been supplied with a subset of documents
-            from the{" "}
-            <a
-              href="https://www.agedcarequality.gov.au/resource-library?resources%5B0%5D=audience%3A8586&resources%5B1%5D=languages%3A371&resources%5B2%5D=type%3A251&resources%5B3%5D=type%3A261&resources%5B4%5D=type%3A7923"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Australian Government's Aged Care Quality and Safety Commission
-            </a>{" "}
-            which I will do my best to reference in my responses.
+            questions you might have about your role and responsibilities as an
+            aged care worker.
           </ChatMessage>
           {history.map((entry, i) => (
             <Fragment key={`entry-${i}`}>
