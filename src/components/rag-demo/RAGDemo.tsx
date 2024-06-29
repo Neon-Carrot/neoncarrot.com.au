@@ -3,9 +3,9 @@ import { useState, type FormEventHandler } from "react";
 import type { History, Response, Source } from "./types";
 import ChatForm from "./ChatForm";
 import ChatHistory from "./ChatHistory";
-import SourceCard from "./SourceCard";
+import SourceWindow from "./SourceWindow";
 
-const apiBaseUrl = import.meta.env.DEV
+const apiBaseUrl = import.meta.env.PROD
   ? import.meta.env.PUBLIC_AZURE_FUNCTION_BASE_URL
   : "http://localhost:7071";
 
@@ -102,7 +102,7 @@ function RAGDemo() {
         />
       </div>
       <div className="source-section">
-        <SourceCard selectedSource={selectedSource} />
+        <SourceWindow selectedSource={selectedSource} />
       </div>
     </div>
   );

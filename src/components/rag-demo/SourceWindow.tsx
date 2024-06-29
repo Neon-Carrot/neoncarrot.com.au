@@ -1,12 +1,11 @@
 import type { Source } from "./types";
 import { getFilePath } from "./utils";
-import { COLORS } from "../../constants";
 
 type Props = {
   selectedSource: Source | null;
 };
 
-function SourceCard({ selectedSource }: Props) {
+function SourceWindow({ selectedSource }: Props) {
   return (
     <>
       <h2 className="heading-6">Source</h2>
@@ -27,4 +26,4 @@ function SourceCard({ selectedSource }: Props) {
   );
 }
 
-export default SourceCard;
+export default SourceWindow;
