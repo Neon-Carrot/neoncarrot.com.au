@@ -1,0 +1,280 @@
+---
+title: "AI in Action - Make Your Data Make Sense"
+author: "caleb-ellis"
+topic: "Tech trends"
+summary: "Find out why AI is on everyone's minds, and how it can be used to gain insights on your organisation's data privately. In this article, we explore Retrieval-Augmented Generation (RAG) - the good, the bad and the ugly. We also showcase a proof of concept RAG application to play with!"
+heroImage: "../../images/girl-with-robot.png"
+heroImageAlt: "Girl holding the hand of a robot"
+heroImageAttribution: { name: "Andy Kelly", username: "askkell" }
+heroImageColor: "#f4718f"
+ogImage: "/images/og-ai-action-make-your-data-make-sense.png"
+otherArticles:
+  [
+    "technology-for-social-justice-conference-2024",
+    "not-for-profit-tech-deals",
+    "welcome-to-neon-carrot",
+  ]
+pubDate: 2024-07-01
+---
+
+import { Picture } from "astro:assets";
+
+import generativeAITools from "../../images/generative-ai-tools.jpg";
+import puzzlePieces from "../../images/puzzle-pieces.png";
+import ragProcess from "../../images/rag-process.jpg";
+import ragPOC from "../../images/rag-proof-of-concept.png";
+import robotSmiling from "../../images/robot-smiling.png";
+
+In <a href="/articles/technology-for-social-justice-conference-2024">our post about the Technology for Social Justice Conference 2024</a> we noted that the event had an overarching Artificial Intelligence (AI) theme, which came as a bit of a surprise. Usually, “cutting-edge” technology takes a little while before propagating from the tech/finance sectors to other industries, if ever, for example with blockchains, the Internet of Things and 3D printing. But with AI? Everyone is curious and wants to know more, including not-for-profit organisations (NFPs) - a 2023 report by Infoxchange indicated that <a href="https://www.infoxchange.org/sites/default/files/infoxchanges_2023_digital_technology_in_the_not-for-profit_sector_report.pdf#page=16">69% of NFPs currently use or planned to use AI in the 12 months from publication</a>.
+
+Despite the excitement, I believe there are still some misconceptions and uncertainty about what you can actually _do_ with the technology. Organisations the world over seem to agree that AI is changing things in a big way, but how are you supposed to apply it? With that said, I'd like to spend the rest of this post giving a brief overview of why AI is so hyped _right now_, and outlining one of its most promising use-cases for NFPs, as well as discussing some important limitations and considerations.
+
+## Why is AI such a big deal right now?
+
+In short, because Generative AI got really, really good.
+
+AI in a _broad_ sense has been around for decades, and to be fair it's been a big deal for ages. Depending on your definition, Netflix's recommendation list, YouTube's “algorithm” and auto-correct are all AI, and they've all had an impact on the world. **Generative AI**, the likes of which we see in the Large Language Models (LLMs) powering ChatGPT and in AI image generators like Midjourney, is the latest in a long list of advancements in the field, but it's a big one. My point being, AI _isn't_ new but great Generative AI _is_.
+
+Secondly, AI has an extremely wide range of applications, and that range has expanded even further with Generative AI. It can be applied in some form to practically every industry, including healthcare (e.g. <a href="https://www.royalmarsden.nhs.uk/news-and-events/news/ai-twice-accurate-biopsy-grading-aggressiveness-some-sarcomas">cancer detection</a>), finance (e.g. <a href="https://www.digitalocean.com/resources/article/ai-fraud-detection">fraud detection</a>), retail (e.g. <a href="https://www.bcg.com/publications/2024/overcoming-retail-complexity-with-ai-powered-pricing">price optimisation</a>), entertainment (e.g. <a href="https://www.forbes.com/sites/theyec/2023/08/17/generative-ai-for-content-creation-how-marketers-can-use-it/">automated content creation</a>) and so on. There is broad value in offloading human work to algorithms, especially when we think about work in terms of _efficiency_ and _output_, and the types of tasks that can be automated are growing (for better or for worse - a topic for another day).
+
+The last reason I'll mention is that, with Generative AI like ChatGPT, the technology is more approachable than ever, and therefore its usefulness has been made immediately apparent to a vast array of people. Most people know you can ask ChatGPT a question about anything and get a response in 5 seconds, but do they know what a blockchain is and what you do with one? I'm guessing probably not. I certainly don't, anyway.
+
+<div class="article-image-wrapper">
+  <figure>
+    <Picture
+      alt="Logos of popular Generative AI tools and companies like ChatGPT and Anthropic."
+      class="article-image"
+      formats={["webp"]}
+      height={337}
+      loading="lazy"
+      sizes="(min-width: 456px) 678px, 412px"
+      src={generativeAITools}
+      width={678}
+      widths={[678, 412]}
+    />
+    <figcaption>
+      {
+        "The number of Generative AI tools is growing exponentially, with most targeting a specific niche. Image taken from "
+      }
+      {<a href="https://zapier.com/blog/generative-ai-tools/">Zapier</a>}
+      {"."}
+    </figcaption>
+  </figure>
+</div>
+
+So, with this broad utility and accessibility in mind, let's explore an actual concrete use-case of AI that your organisation might find useful.
+
+## AI for information retrieval and synthesis
+
+“Information retrieval and synthesis” is a bit of a mouthful, sorry 😬. How about "knowledge extraction and integration"? No? "Data mining and fusion"? That's the worst so far? Ok let's just stick with the first option, and allow me to explain.
+
+To give it a bit more context, every organisation relies on information to function - a common issue is not a _lack_ of information, but the challenge of finding and extracting that information from the huge set of documents, databases and other places where information is stored. Consider the user manuals, training material, internal wikis, spreadsheets, and intranet sites at your organisation. Is it easy for staff to find what they're looking for? Can questions be answered in a self-driven way? If not, you might have an issue with information retrieval.
+
+The second half of the equation, information synthesis, involves combining information from multiple sources to create a broad, cohesive understanding. As an example, by combining information from a childcare worker manual with relevant state and federal childcare legislation, information synthesis can be used to understand what parts of the worker manual are required _by the employer_ and what parts are required _by law_, even if the manual doesn't explicitly mention that.
+
+The human mind can perform both of these functions just fine, of course. We only do them about a million times a day. But if finding and making sense of company information is a common and persistent hurdle for staff, it could be worth looking into offloading some of that mental work to AI.
+
+<div class="spv-8">
+  <div class="article-image-wrapper">
+    <figure>
+      <Picture
+        alt="A pile of loose puzzle pieces"
+        class="article-image"
+        formats={["webp"]}
+        height={450}
+        loading="lazy"
+        sizes="(min-width: 456px) 678px, 412px"
+        src={puzzlePieces}
+        width={678}
+        widths={[678, 412]}
+      />
+      <figcaption>
+        {
+          "Trying to understand how all of your documentation fits together. Photo by "
+        }
+        {
+          <a href="https://unsplash.com/@sloppyperfectionist?utm_source=neoncarrot&utm_medium=referral">
+            Hans-Peter Gauster
+          </a>
+        }
+        {" on "}
+        {
+          <a href="https://unsplash.com/?utm_source=neoncarrot&utm_medium=referral">
+            Unsplash
+          </a>
+        }
+        {"."}
+      </figcaption>
+    </figure>
+  </div>
+</div>
+
+## So how does AI help with this?
+
+A process called Retrieval-Augmented Generation (RAG) combines information retrieval with Large Language Models (LLMs - if it helps, you can equate the term with ChatGPT), which are able to synthesise retrieved information into coherent and contextually-appropriate responses. Without getting into _too_ much technical detail, RAG follows these steps:
+
+1. **Knowledge base preparation:** Split the data you want to interrogate (documents, spreadsheets etc) into chunks, then convert those chunks into something that approximates their “meaning”.
+2. **Query preparation:** When a user has a query, convert that query into “meaning” in the same way as step 1.
+3. **Information retrieval:** Find and retrieve one or more data chunks whose “meanings” most closely match the user query's “meaning”.
+4. **Information synthesis:** Combine the content of the matched data chunks with the user's original query, then send everything to an LLM which will provide a grounded, contextual response.
+
+In effect, what RAG does is reconstruct an LLM prompt so that it includes all of the relevant context and information _alongside_ the user's question. It's like instead of asking someone “Where was Ernest Rutherford born?” you say to them “Ernest Rutherford was born in New Zealand. Where was Ernest Rutherford born?” - which doesn't exactly take a super-genius AI to answer. The devil is in the details of course, but that's the gist.
+
+<div class="article-image-wrapper">
+  <figure>
+    <Picture
+      alt="Flowchart of the Retrieval-Augmented Generation process."
+      class="article-image"
+      formats={["webp"]}
+      height={377}
+      loading="lazy"
+      sizes="(min-width: 456px) 678px, 412px"
+      src={ragProcess}
+      width={678}
+      widths={[678, 412]}
+    />
+    <figcaption>
+      {
+        "Basic flowchart of the Retrieval-Augmented Generation process. Image taken from "
+      }
+      {
+        <a href="https://medium.com/@krtarunsingh/introduction-to-retrieval-augmented-generation-rag-and-its-transformative-role-in-ai-c07e35da7f01">
+          Tarun Singh on Medium
+        </a>
+      }
+      {"."}
+    </figcaption>
+  </figure>
+</div>
+
+Despite the relative simplicity, RAG is surprisingly powerful, with a ton of benefits for NFPs.
+
+## Benefits of using RAG
+
+### RAG lets you use LLMs to query private organisational data
+
+Every organisation has private data, but NFPs often also hold incredibly sensitive data with strict data security and sovereignty requirements. It's possible to set up LLMs that sit within your organisation's IT infrastructure (either through your cloud provider or by self-hosting an open source model) which, when combined with RAG, allows organisations to retrieve and synthesise information that **must** remain within their boundaries. All without needing to train an LLM from scratch, which would be an incredibly costly and finicky task.
+
+### RAG provides increased traceability of LLM responses
+
+It is currently impossible to know exactly how an LLM produces a response, though <a href="https://www.anthropic.com/research/mapping-mind-language-model">there is research on the topic</a> that brings to mind attempting to understand how a human brain generates thoughts. Since RAG uses actual documents to generate responses, it is easier to trace the origin of the information, providing more transparency and explainability in the model's answers.
+
+This traceability also helps with one of my major issues with LLMs - that they should never be treated as a decision-maker, but a decision-informer. By offering references and citations with RAG, users are able to verify the response and make informed choices based on a broader understanding of the subject. Is that just AI-decision-making with extra steps? Potentially. But the key difference is in making it clear that the buck stops with a human.
+
+### RAG applications are adaptable to new data
+
+LLMs rely on static datasets that require extensive retraining to update, often leading to outdated responses. In contrast, RAG applications are adaptable, with the ability to deliver up-to-date information as it becomes available. Since RAG sits as a thin layer on top of LLMs, switching out data sources is comparatively easy, quick and cheap. This is particularly beneficial in fast-paced environments where information is constantly evolving, but regardless it's nice not to be locked into a dataset long-term.
+
+### Approachable interface for retrieving information
+
+Asking a question in natural language and getting a natural language response is intuitive. Navigating a deeply nested filesystem + intranet + printed documents + more takes time to figure out.
+
+## Proof of concept
+
+To illustrate the potential of RAG a bit better I have built a <a href="/demos/retrieval-augmented-generation">proof of concept RAG application</a> for aged care workers, using a set of documents from the <a href="https://www.agedcarequality.gov.au/resource-library?resources%5B0%5D=audience%3A8586&resources%5B1%5D=languages%3A371&resources%5B2%5D=type%3A251&resources%5B3%5D=type%3A261&resources%5B4%5D=type%3A7923">Australian Government's Aged Care Quality and Safety Commission</a> for its knowledge base. The documents are specifically _for_ aged care workers, and include things like a code of conduct, case studies of behaviours that do and do not comply with the code, and a couple of documents specifically about meal times. It uses a simple chatbot interface with a side panel for viewing referenced PDF documents - all you do is ask the chatbot a question about aged care work and it should return a response alongside references to documents in the knowledge base, if that knowledge exists.
+
+<div class="article-image-wrapper">
+  <figure>
+    <Picture
+      alt="Screenshot of a Retrieval-Augmented Generation proof of concept."
+      class="article-image"
+      formats={["webp"]}
+      height={428}
+      loading="lazy"
+      sizes="(min-width: 456px) 678px, 412px"
+      src={ragPOC}
+      width={678}
+      widths={[678, 412]}
+    />
+    <figcaption>
+      {"Screenshot of the Retrieval-Augmented Generation proof of concept. "}
+      <a href="/demos/retrieval-augmented-generation">Give it a shot!</a>
+    </figcaption>
+  </figure>
+</div>
+
+For the purposes of demonstration the documents have been stored publicly, and they're public documents anyway, but in practice it would all be limited to your organisation's private network.
+
+I want to be clear that it is **only a prototype** and just an exploration of what _could_ be achieved. It has not been fully tested, such as whether the underlying data is valid, whether the responses are accurate, or whether the user interface is intuitive - this would have to be conducted alongside domain experts. But I will say that getting to the “working prototype” level was extremely straightforward as far as software projects go, and it was _a lot of fun_ to build. 🚀
+
+Still, it's not all sun and roses. There are some situations in which RAG applications probably aren't the best next step for your organisation.
+
+## Limitations of using RAG
+
+### You need to trust your own data
+
+The old data science adage “garbage in, garbage out” is as true for RAG applications as it's ever been. If the data you want to use for a RAG application is not trustworthy, you cannot trust any response generated from that data, simple as that.
+
+Before AI is even considered as something to explore, there needs to be some sort of audit of the data you want to interrogate. Ensure the data is clean, well-structured, and relevant to the problem you are trying to solve. Establish clear data governance policies and involve domain experts to verify and validate the sources. This absolutely cannot be ignored for RAG applications, but it's also just good data practice that will help your organisation in a lot more ways than just enabling AI.
+
+### The path from prototype to production is not simple
+
+There is a considerable gap between prototype and production in any project, and RAG applications are no exception, owing to:
+
+- Information being retrieved that needs to be both relevant and varied. Information retrieval is an art as well as a science, and it's not easy to do it well. This becomes more difficult as more data is introduced.
+- Different data sources and data types need to be handled differently. There are methods, for example, of converting images into meaning and intent, but you can't treat them the same as PDF text or spreadsheet data. Reconciling these differences can be difficult.
+- A reliance on LLMs which can be unreliable - <a href="https://www.ibm.com/topics/ai-hallucinations">LLM hallucinations are well-documented</a>. RAG addresses LLM shortcomings but it will never eliminate them.
+
+To address this hurdle, my advice would be to keep things simple. Planning an organisation-wide RAG application that can handle any query thrown at it will only end in tears. If you've identified an issue with a specific business function (e.g. new starters struggle with onboarding), consider a targeted RAG application that tackles that specific issue, and have a test plan in place to assert it addresses that issue to an acceptable standard.
+
+### RAG requires some technical expertise
+
+Building “AI-powered” RAG applications is probably easier than you think, but likely outside the scope of a typical not-for-profit's technical knowledge. While there are <a href="https://www.langchain.com/">tools</a> and <a href="https://flowiseai.com/">platforms</a> being developed to simplify the process, you really should have an understanding of the underlying technology in order to customise and troubleshoot the application as necessary.
+
+Collaborating with technical experts (📣 <a href="/#contact">get in touch!</a>) can bridge this knowledge gap, otherwise consider upskilling IT and data analyst staff on hand. Just keep in mind the AI space is developing incredibly fast - training material from early 2023 could already be considered obsolete!
+
+### It's not expensive, but it's not necessarily cheap
+
+The cost of AI systems is proportional to the system's scale, but even small systems require some level of implementation and maintenance costs. For some sort of a reference point, the <a href="/demos/retrieval-augmented-generation">proof of concept</a>, built in Azure, has been indexed with 10 PDF documents totalling ~10MB for an initial cost of roughly $0.07 plus an ongoing cost of $0.002/month for storage and $0.0005 (a 50th of one cent!) each time a user enters a query and gets a response. In short, it's basically free to run. But I'm using the Free tier for most Azure services, I don't really care about its performance, very few people are going to use it, and I've set pretty low limits on how much it can be used to prevent unexpected costs.
+
+That would obviously not be the case for a large, enterprise-scale application in which you would need to consider:
+
+- How much data you want to be retrievable;
+- How often you'd like to update the data;
+- How many users you expect will use the application;
+- How performant you want the application to be;
+- Who will maintain the application;
+- The expected return on investment.
+
+This will inform the kind of infrastructure required as well as ongoing expenses related to updates, data management and technical support. The biggest cost you'd likely incur, other than labour, is <a href="https://azure.microsoft.com/en-au/pricing/details/search/">Azure's AI Search service</a> (the “information retriever” you'd use if you go with Azure) - so don't forget that <a href="/articles/not-for-profit-tech-deals/#microsoft-azure">Azure and AWS offer yearly grants to NFPs</a>!
+
+## Final thoughts
+
+I hope I've elucidated a bit about why AI is popping off and how RAG could be useful for your organisation! There is obviously still a lot more to say, but this post has gone on long enough. In future posts I might explore the two other use-cases of AI that I find really useful, process automation and as a writing assistant, but RAG is definitely the one I find the most interesting.
+
+<div class="article-image-wrapper">
+  <figure>
+    <Picture
+      alt="A happy-looking robot."
+      class="article-image"
+      formats={["webp"]}
+      height={449}
+      loading="lazy"
+      sizes="(min-width: 456px) 678px, 412px"
+      src={robotSmiling}
+      width={678}
+      widths={[678, 412]}
+    />
+    <figcaption>
+      {
+        "Look at this friendly guy! AI can do some really cool stuff if we make use of it. Photo by "
+      }
+      {
+        <a href="https://unsplash.com/@agk42?utm_source=neoncarrot&utm_medium=referral">
+          Alex Knight
+        </a>
+      }
+      {" on "}
+      {
+        <a href="https://unsplash.com/?utm_source=neoncarrot&utm_medium=referral">
+          Unsplash
+        </a>
+      }
+      {"."}
+    </figcaption>
+  </figure>
+</div>
+
+As always, if your organisation is interested in the practical aspects of technology implementation, give us a shout! From developing digital tools to managing tech projects, we ensure your ideas are explored and executed seamlessly, enabling you to focus on what you do best! Contact us at <a href="mailto:info@neoncarrot.com.au">info@neoncarrot.com.au</a> or by using the <a href="/#contact">contact form on our homepage</a> to find out more about how we can work together.
+
+Until next time! 💡🥕

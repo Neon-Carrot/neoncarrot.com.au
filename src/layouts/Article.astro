@@ -14,6 +14,7 @@ import BlogPreviewCard from "../components/BlogPreviewCard.astro";
 import PaintBackground from "../components/PaintBackground.astro";
 import BaseLayout from "./BaseLayout.astro";
 import { truncateString } from "../utils";
+import UnsplashAttribution from "../components/UnsplashAttribution.astro";
 
 type Props = CollectionEntry<"articles">;
 
@@ -23,6 +24,7 @@ const {
   heroImageColor,
   heroImage,
   heroImageAlt,
+  heroImageAttribution,
   pubDate,
   ogImage,
   otherArticles,
@@ -67,17 +69,27 @@ const others = await getEntries(otherArticles);
               color={heroImageColor}
               width={861}
             />
-            <Picture
-              alt={heroImageAlt}
-              class="image"
-              formats={["webp"]}
-              height={574}
-              loading="eager"
-              sizes="(min-width: 920px) 860px, (min-width: 456px) 720px, 412px"
-              src={heroImage}
-              width={860}
-              widths={[860, 720, 412]}
-            />
+            <figure>
+              <Picture
+                alt={heroImageAlt}
+                class="image"
+                formats={["webp"]}
+                height={574}
+                loading="eager"
+                sizes="(min-width: 920px) 860px, (min-width: 456px) 720px, 412px"
+                src={heroImage}
+                width={860}
+                widths={[860, 720, 412]}
+              />
+              {
+                heroImageAttribution ? (
+                  <UnsplashAttribution
+                    name={heroImageAttribution.name}
+                    username={heroImageAttribution.username}
+                  />
+                ) : null
+              }
+            </figure>
           </div>
         </Col>
       </Grid>
@@ -151,11 +163,7 @@ const others = await getEntries(otherArticles);
   }
 
   .paint-background {
-    height: 100%;
-    left: 0;
     position: absolute;
-    top: 0;
-    width: 100%;
   }
 
   .image {
