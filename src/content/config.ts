@@ -14,6 +14,9 @@ const articlesCollection = defineCollection({
         message: "Hero image must be at least 860px wide",
       }),
       heroImageAlt: z.string(),
+      heroImageAttribution: z
+        .object({ name: z.string(), username: z.string() })
+        .optional(),
       heroImageColor: z.nativeEnum(COLORS),
       ogImage: z.string(),
       pubDate: z.date(),

@@ -1,0 +1,115 @@
+@import "../../styles/variables.scss";
+
+.hero-section {
+  padding-top: $spacing-48 !important;
+
+  @media only screen and (max-width: $breakpoint-large) {
+    padding-top: $spacing-48 !important;
+  }
+
+  @media only screen and (max-width: $breakpoint-medium) {
+    padding-top: $spacing-32 !important;
+  }
+}
+
+.rag-demo {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  justify-content: space-between;
+  padding: 2rem 1.5rem;
+
+  @media only screen and (max-width: 896px) {
+    flex-direction: column;
+  }
+}
+
+.chat-section,
+.source-section {
+  flex: 1;
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.pdf-iframe {
+  height: 93%;
+  min-height: 28rem;
+  width: 100%;
+}
+
+.button-link {
+  background: none !important;
+  border: none;
+  color: $color-link;
+  cursor: pointer;
+  padding: 0 !important;
+  text-align: left;
+  text-decoration: underline;
+  word-break: break-word;
+}
+
+.chat-history-container {
+  position: relative;
+}
+
+.chat-history {
+  border: 2px solid $color-black;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  line-height: 1.3625;
+  height: 28rem;
+  overflow-y: auto;
+  padding: $spacing-2;
+  width: 100%;
+
+  &.loading {
+    opacity: 0.5;
+  }
+}
+
+.message-container {
+  align-items: flex-start;
+  display: flex;
+}
+
+.message {
+  flex: 1;
+  margin-bottom: 1rem;
+  padding: 0.25rem 0.5rem;
+}
+
+.human-message {
+  background-color: $color-blue-desat;
+  border-radius: 0.125rem 0.5rem 0.5rem 0.5rem;
+  color: $color-black;
+  margin-left: 0.5rem;
+}
+
+.ai-message {
+  background-color: $color-grey-100;
+  border-radius: 0.5rem 0.125rem 0.5rem 0.5rem;
+  color: $color-black;
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.spinner {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.spinner-path {
+  animation: spinner 0.75s infinite linear;
+  transform-origin: center;
+}
+
+@keyframes spinner {
+  100% {
+    transform: rotate(360deg);
+  }
+}
