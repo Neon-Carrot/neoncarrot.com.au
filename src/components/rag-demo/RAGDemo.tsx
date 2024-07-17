@@ -1,4 +1,4 @@
-import { useState, type FormEventHandler } from "react";
+import { useEffect, useState, type FormEventHandler } from "react";
 
 import type { History, Response, Source } from "./types";
 import ChatForm from "./ChatForm";
@@ -82,6 +82,16 @@ function RAGDemo() {
       setLoading(false);
     }
   };
+
+  // Wake serverless function up on first load
+  useEffect(() => {
+    fetch(`${apiBaseUrl}/`, {
+      method: "GET",
+      headers: {
+        "x-functions-key": import.meta.env.PUBLIC_AZURE_FUNCTION_KEY,
+      },
+    });
+  }, []);
 
   return (
     <div className="rag-demo">
