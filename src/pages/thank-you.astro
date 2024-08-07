@@ -1,0 +1,52 @@
+---
+import "../styles/index.scss";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ButtonLink from "../components/ButtonLink.astro";
+import Card from "../components/Card.astro";
+import Col from "../components/Col.astro";
+import Grid from "../components/Grid.astro";
+import PartyPopper from "../components/PartyPopper.astro";
+import Section from "../components/Section.astro";
+---
+
+<BaseLayout
+  alwaysShowNav
+  description="Thank you for getting in touch"
+  title="Thank you for getting in touch"
+>
+  <main class="thank-you-page bg-orange--desat">
+    <Section deep>
+      <Grid>
+        <Col smSize={4} smStart={1} size={8} start={3}>
+          <Card class="thank-you-card" color="purple">
+            <div class="center spv-8">
+              <PartyPopper width={250} />
+            </div>
+            <h1 class="center">Thank you!</h1>
+            <h2 class="heading-4 center">
+              We've successfully received your message, and will be in touch
+              soon.
+            </h2>
+            <div class="center">
+              <ButtonLink color="red" href="/">Back to homepage</ButtonLink>
+            </div>
+          </Card>
+        </Col>
+      </Grid>
+    </Section>
+  </main>
+
+  <style lang="scss">
+    @import "../styles/variables.scss";
+
+    .thank-you-page {
+      @media only screen and (max-width: $breakpoint-medium) {
+        margin-top: $spacing-8;
+      }
+    }
+
+    .thank-you-card {
+      padding: $spacing-12 $spacing-8;
+    }
+  </style>
+</BaseLayout>
