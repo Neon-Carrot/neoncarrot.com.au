@@ -60,6 +60,11 @@
   scroll-margin-top: $spacing-16;
 }
 
+.border {
+  border: 2px solid $color-black;
+  border-radius: 1rem;
+}
+
 .button,
 a.button {
   border-radius: 0.5rem;

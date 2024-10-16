@@ -1,0 +1,476 @@
+---
+title: "How to choose the right LMS for your Not-for-Profit"
+author: "caleb-ellis"
+topic: "How-to guides"
+summary: "Demystify the world of Learning Management Systems (LMSs), and gain the confidence to choose the right one for you. In this article, we explain our process for selecting an LMS by defining requirements, listing features to look for, and evaluating the options."
+heroImage: "../../images/love-to-learn-sign.png"
+heroImageAlt: "Sign outside a school that says 'Love To Learn'"
+heroImageAttribution: { name: "Tim Mossholder", username: "timmossholder" }
+heroImageColor: "#f36a1b"
+ogImage: "/images/og-how-to-choose-the-right-lms.png"
+otherArticles:
+  [
+    "ai-action-make-your-data-make-sense",
+    "technology-for-social-justice-conference-2024",
+    "not-for-profit-tech-deals",
+  ]
+pubDate: 2024-10-17
+---
+
+import { Image, Picture } from "astro:assets";
+
+import choosingLmsInfographic from "../../images/choosing-lms-infographic.jpg";
+import legoBandits from "../../images/lego-bandits.png";
+import lmsUsers from "../../images/lms-users.png";
+import lotsOfBooks from "../../images/lots-of-books.png";
+import requirementsPrioritisation from "../../images/requirements-prioritisation.jpg";
+import thankYou from "../../images/thank-you.png";
+import threeDCharts from "../../images/3d-charts.png";
+import windowShopping from "../../images/window-shopping.png";
+
+<div className="border spv-8" style={{ padding: "1.5rem 1.5rem 0rem" }}>
+  **Who this article is for:**
+  - Organisations that don't know what a Learning Management System is, what they can do, and what problems they solve.
+  - Organisations that need help with the process of choosing a Learning Management System that is right for them.
+</div>
+
+As a Not-for-Profit (NFP) organisation, it's likely you manage and deliver a **lot** of different types of training. Beyond the wooden workplace health and safety inductions we all have to endure, you also have to contend with training staff and volunteers in often very complex service delivery. The scale can be hard to manage, especially when coupled with the importance, sensitivity and often compliance-heavy nature of the training material itself.
+Things are made harder still if you deliver training predominantly in person, track completion in an Excel spreadsheet, or have content duplicated across different sites or mediums. But it doesn't have to be this way! Implementing a Learning Management System could make your life that little bit easier.
+
+## What is an LMS and how can it help you?
+
+A Learning Management System (LMS) is a software platform that **administers**, **tracks**, and **delivers** educational content, streamlining the manual admin work that goes into managing training material. **Instructors** use them to manage, deliver and sometimes create educational content, while **learners** use them to access and engage with the materials at their own convenience.
+
+LMSs can be used for onboarding employees, training volunteers, educating stakeholders — some even provide a platform for selling educational content to other individuals and organisations. Which isn't actually a crazy idea for NFPs! It's hard to overstate the value of NFPs' expertise about the communities they serve and the services they provide, and there could be a market for that knowledge.
+
+LMSs are usually offered as Software-as-a-Service (SaaS — off-the-shelf software in which you pay a recurring fee for access), however there are also LMSs that you can host on your own IT infrastructure (self-hosting).
+
+Now unless this article is your first exposure to the world of online learning, you're already aware that there are 50 million different options to choose from. **So how do you pick the right LMS?**
+
+<div class="article-image-wrapper">
+  <figure>
+    <Picture
+      alt="A huge selection of books in a library."
+      class="article-image"
+      formats={["webp"]}
+      height={508}
+      loading="lazy"
+      sizes="(min-width: 456px) 760px, 412px"
+      src={lotsOfBooks}
+      width={760}
+      widths={[760, 412]}
+    />
+    <figcaption>
+        {
+          "How it can feel browsing the different LMSs out there. Photo by "
+        }
+        {
+          <a href="https://unsplash.com/@chuttersnap?utm_source=neoncarrot&utm_medium=referral">
+            CHUTTERSNAP
+          </a>
+        }
+        {" on "}
+        {
+          <a href="https://unsplash.com/?utm_source=neoncarrot&utm_medium=referral">
+            Unsplash
+          </a>
+        }
+        {"."}
+      </figcaption>
+  </figure>
+</div>
+
+## Defining your requirements
+
+First things first — before you start chatting with LMS vendors' sales teams who'll tell you only what you want to hear, it is absolutely **critical** that you define what you actually want from an LMS.
+
+I understand I haven't gone over the LMS feature list just yet so it may be difficult to envision what you want, but that's intentional (sorry! 😬), otherwise there's a risk of looking at your requirements solely through the lens of what LMSs offer. For example, is it that you want a mobile app for training (an LMS feature), or do you want your frontline staff to be able to access training material in the field (a business requirement)? Do you really need an LMS with a “blended learning environment” (feature), or does your organisation just need a digital equivalent to face-to-face training you already deliver (requirement)?
+
+### 1. List your objectives
+
+Let's get down to business — what are you hoping to achieve by implementing an LMS? One approach to defining objectives is by taking stock of what the state of your training is in now, and then by imagining what the ideal state of your training looks like.
+
+Here are some example objectives:
+- **Simplify staff onboarding process:** Our current onboarding process is convoluted, with numerous touch points across several different staff. A simplified onboarding process will free up time for service delivery.
+- **Increase tender opportunities:** Government tenders for education and training services often require an online component in their award criteria. Building online training will expand the list of tender opportunities for which we are eligible.
+- **Diversify income:** By delivering paid training material online, we can create additional income streams and reach a wider audience than with in-person training.
+- **Improve compliance-tracking:** Our current compliance training process offers poor visibility for reporting. An ability to report on compliance-rates will help with overall management as well as any external audits.
+
+### 2. Identify your users and their needs
+
+The people who are going to use the LMS are as important as the system itself, because what good is a system that's fit-for-someone-else's-purpose?
+
+<div class="article-image-wrapper">
+  <figure>
+    <Picture
+      alt="A group of young people using digital technology."
+      class="article-image"
+      formats={["webp"]}
+      height={507}
+      loading="lazy"
+      sizes="(min-width: 456px) 760px, 412px"
+      src={lmsUsers}
+      width={760}
+      widths={[760, 412]}
+    />
+    <figcaption>
+        {
+          "Who are your users and what do they like? Photo by "
+        }
+        {
+          <a href="https://unsplash.com/@brookecagle?utm_source=neoncarrot&utm_medium=referral">
+            Brooke Cagle
+          </a>
+        }
+        {" on "}
+        {
+          <a href="https://unsplash.com/?utm_source=neoncarrot&utm_medium=referral">
+            Unsplash
+          </a>
+        }
+        {"."}
+      </figcaption>
+  </figure>
+</div>
+
+In this step, the main questions you want to ask and answer for your organisation is: who is going to be impacted by the implementation and use of the LMS, and what would make them happy? If you completed the step above you've likely already identified a few users, but regardless, here are a few tips to help you in this process:
+- **Define user groups:** The broadest and most obvious user groups would be “staff”, “volunteers” and “clients”, but these will likely need to be more granularly defined, e.g. “staff” could be broken down into program managers and case workers, each with a different set of requirements.
+- **Assess tech-savviness:** Consider the tech-savviness of your users. If they're not particularly tech-oriented, you might want to give priority to LMSs that have a simple and intuitive interface.
+- **Accessibility:** Consider language and accessibility needs. If your users are diverse, you may need multilingual support or accessibility features for users with disabilities.
+- **Understand learning styles:** Your users may have varying preferences for how they like to learn. Some may prefer video tutorials, while others might benefit more from downloadable resources. Your users might not even resonate with online learning at all!
+
+### 3. Set a budget
+
+LMS pricing can vary significantly, from free and open-source options that you configure yourself to expensive, all-encompassing platforms that can do _literally anything_ (or so their marketers claim). And since most LMSs live in the SaaS world, the pricing can be highly dynamic even within a single platform.
+
+For paid options, an organisation with ~500 users can expect an LMS to have a yearly cost between 4 and 6 figures depending on payment plan, feature set, and service-level agreements. So with that amount of variability in mind - save yourself the tears and set a hard spending limit before looking into the more richly-featured options. Unless you want to do some window shopping. That can be nice too.
+
+<div class="article-image-wrapper">
+  <figure>
+    <Picture
+      alt="Block Arcade in Melbourne - a fancy set of shops."
+      class="article-image"
+      formats={["webp"]}
+      height={494}
+      loading="lazy"
+      sizes="(min-width: 456px) 760px, 412px"
+      src={windowShopping}
+      width={760}
+      widths={[760, 412]}
+    />
+    <figcaption>
+        {
+          "The world would be a much nicer place if NFPs had deeper pockets! One can dream, anyway... Photo by "
+        }
+        {
+          <a href="https://unsplash.com/@framesbyfin?utm_source=neoncarrot&utm_medium=referral">
+            Heidi Fin
+          </a>
+        }
+        {" on "}
+        {
+          <a href="https://unsplash.com/?utm_source=neoncarrot&utm_medium=referral">
+            Unsplash
+          </a>
+        }
+        {"."}
+      </figcaption>
+  </figure>
+</div>
+
+Some pricing things to consider:
+- **LMSs can be priced-per-user:** The meaning of “user” will depend on the LMS vendor — it could mean either “learner” or “instructor” or both or more! To add another wrinkle, some LMSs bill per “active user” where you are only charged for the number of users who log in for a given billing period. This is the pricing option with the highest variance, and is usually best for smaller organisations with a limited number of users or without a forecast for huge growth in their user base. On the other hand, LMSs that charge per ”active” user can be a good option for NFPs with a large volunteer base.
+- **LMSs can have fixed-price plans:** A recurring monthly/yearly licence fee. The actual dollar amount might not be advertised unless you're a fairly small NFP, so you'll still have to get in contact with an LMS vendor. This option can be good for growing NFPs or those with fluctuating numbers of active users.
+- **LMSs can be self-hosted for free:** Some LMS platforms can be implemented without any licensing costs, but it's “free” in the same way that starting a family is free - it's all the other costs you have to worry about. This option requires a decent amount of technical expertise to set up as well as maintain. Self-hosting can be suitable if you have a very specific technical constraint that requires you to have full control of the platform, or you already have tech-savvy staff on-hand and a very limited budget.
+- **Ask about discounts for NFPs:** This should be standard practice for any procurement activities you do, but I'll leave this in as a reminder to explicitly ask. A lot of LMS vendors won't openly advertise discounts that they offer.
+
+### 4. Determine technical constraints
+
+This step involves assessing your current technology environment and determining what aspects will impact your choice of LMS. Some technical considerations include:
+- **Data security:** All organisations have to make sure their intellectual property is protected, and NFPs are no different. The strictness of your data security requirements will depend on the sensitivity of your training material and your organisation's appetite for risk, but I would say that at an absolute minimum, limit your LMS choices to those that support multi-factor authentication (MFA) and regular backups.
+- **Internet connectivity:** Does your organisation deliver training to clients in remote areas? You may need to consider the state of internet connectivity in service areas, and prioritise LMSs that have offline capabilities.
+- **Content formats:** Do you already manage training material? Ensure the LMS supports the formats that material is in (e.g., videos, PDFs, SCORM packages). Prioritise LMSs that comply with e-learning file standards like SCORM or xAPI - LMSs that use their own format will often be excruciatingly difficult to migrate away from.
+
+## LMS features to look for
+
+So, I'm sure you haven't skipped ahead and you've totally defined your objectives, identified your users, determined your technical constraints and set a budget. Totally! Now we get to the fun part, which is actually differentiating LMSs based on the features they have on offer.
+
+<div class="article-image-wrapper">
+  <figure>
+    <Picture
+      alt="LMS features infographic"
+      class="article-image"
+      formats={["webp"]}
+      height={575}
+      loading="lazy"
+      sizes="(min-width: 456px) 760px, 412px"
+      src={choosingLmsInfographic}
+      width={760}
+      widths={[760, 412]}
+    />
+    <figcaption>
+        {
+          "Oh yeah, seems simple enough. *head explodes*. Image taken from"
+        }
+        {" "}
+        {
+          <a href="https://elearninginfographics.com/look-choosing-lms-infographic/">
+            ELEARNINGinfographics.com
+          </a>
+        }
+        {"."}
+      </figcaption>
+  </figure>
+</div>
+
+In no particular order, here is a non-exhaustive list of common features that you may be interested in — especially if they align with your requirements!.
+
+### Course-authoring tools
+
+There is a common misconception that LMS' all include functionality for creating training, but **this is not the case**. Some LMSs only deal with the hosting and administration of training content, but the training needs to be imported having been built somewhere else such as Adobe Captivate, Articulate Storyline or even just PowerPoint.
+LMS' course-authoring capabilities may not be as feature-rich as dedicated software options, but it can be beneficial to have access to simple features.
+Consider:
+- What kind of content-authoring tools do you need (e.g. drag-and-drop editors, quizzes, templates, etc)?
+- Do you already have access to dedicated content-authoring tools?
+- What types of content do you need to support (e.g., video, audio, interactive elements)?
+- Is it important to be able to easily update or replace content?
+
+### User management
+
+Different users of an LMS will have different permissions on what they're allowed to do. LMSs will usually have at least three roles baked in by default (though the exact names and permissions may vary):
+1. **Administrators:** Full system access and control.
+2. **Instructors:** Can create and manage courses, assessments and learner progress.
+3. **Learners:** Can access assigned courses and track their own progress.
+
+This could be enough to start off with, but you might want more granularity in permission management so, for example, staff in Program A can create and manage Program A training material, but not Program B (and vice versa).
+
+Having worked on building flexible role-based access control systems in the past, it can be difficult to implement and maintain and therefore usually comes with a **high cost**. LMSs will usually only offer this feature at their “Enterprise” pricing level. So, if you can get away with only having simple roles, do so - don't immediately assume roles in an LMS need to reflect the roles you have in your organisation.
+
+Consider:
+- What types of user roles are available by default?
+- Are there any other user roles you think you might need?
+- Is it possible to create custom user roles with specific permissions?
+- How does the system handle user groups and hierarchies?
+
+<div class="article-image-wrapper">
+  <figure>
+    <Picture
+      alt="Lego bandits"
+      class="article-image"
+      formats={["webp"]}
+      height={506}
+      loading="lazy"
+      sizes="(min-width: 456px) 760px, 412px"
+      src={legoBandits}
+      width={760}
+      widths={[760, 412]}
+    />
+    <figcaption>
+        {
+          "It's probably not necessary to replicate the 'Raider' and 'Bandit' roles you have in your organisation. Photo by "
+        }
+        {
+          <a href="https://unsplash.com/@kasiade?utm_source=neoncarrot&utm_medium=referral">
+            Kasia Derenda
+          </a>
+        }
+        {" on "}
+        {
+          <a href="https://unsplash.com/?utm_source=neoncarrot&utm_medium=referral">
+            Unsplash
+          </a>
+        }
+        {"."}
+      </figcaption>
+  </figure>
+</div>
+
+### Free trial
+
+Every LMS vendor will offer a free demonstration of their product, but it is far more valuable to be able to play around with the system at your own pace and in your own way with a free trial. You won't be able to fully explore all the features and run into all the limitations in a 14 or 30 day free trial, but you'll be able to “vibe check” things like whether the user interface is intuitive, and how well the platform performs on desktop and mobile.
+
+Consider:
+- Does the vendor offer a free trial? If so, how long is it?
+- What are the limitations for the trial version?
+- Is there any support provided during the trial period?
+- What happens to your data and content after the trial period ends?
+
+### E-commerce platform
+
+If you're not solely interested in creating and managing your own training material, it can be useful to look for LMSs that provide a platform to buy and sell training either from the LMS vendor themself, or from other users. Just be aware that, like with any platform that hosts user-generated content, there'll be some good, and a _loooot_ of nonsense.
+
+Consider:
+- Is it important to be able to buy and/or sell training material?
+- Does the LMS come with an e-commerce platform? If so, what types of content are included?
+- Are there any additional costs for accessing the training e-commerce platform?
+- What are the privacy/IP implications of hosting content on the platform?
+- How is your brand portrayed on the platform? What customisation options are there?
+
+### Reporting and analytics
+
+This is a big one, especially if you use training to demonstrate impact to funding bodies. Fortunately, pretty much all of the major players in the LMS space offer _some_ level of reporting and analytics, for things like tracking progress and completion rates. The differentiator will be the depth and customisation of reporting/analytics on offer.
+
+Consider:
+- What types of reports do you need?
+- How customised do your reports need to be?
+- Do you need to be able to issue certificates upon course completion?
+- How easy is it to export data from the LMS, for use in your own internal reporting?
+
+<div class="article-image-wrapper">
+  <figure>
+    <Picture
+      alt="3d render of reporting and analytics visualisation"
+      class="article-image"
+      formats={["webp"]}
+      height={505}
+      loading="lazy"
+      sizes="(min-width: 456px) 760px, 412px"
+      src={threeDCharts}
+      width={760}
+      widths={[760, 412]}
+    />
+    <figcaption>
+        {
+          "Yes, 3D data visualisation are cool, but I'm gonna hazard a guess and say you don't need them. Photo by "
+        }
+        {
+          <a href="https://unsplash.com/@dengxiangs?utm_source=neoncarrot&utm_medium=referral">
+            Choong Deng Xiang
+          </a>
+        }
+        {" on "}
+        {
+          <a href="https://unsplash.com/?utm_source=neoncarrot&utm_medium=referral">
+            Unsplash
+          </a>
+        }
+        {"."}
+      </figcaption>
+  </figure>
+</div>
+
+### Hosting options
+
+Not every LMS is exclusively cloud-based — some have the option to licence the software for a fixed fee that you can then host on your own infrastructure. This can be a great option for NFPs that have specific technical constraints (e.g. data sovereignty laws) but don't want to go down the route of configuring a system from scratch.
+
+Consider:
+- Does the LMS need to be hosted on-premises?
+- For cloud-based hosting, where are the servers located? How is the data secured? Can the geographic location of the data be changed?
+- For self-hosting, what are the hardware and software requirements? Is support for installation and maintenance provided? How are updates and patches managed?
+- How does the pricing model differ between cloud-based and self-hosted options?
+
+### Vendor support and training
+
+Do you have in-house IT staff or a managed provider who can address technical issues, or do you think you will lean more on an LMS vendor's support services? If the latter, look for vendors who offer onboarding assistance, training (yes, training to manage training!), extensive documentation and responsive customer service.
+
+Consider:
+- What level of customer support does the LMS provide?
+- Is there an additional cost for premium support?
+- Does the LMS have an active user community or knowledge base?
+- How often does the LMS release updates, and how are these communicated?
+
+## Prioritising requirements
+
+So by this stage you should have a list of system requirements, and you should have a grasp on some typical LMS features (though I encourage you to explore more — I didn't even mention collaboration tools, integrations with other systems, scalability, or security). What you want to do now is map your system requirements to the features that LMSs offer, and prioritise them.
+
+At Neon Carrot, we'll typically prioritise features using the [MoSCoW method](https://en.wikipedia.org/wiki/MoSCoW_method). With it, we divide each of the features into **Must have** (non-negotiable), **Should have** (plan on it, but not strictly required for project success), **Could have** (nice-to-haves) and **Won't have** (not right now / unnecessary). This is enough granularity for us without getting too finicky, but do it however it works for you!
+
+<div class="article-portrait-image center">
+  <div class="article-image-wrapper image-wrapper">
+    <figure>
+      <Image
+        alt="Prioritisation exercise with post-it notes"
+        class="article-image"
+        format="webp"
+        height={600}
+        loading="lazy"
+        src={requirementsPrioritisation}
+        width={400}
+      />
+      <figcaption>
+        {
+          "Embrace the sticky notes. Sticky notes are your friends. Photo by "
+        }
+        {
+          <a href="https://unsplash.com/@joszczepanska?utm_source=neoncarrot&utm_medium=referral">
+            Jo Szczepanska
+          </a>
+        }
+        {" on "}
+        {
+          <a href="https://unsplash.com/?utm_source=neoncarrot&utm_medium=referral">
+            Unsplash
+          </a>
+        }
+        {"."}
+      </figcaption>
+    </figure>
+  </div>
+</div>
+
+Some tips:
+- Be realistic. Understand your organisation's true needs versus wants. To put it another way, don't let perfect be the enemy of good.
+- Think long-term but prioritise the short-term. What are the problems you have right now? They need addressing before imagined future problems.
+- Involve stakeholders. Get input from as diverse a group as feasible, to help ensure all needs are represented.
+- Weigh the impact. Prioritise the things that will have the biggest positive impact on your training capabilities.
+
+Also, without you even realising it (probably), I've just tricked you into doing business analyst work! That nebulous term is actually one of our specialties, so if you need help in defining, documenting and prioritising system requirements, don't hesitate to [get in touch](https://www.neoncarrot.com.au/#contact)!
+
+## Evaluating LMS options
+
+The document you created in the previous step will be your guiding light here, so hold it tight! In this phase you want to quickly filter and sort the different LMSs based on their suitability for your organisation. One way you can do this is to:
+
+1. Start by compiling the list of LMSs you'd like to evaluate. Seek recommendations from your network and research popular platforms online. Alternatively, you could just use [this list of popular LMSs](https://www.softwareadvice.com.au/directory/3816/nonprofit-lms/software?sort=reviews) _(Note that I don't endorse any reviews or recommendations on this site - I only suggest using it as a list of what your options are!)_.
+2. Next, go through the list one by one and eliminate the LMS options that don't satisfy your **Must have** features, technical constraints, or budget.
+3. Of the remaining options, scan their feature lists and determine which of the **Should have** and **Could have** features they offer. Then, use a point scale/weighted decision matrix (e.g. **Should haves** are worth 3 points and **Could haves** are worth 2) to sort those options based on their rating.
+4. Of the sorted LMSs, shortlist the top 3-5. These are the ones that you'll evaluate fully, by getting in contact with their sales teams and playing around with the product yourselves.
+4. Finally, compile your findings, scores and feedback and present them to whoever needs to be involved. If everything looks good, maybe you can go ahead with the option that ticks the most boxes! Oh, and don't forget to unsubscribe from all the marketing newsletters you unknowingly signed up for when getting quotes. 😛
+
+You could even go a step further and run a pilot program, in which you might commit for a short period of time and use the LMS in earnest, then reevaluate to see how you found using it.
+
+## Closing thoughts
+
+Looking back on it now, this post has become way longer than I had intended. So if you've made it this far, thanks so much for reading!
+
+<div class="article-image-wrapper">
+  <figure>
+    <Picture
+      alt="Thank You spelled out in Scrabble letters"
+      class="article-image"
+      formats={["webp"]}
+      height={505}
+      loading="lazy"
+      sizes="(min-width: 456px) 760px, 412px"
+      src={thankYou}
+      width={760}
+      widths={[760, 412]}
+    />
+    <figcaption>
+        {
+          "The waffling may have gotten a little out of control with this one. Photo by "
+        }
+        {
+          <a href="https://unsplash.com/@priscilladupreez?utm_source=neoncarrot&utm_medium=referral">
+            Priscilla Du Preez
+          </a>
+        }
+        {" on "}
+        {
+          <a href="https://unsplash.com/?utm_source=neoncarrot&utm_medium=referral">
+            Unsplash
+          </a>
+        }
+        {"."}
+      </figcaption>
+  </figure>
+</div>
+
+I just wanted to finish off by saying the process I've outlined here is on the more involved and time-consuming side of things. It would be well within the norm to spend 3-6 months doing everything “by the book” when choosing and implementing an LMS. But have no doubt, you could very easily just grab the company credit card and pay whatever it takes to set up and implement Canvas (a fantastic, if expensive LMS) at your organisation and be done with the analysis paralysis.
+
+But an LMS is a piece of software you're likely to keep running for 5+ years, so my 2 cents is that it pays to do it right. Investing the extra time upfront can ensure that the system you implement truly meets your needs and supports your mission. Remember, the goal isn't just to “have an LMS” - it's to have one that empowers your team, engages your learners, and grows with you over time. So take the time, do it right, and future you will thank you for it!
+
+Before I go, if you've gone through the process of choosing and using an LMS yourself, we'd love to hear your experiences! Share any thoughts, triumphs or tribulations in the comments of our LinkedIn post.
+
+And as always, if your organisation is interested in the practical aspects of implementing technology, give us a shout! From developing digital tools to managing tech projects, we ensure your ideas are explored and executed seamlessly, enabling you to focus on what you do best! Contact us at [info@neoncarrot.com.au](mailto:info@neoncarrot.com.au) or by using the [contact form on our homepage](https://www.neoncarrot.com.au/#contact) to find out more about how we can work together.
+
+Until next time! 💡🥕
