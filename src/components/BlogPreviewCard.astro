@@ -32,14 +32,11 @@ const { author, heroImageColor, pubDate, heroImageAlt, heroImage, title } =
         widths={[496, 720, 412]}
       />
       <div class="content">
-        <span class="display-inline-block spv-2">
+        <span class="display-inline-block spv-1">
           <h3 class="heading-5 title">
             {title}
           </h3>
         </span>
-        <p class="spv-0">
-          <PublishedBy authorId={author.id} pubDate={pubDate} />
-        </p>
       </div>
     </Card>
   </a>
@@ -79,8 +76,8 @@ const { author, heroImageColor, pubDate, heroImageAlt, heroImage, title } =
       background: linear-gradient(
         to top,
         rgba(36, 36, 48, 1) 0%,
-        rgba(36, 36, 48, 0.9) 25%,
-        rgba(36, 36, 48, 0) 66%
+        rgba(36, 36, 48, 0.9) 20%,
+        rgba(36, 36, 48, 0) 50%
       );
       content: "";
       height: 100%;
@@ -121,6 +118,7 @@ const { author, heroImageColor, pubDate, heroImageAlt, heroImage, title } =
       0 100%,
       100% 100%;
     background-repeat: no-repeat;
+    margin-bottom: 0;
     transition: background-size cubic-bezier(0, 0, 0.2, 1) 400ms;
   }
 </style>
