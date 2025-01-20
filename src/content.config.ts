@@ -1,18 +1,17 @@
 import { defineCollection, reference, z } from "astro:content";
 
-import { COLORS, ARTICLE_TOPICS } from "../constants";
+import { COLORS, ARTICLE_TOPICS } from "./constants";
+import { glob } from "astro/loaders";
 
 const articlesCollection = defineCollection({
-  type: "content",
+  loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: "./src/content/articles" }),
   schema: ({ image }) =>
     z.object({
       title: z.string(),
       author: reference("team"),
       topic: z.nativeEnum(ARTICLE_TOPICS),
       summary: z.string().max(300),
-      heroImage: image().refine((img) => img.width >= 860, {
-        message: "Hero image must be at least 860px wide",
-      }),
+      heroImage: image(),
       heroImageAlt: z.string(),
       heroImageAttribution: z
         .object({ name: z.string(), username: z.string() })
@@ -26,7 +25,7 @@ const articlesCollection = defineCollection({
 });
 
 const teamCollection = defineCollection({
-  type: "data",
+  loader: glob({ pattern: "**/[^_]*.yaml", base: "./src/content/team" }),
   schema: z.object({
     name: z.string(),
     nickname: z.string().optional(),
