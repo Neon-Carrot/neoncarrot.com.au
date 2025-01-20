@@ -21,7 +21,7 @@ export async function GET(context) {
         lastBuildDate: article.data.updatedDate,
         author: author?.data.name || "Unknown author",
         description: article.data.summary,
-        link: `/articles/${article.slug}/`,
+        link: `/articles/${article.id}/`,
       };
     }),
   });

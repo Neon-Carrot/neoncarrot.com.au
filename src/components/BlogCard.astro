@@ -10,7 +10,7 @@ type Props = CollectionEntry<"articles"> & {
   lazyLoad?: boolean;
 };
 
-const { class: className, data, lazyLoad = false, slug }: Props = Astro.props;
+const { class: className, data, lazyLoad = false, id }: Props = Astro.props;
 const {
   author,
   heroImage,
@@ -21,7 +21,7 @@ const {
   title,
   topic,
 } = data;
-const href = `/articles/${slug}`;
+const href = `/articles/${id}`;
 ---
 
 <div class:list={["wrapper", className]}>

@@ -7,13 +7,13 @@ import PublishedBy from "./PublishedBy.astro";
 
 type Props = CollectionEntry<"articles"> & { class?: string };
 
-const { class: className, data, slug }: Props = Astro.props;
+const { class: className, data, id }: Props = Astro.props;
 const { author, heroImageColor, pubDate, heroImageAlt, heroImage, title } =
   data;
 ---
 
 <div class={className}>
-  <a class="link" href={`/articles/${slug}`}>
+  <a class="link" href={`/articles/${id}`}>
     <Card
       class="card"
       bgColor={heroImageColor}
